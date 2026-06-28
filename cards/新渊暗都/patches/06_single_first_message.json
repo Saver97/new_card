@@ -1,0 +1,3 @@
+[
+  {"op": "replace", "path": "/first_messages", "value": ["开场白/默认开场白.txt"]}
+]

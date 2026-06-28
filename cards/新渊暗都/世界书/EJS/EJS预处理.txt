@@ -1,4 +1,4 @@
-@@generate_before
+@@preprocessing
 <%_
 define('current_region', getvar('stat_data.世界.当前地点', { defaults: '' }));
 define('current_days', getvar('stat_data.世界.经过天数', { defaults: 0 }));

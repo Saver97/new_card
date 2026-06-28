@@ -418,17 +418,7 @@
   },
   "description": "",
   "first_messages": [
-    "开场白/城防署_男.txt",
-    "开场白/城防署_女.txt",
-    "开场白/深渊议会_男.txt",
-    "开场白/深渊议会_女.txt",
-    "开场白/自由行者_男.txt",
-    "开场白/自由行者_女.txt",
-    "开场白/暮光商会_男.txt",
-    "开场白/暮光商会_女.txt",
-    "开场白/天使种_传说.txt",
-    "开场白/恶魔种_传说.txt",
-    "开场白/纯机械生命体_传说.txt"
+    "开场白/默认开场白.txt"
   ],
   "creator": "",
   "creator_notes": "",
@@ -583,7 +573,6 @@
     },
     "任务完成检测": {
       "id": "task-complete-check",
-      "scriptName": "任务完成检测",
       "findRegex": "\\{\\{([^}]+)\\}\\}(完成|放弃)",
       "replaceString": "",
       "trimStrings": [],
@@ -601,7 +590,6 @@
     },
     "角色创建面板": {
       "id": "char-create-panel",
-      "scriptName": "角色创建面板",
       "findRegex": "<CharacterCreatePanel\\s*/>",
       "replace_file": "正则/角色创建面板.html",
       "trimStrings": [],
@@ -619,7 +607,6 @@
     },
     "信息面板": {
       "id": "info-panel",
-      "scriptName": "信息面板",
       "findRegex": "<InfoPanel\\s*/>",
       "replace_file": "正则/信息面板.html",
       "trimStrings": [],
