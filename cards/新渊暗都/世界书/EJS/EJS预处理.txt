@@ -1,0 +1,9 @@
+@@generate_before
+<%_
+define('current_region', getvar('stat_data.世界.当前地点', { defaults: '' }));
+define('current_days', getvar('stat_data.世界.经过天数', { defaults: 0 }));
+define('task_status', getvar('stat_data.任务.任务状态', { defaults: '进行中' }));
+define('current_faction', getvar('stat_data.主角.基础.势力', { defaults: '' }));
+define('current_race', getvar('stat_data.主角.基础.种族', { defaults: '' }));
+define('current_gender', getvar('stat_data.主角.基础.性别', { defaults: '' }));
+_%>

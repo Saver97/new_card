@@ -1,0 +1,395 @@
+{
+  "projectName": "新渊暗都",
+  "worldbookName": "新渊暗都",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {
+    "世界观": {
+      "新渊城世界观": {
+        "path": "世界书/世界观/新渊城世界观.yaml",
+        "keywords": [],
+        "abstract": "新渊城核心设定：三层城市结构、三路线矛盾、深渊议会阴谋",
+        "enabled": true
+      },
+      "种族与社会": {
+        "path": "世界书/世界观/种族与社会.yaml",
+        "keywords": [],
+        "abstract": "8种族分类体系、来源、社会地位与种族关系",
+        "enabled": true
+      },
+      "力量体系详述": {
+        "path": "世界书/世界观/力量体系详述.yaml",
+        "keywords": [],
+        "abstract": "灵能/基因/义体三路线机制、等级、风险与侵蚀度",
+        "enabled": true
+      }
+    },
+    "扮演准则": {
+      "叙事风格与NPC外貌规则": {
+        "path": "世界书/扮演准则/叙事风格与NPC外貌规则.yaml",
+        "keywords": [],
+        "abstract": "叙事风格、互动规则、NPC与主角外貌生成规则、任务系统",
+        "enabled": true
+      }
+    },
+    "地理": {
+      "上城区": {
+        "part": "region",
+        "keywords": [
+          "上城区",
+          "城防署总部",
+          "暮光交易所"
+        ],
+        "abstract": "上城区：精英与官方聚集地，城防署总部与暮光交易所",
+        "contents": [
+          {
+            "content": "@@if current_region?.includes('上城区')"
+          },
+          {
+            "file": "世界书/地理/上城区.yaml"
+          }
+        ],
+        "enabled": true
+      },
+      "中城区": {
+        "part": "region",
+        "keywords": [
+          "中城区",
+          "商业区",
+          "自由行者酒吧"
+        ],
+        "abstract": "中城区：商业繁华与平民生活区，自由行者酒吧",
+        "contents": [
+          {
+            "content": "@@if current_region?.includes('中城区')"
+          },
+          {
+            "file": "世界书/地理/中城区.yaml"
+          }
+        ],
+        "enabled": true
+      },
+      "下城区": {
+        "part": "region",
+        "keywords": [
+          "下城区",
+          "贫民窟",
+          "黑市"
+        ],
+        "abstract": "下城区：阴暗底层，贫民窟、黑市与地下诊所",
+        "contents": [
+          {
+            "content": "@@if current_region?.includes('下城区')"
+          },
+          {
+            "file": "世界书/地理/下城区.yaml"
+          }
+        ],
+        "enabled": true
+      },
+      "深渊裂隙": {
+        "part": "region",
+        "keywords": [
+          "深渊裂隙",
+          "深渊议会",
+          "裂隙遗迹"
+        ],
+        "abstract": "深渊裂隙：异界交界，深渊议会据点与裂隙遗迹",
+        "contents": [
+          {
+            "content": "@@if current_region?.includes('深渊裂隙')"
+          },
+          {
+            "file": "世界书/地理/深渊裂隙.yaml"
+          }
+        ],
+        "enabled": true
+      },
+      "城防署总部": {
+        "path": "世界书/地理/城防署总部.yaml",
+        "part": "scene",
+        "keywords": [
+          "城防署总部",
+          "城防署"
+        ],
+        "abstract": "城防署总部场景：灵能探测网、沈星河办公室",
+        "enabled": true
+      },
+      "暮光交易所": {
+        "path": "世界书/地理/暮光交易所.yaml",
+        "part": "scene",
+        "keywords": [
+          "暮光交易所",
+          "暮光商会"
+        ],
+        "abstract": "暮光交易所场景：莉莉丝的情报与器械交易中枢",
+        "enabled": true
+      },
+      "自由行者酒吧": {
+        "path": "世界书/地理/自由行者酒吧.yaml",
+        "part": "scene",
+        "keywords": [
+          "自由行者酒吧",
+          "自由行者"
+        ],
+        "abstract": "自由行者酒吧场景：林夜的佣兵据点与悬赏板",
+        "enabled": true
+      },
+      "城防署势力": {
+        "path": "世界书/地理/城防署_势力.yaml",
+        "part": "faction",
+        "keywords": [
+          "城防署",
+          "CDA",
+          "署长",
+          "沈星河"
+        ],
+        "abstract": "城防署势力详情：理想派与腐败派、灵能探测网",
+        "enabled": true
+      },
+      "深渊议会势力": {
+        "path": "世界书/地理/深渊议会_势力.yaml",
+        "part": "faction",
+        "keywords": [
+          "深渊议会",
+          "议长",
+          "维克托"
+        ],
+        "abstract": "深渊议会势力详情：神之容器计划、深渊强化",
+        "enabled": true
+      },
+      "自由行者联盟势力": {
+        "path": "世界书/地理/自由行者联盟_势力.yaml",
+        "part": "faction",
+        "keywords": [
+          "自由行者联盟",
+          "自由行者",
+          "林夜"
+        ],
+        "abstract": "自由行者联盟势力详情：佣兵规则、情报网络",
+        "enabled": true
+      },
+      "暮光商会势力": {
+        "path": "世界书/地理/暮光商会_势力.yaml",
+        "part": "faction",
+        "keywords": [
+          "暮光商会",
+          "莉莉丝"
+        ],
+        "abstract": "暮光商会势力详情：情报交易、器械流通",
+        "enabled": true
+      }
+    },
+    "NPC": {
+      "沈星河": {
+        "path": "世界书/NPC/沈星河.yaml",
+        "abstract": "城防署署长·沈星河：理想主义者，前灵能特种部队指挥官",
+        "enabled": true,
+        "keywords": [
+          "沈星河",
+          "城防署署长",
+          "署长"
+        ]
+      },
+      "维克托": {
+        "path": "世界书/NPC/维克托.yaml",
+        "abstract": "深渊议长·维克托·深渊：恶魔叛逃者领袖，追求神之容器",
+        "enabled": true,
+        "keywords": [
+          "维克托",
+          "深渊议长",
+          "议长",
+          "维克托·深渊"
+        ]
+      },
+      "林夜": {
+        "path": "世界书/NPC/林夜.yaml",
+        "abstract": "自由行者首领·林夜：退役特工，佣兵之王，半机械体",
+        "enabled": true,
+        "keywords": [
+          "林夜",
+          "自由行者首领",
+          "首领",
+          "夜哥"
+        ]
+      },
+      "莉莉丝": {
+        "path": "世界书/NPC/莉莉丝.yaml",
+        "abstract": "暮光商会会长·莉莉丝·影纱：血族商人，情报女王",
+        "enabled": true,
+        "keywords": [
+          "莉莉丝",
+          "暮光商会会长",
+          "会长",
+          "莉莉丝·影纱"
+        ]
+      }
+    },
+    "事件": {
+      "日常巡逻": {
+        "path": "世界书/事件/日常巡逻.yaml",
+        "abstract": "日常巡逻随机事件池：街头斗殴、黑市交易、觉醒暴走等",
+        "enabled": true,
+        "keywords": [
+          "巡逻",
+          "日常",
+          "街头斗殴",
+          "黑市交易"
+        ]
+      },
+      "深渊阴谋": {
+        "abstract": "深渊阴谋主线事件：失踪觉醒者、议会渗透、神之容器计划",
+        "enabled": true,
+        "keywords": [
+          "深渊",
+          "阴谋",
+          "主线",
+          "失踪",
+          "神之容器"
+        ],
+        "contents": [
+          {
+            "content": "@@if current_days >= 3"
+          },
+          {
+            "file": "世界书/事件/深渊阴谋.yaml"
+          }
+        ]
+      }
+    },
+    "时间线": {
+      "新渊城历史": {
+        "path": "世界书/时间线/新渊城历史.yaml",
+        "abstract": "新渊城500年历史：大崩坏、审判庭覆灭、城建城、三路线成熟",
+        "part": "history",
+        "enabled": true,
+        "keywords": []
+      }
+    },
+    "EJS预处理": {
+      "EJS预处理": {
+        "path": "世界书/EJS/EJS预处理.txt",
+        "abstract": "EJS变量预处理：注册current_region/current_days/task_status等",
+        "enabled": true,
+        "keywords": []
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "EJS预处理",
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件",
+      "MVU"
+    ]
+  },
+  "strategyThresholds": {
+    "角色": {
+      "basic": {
+        "threshold": 5,
+        "required": true
+      },
+      "other": {
+        "threshold": 2,
+        "required": false
+      },
+      "personality": {
+        "threshold": 2,
+        "required": true
+      },
+      "tri_faceted": {
+        "threshold": 2,
+        "required": false
+      }
+    },
+    "事件": 0,
+    "地理": {
+      "faction": {
+        "threshold": 4,
+        "required": false
+      },
+      "region": {
+        "threshold": 4,
+        "required": false
+      },
+      "scene": {
+        "threshold": 4,
+        "required": false
+      }
+    },
+    "MVU": {
+      "initvar": {
+        "threshold": null,
+        "required": false
+      },
+      "output_format": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "update_rules": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "variable_list": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    },
+    "NPC": 0,
+    "EJS预处理": "Infinity",
+    "扮演准则": "Infinity",
+    "时间线": {
+      "history": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "plot": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    },
+    "世界观": "Infinity"
+  },
+  "partOrder": {
+    "角色": [
+      "basic",
+      "personality",
+      "tri_faceted",
+      "other"
+    ],
+    "地理": [
+      "region",
+      "scene",
+      "faction"
+    ],
+    "MVU": [
+      "variable_list",
+      "update_rules",
+      "output_format",
+      "initvar"
+    ],
+    "时间线": [
+      "history",
+      "plot"
+    ]
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "",
+  "first_messages": [],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": "2026-06-28T17:17:40.070Z"
+}

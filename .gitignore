@@ -1,0 +1,25 @@
+# 依赖
+node_modules/
+.cache/
+
+# forge 打包产物（仅排除最终输出卡，保留 state 和配置）
+cards/**/*.png
+cards/**/*暗都*.json
+
+# patch 历史（本地备份，不入库）
+.patch-history/
+
+# 备份文件
+*.bak
+*.tmp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+
+# 日志
+*.log

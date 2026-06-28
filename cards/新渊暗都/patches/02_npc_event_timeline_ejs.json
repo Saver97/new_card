@@ -1,0 +1,14 @@
+[
+  {"op": "add", "path": "/entryManifest/NPC", "value": {}},
+  {"op": "add", "path": "/entryManifest/NPC/沈星河", "value": {"path": "世界书/NPC/沈星河.yaml", "abstract": "城防署署长·沈星河：理想主义者，前灵能特种部队指挥官", "enabled": true, "keywords": ["沈星河", "城防署署长", "署长"]}},
+  {"op": "add", "path": "/entryManifest/NPC/维克托", "value": {"path": "世界书/NPC/维克托.yaml", "abstract": "深渊议长·维克托·深渊：恶魔叛逃者领袖，追求神之容器", "enabled": true, "keywords": ["维克托", "深渊议长", "议长", "维克托·深渊"]}},
+  {"op": "add", "path": "/entryManifest/NPC/林夜", "value": {"path": "世界书/NPC/林夜.yaml", "abstract": "自由行者首领·林夜：退役特工，佣兵之王，半机械体", "enabled": true, "keywords": ["林夜", "自由行者首领", "首领", "夜哥"]}},
+  {"op": "add", "path": "/entryManifest/NPC/莉莉丝", "value": {"path": "世界书/NPC/莉莉丝.yaml", "abstract": "暮光商会会长·莉莉丝·影纱：血族商人，情报女王", "enabled": true, "keywords": ["莉莉丝", "暮光商会会长", "会长", "莉莉丝·影纱"]}},
+  {"op": "add", "path": "/entryManifest/事件", "value": {}},
+  {"op": "add", "path": "/entryManifest/事件/日常巡逻", "value": {"path": "世界书/事件/日常巡逻.yaml", "abstract": "日常巡逻随机事件池：街头斗殴、黑市交易、觉醒暴走等", "enabled": true, "keywords": ["巡逻", "日常", "街头斗殴", "黑市交易"]}},
+  {"op": "add", "path": "/entryManifest/事件/深渊阴谋", "value": {"abstract": "深渊阴谋主线事件：失踪觉醒者、议会渗透、神之容器计划", "enabled": true, "keywords": ["深渊", "阴谋", "主线", "失踪", "神之容器"], "contents": [{"content": "@@if current_days >= 3"}, {"file": "世界书/事件/深渊阴谋.yaml"}]}},
+  {"op": "add", "path": "/entryManifest/时间线", "value": {}},
+  {"op": "add", "path": "/entryManifest/时间线/新渊城历史", "value": {"path": "世界书/时间线/新渊城历史.yaml", "abstract": "新渊城500年历史：大崩坏、审判庭覆灭、城建城、三路线成熟", "part": "history", "enabled": true, "keywords": []}},
+  {"op": "add", "path": "/entryManifest/EJS预处理", "value": {}},
+  {"op": "add", "path": "/entryManifest/EJS预处理/EJS预处理", "value": {"path": "世界书/EJS/EJS预处理.txt", "abstract": "EJS变量预处理：注册current_region/current_days/task_status等", "enabled": true, "keywords": []}}
+]
