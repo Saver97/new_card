@@ -9,19 +9,22 @@
         "path": "世界书/世界观/新渊城世界观.yaml",
         "keywords": [],
         "abstract": "新渊城核心设定：三层城市结构、三路线矛盾、深渊议会阴谋",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       },
       "种族与社会": {
         "path": "世界书/世界观/种族与社会.yaml",
         "keywords": [],
         "abstract": "8种族分类体系、来源、社会地位与种族关系",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       },
       "力量体系详述": {
         "path": "世界书/世界观/力量体系详述.yaml",
         "keywords": [],
         "abstract": "灵能/基因/义体三路线机制、等级、风险与侵蚀度",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       }
     },
     "扮演准则": {
@@ -29,7 +32,8 @@
         "path": "世界书/扮演准则/叙事风格与NPC外貌规则.yaml",
         "keywords": [],
         "abstract": "叙事风格、互动规则、NPC与主角外貌生成规则、任务系统",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       }
     },
     "地理": {
@@ -271,7 +275,8 @@
         "path": "世界书/EJS/EJS预处理.txt",
         "keywords": [],
         "abstract": "EJS变量预处理：注册current_region/current_days/task_status等",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       }
     },
     "MVU": {
@@ -280,28 +285,32 @@
         "part": "variable_list",
         "keywords": [],
         "abstract": "MVU变量列表：展示所有变量给AI",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       },
       "变量更新规则": {
         "path": "世界书/变量/变量更新规则.yaml",
         "part": "update_rules",
         "keywords": [],
         "abstract": "MVU变量更新规则：AI可写路径白名单",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       },
       "变量输出格式": {
         "path": "世界书/变量/变量输出格式.txt",
         "part": "output_format",
         "keywords": [],
         "abstract": "MVU变量输出格式：JSON Patch格式说明",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       },
       "初始变量": {
         "path": "世界书/变量/initvar.yaml",
         "part": "initvar",
         "keywords": [],
         "abstract": "MVU初始变量：角色创建时的初始状态",
-        "enabled": true
+        "enabled": true,
+        "depth": 2
       }
     }
   },

@@ -1,8 +1,14 @@
 ---
 <update_variable_rules>
 rule:
-  - you must output the update analysis and the actual update commands at once in the end of the next reply
-  - 'the update commands must strictly follow the **JSON Patch (RFC 6902)** standard, but can only use the following operations: `replace` (replace the value of existing paths), `add` (only used to insert new items into an object or array), `remove`; that is, the output must be a valid JSON array containing operation objects'
+  - ★★★ 每次回复末尾必须输出本块，无例外
+  - ★★★ 更新命令必须严格遵循 **JSON Patch (RFC 6902)** 标准
+  - ★★★ 只允许使用 `replace`（替换现有路径值）、`add`（插入新项）、`remove`（删除）
+  - ★★★ 输出必须为有效的JSON数组，包含操作对象
+  - ★★★ 不得编造白名单之外的路径（见变量更新规则.yaml）
+  - ★★★ 不得修改已锁定变量：姓名/种族/职业/势力/性别
+  - ★★★ 时间格式必须为 "M月D日·星期X HH:MM:SS"
+  - ★★★ NPC关系写入时必须包含完整字段：好感度/看法/职业/种族/外貌身材
 format: |-
   <UpdateVariable>
   <Analysis>$(IN ENGLISH, no more than 80 words)
@@ -13,10 +19,10 @@ format: |-
   </Analysis>
   <JSONPatch>
   [
-    { "op": "replace", "path": "${/path/to/variable}", "value": ${new_value} },
-    { "op": "add", "path": "${/path/to/object/newKey}", "value": ${content} },
-    { "op": "remove", "path": "${/path/to/array/0}" },
-    ...
+    { "op": "replace", "path": "/世界/当前时间", "value": "6月29日·星期日 08:15:00" },
+    { "op": "replace", "path": "/世界/当前地点", "value": "上城区·城防署总部·B3车库" },
+    { "op": "add", "path": "/社交/已遇NPC列表/-", "value": "赵北" },
+    { "op": "add", "path": "/社交/NPC关系/赵北", "value": {"好感度": 10, "看法": "资深特工，对新人友善", "职业": "外勤特遣队副队长", "种族": "人类", "外貌身材": "三十五六岁，黑色短发，左眼角有疤痕，右手义体改造"} }
   ]
   </JSONPatch>
   </UpdateVariable>
