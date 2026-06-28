@@ -368,7 +368,7 @@ variables:
     check: {{任务名}}完成时设为已完成，{{任务名}}放弃时设为已放弃
   - 路径: /社交/已遇NPC列表
     type: array
-    check: 首次遇到NPC时add该NPC姓名
+    check: 首次遇到NPC时add该NPC姓名（优先世界书NPC，AI原创NPC亦可）
   - 路径: /社交/当前交互NPC
     type: string
     check: 对话中的NPC姓名，对话结束时清空

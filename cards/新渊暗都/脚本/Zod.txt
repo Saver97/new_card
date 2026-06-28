@@ -1,0 +1,102 @@
+﻿import { registerMvuSchema } from 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';
+// 娉ㄥ叆锛歷alidate-mvu 浼氭彁渚涘叏灞€ z锛圸od v4锛夊拰 _锛坙odash锛夛紝涓嶄緷璧栨湰鍦?node_modules
+// 杩愯鏃惰剼鏈?Zod.txt 涔熼€氳繃 registerMvuSchema 娉ㄥ叆
+
+// ========== 涓昏鍩?==========
+
+const 涓昏鍩虹Schema = z.object({
+  濮撳悕: z.string().prefault('寰呰瀹?),
+  绉嶆棌: z.enum(['浜虹被', '绮剧伒绉?, '鍏藉寲绉?, '琛€鏃忕', '鍗婃満姊颁綋', '澶╀娇绉?, '鎭堕瓟绉?, '绾満姊扮敓鍛戒綋']).prefault('浜虹被'),
+  骞撮緞: z.coerce.number().min(16).max(300).prefault(25),
+  鑱屼笟: z.enum(['澶栧嫟鐗瑰伐', '鐏佃兘璋冩煡鍛?, '鏆楀奖鎵ц鑰?, '璁細瀛﹁€?, '璧忛噾鐚庝汉', '琛楀尯鍖荤敓', '鎯呮姤鎺', '鍣ㄦ甯?]).prefault('澶栧嫟鐗瑰伐'),
+  鎬у埆: z.enum(['鐢?, '濂?]).prefault('鐢?),
+  鍔垮姏: z.enum(['鍩庨槻缃?, '娣辨笂璁細', '鑷敱琛岃€呰仈鐩?, '鏆厜鍟嗕細']).prefault('鍩庨槻缃?),
+  閲戦挶: z.coerce.number().min(0).max(999999999).prefault(5000),
+  澶栬矊韬潗: z.string().prefault('寰呯敓鎴?),
+});
+
+const 涓昏灞炴€chema = z.object({
+  鐏佃兘绛夌骇: z.coerce.number().min(0).max(100).prefault(0),
+  鍩哄洜寮哄寲绛夌骇: z.coerce.number().min(0).max(100).prefault(0),
+  涔変綋鍖栫▼搴? z.coerce.number().min(0).max(100).prefault(0),
+  鐗规畩鑳藉姏: z.string().prefault('鏃?),
+});
+
+const 涓昏鐘舵€丼chema = z.object({
+  HP: z.coerce.number().min(0).max(100).prefault(100),
+  浣撳姏: z.coerce.number().min(0).max(100).prefault(100),
+  绮剧鍔? z.coerce.number().min(0).max(100).prefault(100),
+  渚佃殌搴? z.coerce.number().min(0).max(100).prefault(0),
+});
+
+const 涓昏鐫€瑁匰chema = z.object({
+  澶栧: z.string().prefault('鏃?),
+  涓婅。: z.string().prefault('鏅€氳‖琛?),
+  涓嬭: z.string().prefault('鏅€氳￥瀛?),
+  鍐呰。: z.string().prefault('鏃?),
+  鍐呰￥: z.string().prefault('鏅€氬唴瑁?),
+  闉嬪瓙: z.string().prefault('鏅€氶瀷瀛?),
+  楗板搧: z.string().prefault('鏃?),
+});
+
+const 涓昏Schema = z.object({
+  鍩虹: 涓昏鍩虹Schema,
+  灞炴€? 涓昏灞炴€chema,
+  鐘舵€? 涓昏鐘舵€丼chema,
+  鐫€瑁? 涓昏鐫€瑁匰chema,
+  鑳屽寘: z.array(z.string()).prefault([]),
+  鎴樻枟瀹氫綅: z.enum(['鍓嶆帓鍧﹀厠', '涓帓杈撳嚭', '鍚庢帓鏀彺', '娓歌蛋鍒哄', '鎺у満娉曞笀', '鍏ㄨ兘娣峰悎']).prefault('涓帓杈撳嚭'),
+  褰撳墠鎯呯华: z.string().prefault('骞抽潤'),
+});
+
+// ========== 涓栫晫鍩?==========
+
+const 涓栫晫Schema = z.object({
+  褰撳墠鏃堕棿: z.string().prefault('6鏈?9鏃ヂ锋槦鏈熸棩 08:00:00'),
+  褰撳墠鍦扮偣: z.string().prefault('涓婂煄鍖郝峰煄闃茬讲鎬婚儴路浼氳瀹?),
+  缁忚繃澶╂暟: z.coerce.number().min(0).max(999).prefault(0),
+  澶╂皵: z.enum(['鏅存湕', '澶氫簯', '闃村ぉ', '灏忛洦', '澶ч洦', '鏆撮洦', '闆鹃溇', '鏋佸厜']).prefault('鏅存湕'),
+  閮藉競娴佽█: z.string().prefault('鏆傛棤'),
+  鍩庡競娲昏穬搴? z.enum(['骞抽潤', '姝ｅ父', '绱у紶', '娣蜂贡', '鍗辨満']).prefault('姝ｅ父'),
+});
+
+// ========== 浠诲姟鍩?==========
+
+const 浠诲姟Schema = z.object({
+  褰撳墠浠诲姟: z.string().prefault('鏃?),
+  浠诲姟鐩爣: z.string().prefault('鏃?),
+  瀛愪换鍔? z.string().prefault('鏃?),
+  宸茶幏鍙栫嚎绱? z.string().prefault('鏃?),
+  浠诲姟鐘舵€? z.enum(['杩涜涓?, '宸插畬鎴?, '宸叉斁寮?, '鏃犱换鍔?]).prefault('鏃犱换鍔?),
+});
+
+// ========== 绀句氦鍩?==========
+
+const NPC鍏崇郴璇︽儏Schema = z.object({
+  濂芥劅搴? z.coerce.number().min(0).max(100).prefault(0),
+  鐪嬫硶: z.string().prefault('闄岀敓'),
+  鑱屼笟: z.string().prefault('鏈煡'),
+  绉嶆棌: z.string().prefault('鏈煡'),
+  澶栬矊韬潗: z.string().prefault('寰呯敓鎴?),
+});
+
+const 绀句氦Schema = z.object({
+  宸查亣NPC鍒楄〃: z.array(z.string()).prefault([]),
+  褰撳墠浜や簰NPC: z.string().prefault('鏃?),
+  NPC鍏崇郴: z.record(NPC鍏崇郴璇︽儏Schema).prefault({}),
+});
+
+// ========== 鎬籗chema ==========
+
+export const Schema = z.object({
+  涓昏: 涓昏Schema,
+  涓栫晫: 涓栫晫Schema,
+  浠诲姟: 浠诲姟Schema,
+  绀句氦: 绀句氦Schema,
+});
+
+
+
+$(() => {
+  registerMvuSchema(Schema);
+});

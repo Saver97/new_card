@@ -183,63 +183,61 @@
     "NPC": {
       "沈星河": {
         "path": "世界书/NPC/沈星河.yaml",
-        "abstract": "城防署署长·沈星河：理想主义者，前灵能特种部队指挥官",
-        "enabled": true,
         "keywords": [
           "沈星河",
           "城防署署长",
           "署长"
-        ]
+        ],
+        "abstract": "城防署署长·沈星河：理想主义者，前灵能特种部队指挥官",
+        "enabled": true
       },
       "维克托": {
         "path": "世界书/NPC/维克托.yaml",
-        "abstract": "深渊议长·维克托·深渊：恶魔叛逃者领袖，追求神之容器",
-        "enabled": true,
         "keywords": [
           "维克托",
           "深渊议长",
           "议长",
           "维克托·深渊"
-        ]
+        ],
+        "abstract": "深渊议长·维克托·深渊：恶魔叛逃者领袖，追求神之容器",
+        "enabled": true
       },
       "林夜": {
         "path": "世界书/NPC/林夜.yaml",
-        "abstract": "自由行者首领·林夜：退役特工，佣兵之王，半机械体",
-        "enabled": true,
         "keywords": [
           "林夜",
           "自由行者首领",
           "首领",
           "夜哥"
-        ]
+        ],
+        "abstract": "自由行者首领·林夜：退役特工，佣兵之王，半机械体",
+        "enabled": true
       },
       "莉莉丝": {
         "path": "世界书/NPC/莉莉丝.yaml",
-        "abstract": "暮光商会会长·莉莉丝·影纱：血族商人，情报女王",
-        "enabled": true,
         "keywords": [
           "莉莉丝",
           "暮光商会会长",
           "会长",
           "莉莉丝·影纱"
-        ]
+        ],
+        "abstract": "暮光商会会长·莉莉丝·影纱：血族商人，情报女王",
+        "enabled": true
       }
     },
     "事件": {
       "日常巡逻": {
         "path": "世界书/事件/日常巡逻.yaml",
-        "abstract": "日常巡逻随机事件池：街头斗殴、黑市交易、觉醒暴走等",
-        "enabled": true,
         "keywords": [
           "巡逻",
           "日常",
           "街头斗殴",
           "黑市交易"
-        ]
+        ],
+        "abstract": "日常巡逻随机事件池：街头斗殴、黑市交易、觉醒暴走等",
+        "enabled": true
       },
       "深渊阴谋": {
-        "abstract": "深渊阴谋主线事件：失踪觉醒者、议会渗透、神之容器计划",
-        "enabled": true,
         "keywords": [
           "深渊",
           "阴谋",
@@ -247,6 +245,7 @@
           "失踪",
           "神之容器"
         ],
+        "abstract": "深渊阴谋主线事件：失踪觉醒者、议会渗透、神之容器计划",
         "contents": [
           {
             "content": "@@if current_days >= 3"
@@ -254,22 +253,53 @@
           {
             "file": "世界书/事件/深渊阴谋.yaml"
           }
-        ]
+        ],
+        "enabled": true
       }
     },
     "时间线": {
       "新渊城历史": {
         "path": "世界书/时间线/新渊城历史.yaml",
-        "abstract": "新渊城500年历史：大崩坏、审判庭覆灭、城建城、三路线成熟",
         "part": "history",
-        "enabled": true,
-        "keywords": []
+        "keywords": [],
+        "abstract": "新渊城500年历史：大崩坏、审判庭覆灭、城建城、三路线成熟",
+        "enabled": true
       }
     },
     "EJS预处理": {
       "EJS预处理": {
         "path": "世界书/EJS/EJS预处理.txt",
+        "keywords": [],
         "abstract": "EJS变量预处理：注册current_region/current_days/task_status等",
+        "enabled": true
+      }
+    },
+    "MVU": {
+      "变量列表": {
+        "path": "世界书/变量/变量列表.txt",
+        "abstract": "MVU变量列表：展示所有变量给AI",
+        "part": "variable_list",
+        "enabled": true,
+        "keywords": []
+      },
+      "变量更新规则": {
+        "path": "世界书/变量/变量更新规则.yaml",
+        "abstract": "MVU变量更新规则：AI可写路径白名单",
+        "part": "update_rules",
+        "enabled": true,
+        "keywords": []
+      },
+      "变量输出格式": {
+        "path": "世界书/变量/变量输出格式.txt",
+        "abstract": "MVU变量输出格式：JSON Patch格式说明",
+        "part": "output_format",
+        "enabled": true,
+        "keywords": []
+      },
+      "初始变量": {
+        "path": "世界书/变量/initvar.yaml",
+        "abstract": "MVU初始变量：角色创建时的初始状态",
+        "part": "initvar",
         "enabled": true,
         "keywords": []
       }
@@ -391,5 +421,153 @@
   "creator": "",
   "creator_notes": "",
   "version": "1.0",
-  "create_date": "2026-06-28T17:17:40.070Z"
+  "create_date": "2026-06-28T17:17:40.070Z",
+  "extensions": {
+    "tavern_helper": {
+      "scripts": {
+        "MVU": {
+          "type": "script",
+          "script_file": "脚本/MVU.txt",
+          "enabled": true,
+          "id": "d0311ca6-5e9a-498e-a777-f74dc4dc6b12",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": [
+              {
+                "name": "重新处理变量",
+                "visible": true
+              },
+              {
+                "name": "重新读取初始变量",
+                "visible": true
+              },
+              {
+                "name": "快照楼层",
+                "visible": false
+              },
+              {
+                "name": "重演楼层",
+                "visible": false
+              },
+              {
+                "name": "重试额外模型解析",
+                "visible": false
+              },
+              {
+                "name": "清除旧楼层变量",
+                "visible": false
+              }
+            ]
+          },
+          "data": {}
+        },
+        "Zod": {
+          "type": "script",
+          "script_file": "脚本/Zod.txt",
+          "enabled": true,
+          "id": "5b3b09af-35e3-4149-a0f7-2f08776ed6a1",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": []
+          },
+          "data": {}
+        }
+      },
+      "variables": {}
+    },
+    "talkativeness": "0.5",
+    "fav": false,
+    "depth_prompt": {
+      "prompt": "",
+      "depth": 4,
+      "role": "system"
+    }
+  },
+  "regex_scripts": {
+    "对AI隐藏状态栏": {
+      "id": "b5f2606f-69cc-4a6a-8ebb-bd8a3b7f671f",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    },
+    "状态栏界面": {
+      "id": "ce6da13c-4e35-4057-8964-3192b7903acc",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "replace_file": "正则/状态栏界面.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    },
+    "对AI隐藏变量更新": {
+      "id": "aa12731a-97c4-4450-ac2f-0bfe1d6a4f64",
+      "findRegex": "/<(update(?:variable)?)>(?:(?!.*<\\/\\1>)(?:(?!<\\1>).)*$|(?:(?!<\\1>).)*<\\/\\1?>)/gsi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    },
+    "变量更新中美化": {
+      "id": "b9d5f25b-a9d0-41bf-8a69-602d64bbde22",
+      "findRegex": "/<(update(?:variable)?)>(?!.*<\\/\\1>)\\s*((?:(?!<\\1>).)*)\\s*$/gsi",
+      "replace_file": "正则/变量更新中美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    },
+    "变量更新美化": {
+      "id": "92d49340-fe5e-4929-871f-43d110e5ec76",
+      "findRegex": "/<(update(?:variable)?)>\\s*((?:(?!<\\1>).)*)\\s*<\\/\\1>/gsi",
+      "replace_file": "正则/变量更新美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    }
+  }
 }

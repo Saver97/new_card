@@ -1,0 +1,7 @@
+[
+  {"op": "add", "path": "/entryManifest/MVU", "value": {}},
+  {"op": "add", "path": "/entryManifest/MVU/变量列表", "value": {"path": "世界书/变量/变量列表.txt", "abstract": "MVU变量列表：展示所有变量给AI", "part": "variable_list", "enabled": true, "keywords": []}},
+  {"op": "add", "path": "/entryManifest/MVU/变量更新规则", "value": {"path": "世界书/变量/变量更新规则.yaml", "abstract": "MVU变量更新规则：AI可写路径白名单", "part": "update_rules", "enabled": true, "keywords": []}},
+  {"op": "add", "path": "/entryManifest/MVU/变量输出格式", "value": {"path": "世界书/变量/变量输出格式.txt", "abstract": "MVU变量输出格式：JSON Patch格式说明", "part": "output_format", "enabled": true, "keywords": []}},
+  {"op": "add", "path": "/entryManifest/MVU/初始变量", "value": {"path": "世界书/变量/initvar.yaml", "abstract": "MVU初始变量：角色创建时的初始状态", "part": "initvar", "enabled": true, "keywords": []}}
+]
