@@ -1,0 +1,13 @@
+[
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/城防署_男.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/城防署_女.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/深渊议会_男.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/深渊议会_女.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/自由行者_男.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/自由行者_女.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/暮光商会_男.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/暮光商会_女.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/天使种_传说.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/恶魔种_传说.txt"},
+  {"op": "add", "path": "/first_messages/-", "value": "开场白/纯机械生命体_传说.txt"}
+]

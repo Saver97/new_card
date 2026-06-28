@@ -277,31 +277,31 @@
     "MVU": {
       "变量列表": {
         "path": "世界书/变量/变量列表.txt",
-        "abstract": "MVU变量列表：展示所有变量给AI",
         "part": "variable_list",
-        "enabled": true,
-        "keywords": []
+        "keywords": [],
+        "abstract": "MVU变量列表：展示所有变量给AI",
+        "enabled": true
       },
       "变量更新规则": {
         "path": "世界书/变量/变量更新规则.yaml",
-        "abstract": "MVU变量更新规则：AI可写路径白名单",
         "part": "update_rules",
-        "enabled": true,
-        "keywords": []
+        "keywords": [],
+        "abstract": "MVU变量更新规则：AI可写路径白名单",
+        "enabled": true
       },
       "变量输出格式": {
         "path": "世界书/变量/变量输出格式.txt",
-        "abstract": "MVU变量输出格式：JSON Patch格式说明",
         "part": "output_format",
-        "enabled": true,
-        "keywords": []
+        "keywords": [],
+        "abstract": "MVU变量输出格式：JSON Patch格式说明",
+        "enabled": true
       },
       "初始变量": {
         "path": "世界书/变量/initvar.yaml",
-        "abstract": "MVU初始变量：角色创建时的初始状态",
         "part": "initvar",
-        "enabled": true,
-        "keywords": []
+        "keywords": [],
+        "abstract": "MVU初始变量：角色创建时的初始状态",
+        "enabled": true
       }
     }
   },
@@ -417,7 +417,19 @@
     "depth": 0
   },
   "description": "",
-  "first_messages": [],
+  "first_messages": [
+    "开场白/城防署_男.txt",
+    "开场白/城防署_女.txt",
+    "开场白/深渊议会_男.txt",
+    "开场白/深渊议会_女.txt",
+    "开场白/自由行者_男.txt",
+    "开场白/自由行者_女.txt",
+    "开场白/暮光商会_男.txt",
+    "开场白/暮光商会_女.txt",
+    "开场白/天使种_传说.txt",
+    "开场白/恶魔种_传说.txt",
+    "开场白/纯机械生命体_传说.txt"
+  ],
   "creator": "",
   "creator_notes": "",
   "version": "1.0",
