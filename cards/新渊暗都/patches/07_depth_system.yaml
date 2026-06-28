@@ -1,0 +1,11 @@
+[
+  {"op": "add", "path": "/entryManifest/世界观/新渊城世界观/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/世界观/种族与社会/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/世界观/力量体系详述/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/扮演准则/叙事风格与NPC外貌规则/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/MVU/变量列表/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/MVU/变量更新规则/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/MVU/变量输出格式/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/MVU/初始变量/depth", "value": 2},
+  {"op": "add", "path": "/entryManifest/EJS预处理/EJS预处理/depth", "value": 2}
+]

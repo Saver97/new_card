@@ -1,0 +1,5 @@
+[
+  {"op": "remove", "path": "/regex_scripts/状态栏界面"},
+  {"op": "replace", "path": "/regex_scripts/信息面板/findRegex", "value": "<StatusPlaceHolderImpl\\s*/>"},
+  {"op": "add", "path": "/regex_scripts/信息面板/runOnEdit", "value": true}
+]
