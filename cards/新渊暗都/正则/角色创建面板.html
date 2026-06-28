@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新渊暗都 · 角色创建</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%); color: #e0e0e0; min-height: 100vh; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+h1 { text-align: center; color: #00d4ff; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,212,255,0.5); }
+.subtitle { text-align: center; color: #888; margin-bottom: 30px; font-size: 14px; }
+
+/* 步骤指示器 */
+.steps { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.step { padding: 8px 16px; border-radius: 20px; background: #1a1a2e; border: 1px solid #333; font-size: 13px; transition: all 0.3s; }
+.step.active { background: #00d4ff; color: #000; border-color: #00d4ff; }
+.step.done { background: #2a4a3a; border-color: #00ff88; color: #00ff88; }
+
+/* 卡片容器 */
+.card { background: rgba(26,26,46,0.9); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid #333; }
+.card-title { color: #00d4ff; font-size: 18px; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+/* 选项网格 */
+.options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.option-btn { padding: 15px; border-radius: 8px; background: #252540; border: 2px solid #333; cursor: pointer; transition: all 0.3s; text-align: center; }
+.option-btn:hover { border-color: #00d4ff; background: #2a2a4a; }
+.option-btn.selected { border-color: #00d4ff; background: rgba(0,212,255,0.15); }
+.option-btn.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.option-btn .name { font-size: 16px; font-weight: bold; margin-bottom: 5px; }
+.option-btn .desc { font-size: 11px; color: #888; }
+.option-btn .tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-top: 5px; display: inline-block; }
+.tag-legend { background: #ff6b00; color: #000; }
+.tag-special { background: #9b59b6; color: #fff; }
+
+/* 表单 */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; color: #888; font-size: 13px; }
+.form-group input, .form-group select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #252540; color: #e0e0e0; font-size: 14px; }
+.form-group input:focus, .form-group select:focus { outline: none; border-color: #00d4ff; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+/* 预览区 */
+.preview { background: #1a1a2e; border-radius: 8px; padding: 20px; border: 1px solid #00d4ff; }
+.preview-title { color: #00d4ff; font-size: 14px; margin-bottom: 15px; }
+.preview-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #333; font-size: 13px; }
+.preview-item:last-child { border-bottom: none; }
+.preview-label { color: #888; }
+.preview-value { color: #00ff88; }
+
+/* 按钮 */
+.btn-group { display: flex; gap: 10px; margin-top: 20px; }
+.btn { padding: 12px 30px; border-radius: 8px; border: none; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+.btn-primary { background: #00d4ff; color: #000; }
+.btn-primary:hover { background: #00b8e0; }
+.btn-secondary { background: #333; color: #e0e0e0; }
+.btn-secondary:hover { background: #444; }
+.btn-create { background: linear-gradient(135deg, #00ff88, #00d4ff); color: #000; font-weight: bold; width: 100%; }
+
+/* 隐藏步骤 */
+.step-panel { display: none; }
+.step-panel.active { display: block; }
+
+/* 警告提示 */
+.warning { background: rgba(255,107,0,0.2); border: 1px solid #ff6b00; border-radius: 8px; padding: 10px; margin-top: 10px; font-size: 12px; color: #ff6b00; }
+.info { background: rgba(0,212,255,0.1); border: 1px solid #00d4ff; border-radius: 8px; padding: 10px; margin-top: 10px; font-size: 12px; color: #00d4ff; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>新渊暗都</h1>
+  <p class="subtitle">2026 · 多种族共存超级都市 · 霓虹与阴影交织</p>
+
+  <!-- 步骤指示器 -->
+  <div class="steps">
+    <div class="step active" data-step="1">1. 势力</div>
+    <div class="step" data-step="2">2. 职业</div>
+    <div class="step" data-step="3">3. 种族</div>
+    <div class="step" data-step="4">4. 性别</div>
+    <div class="step" data-step="5">5. 姓名/年龄</div>
+    <div class="step" data-step="6">6. 确认创建</div>
+  </div>
+
+  <!-- 步骤1: 势力 -->
+  <div class="step-panel active" id="step1">
+    <div class="card">
+      <div class="card-title">选择你的势力</div>
+      <div class="options-grid" id="faction-options"></div>
+      <div class="info" id="faction-info" style="display:none;"></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="nextStep(1)">下一步 →</button>
+    </div>
+  </div>
+
+  <!-- 步骤2: 职业 -->
+  <div class="step-panel" id="step2">
+    <div class="card">
+      <div class="card-title">选择你的职业</div>
+      <div class="options-grid" id="job-options"></div>
+      <div class="info" id="job-info" style="display:none;"></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="prevStep(2)">← 上一步</button>
+      <button class="btn btn-primary" onclick="nextStep(2)">下一步 →</button>
+    </div>
+  </div>
+
+  <!-- 步骤3: 种族 -->
+  <div class="step-panel" id="step3">
+    <div class="card">
+      <div class="card-title">选择你的种族</div>
+      <div class="options-grid" id="race-options"></div>
+      <div id="race-warning" class="warning" style="display:none;"></div>
+      <div class="info" id="race-info" style="display:none;"></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="prevStep(3)">← 上一步</button>
+      <button class="btn btn-primary" onclick="nextStep(3)">下一步 →</button>
+    </div>
+  </div>
+
+  <!-- 步骤4: 性别 -->
+  <div class="step-panel" id="step4">
+    <div class="card">
+      <div class="card-title">选择你的性别</div>
+      <div class="options-grid" id="gender-options"></div>
+      <div id="gender-warning" class="warning" style="display:none;"></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="prevStep(4)">← 上一步</button>
+      <button class="btn btn-primary" onclick="nextStep(4)">下一步 →</button>
+    </div>
+  </div>
+
+  <!-- 步骤5: 姓名/年龄 -->
+  <div class="step-panel" id="step5">
+    <div class="card">
+      <div class="card-title">填写你的基础信息</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>姓名</label>
+          <input type="text" id="char-name" placeholder="输入角色姓名" maxlength="20">
+        </div>
+        <div class="form-group">
+          <label>年龄 (16-300，精灵种上限300，其他上限100)</label>
+          <input type="number" id="char-age" min="16" max="300" value="25">
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="prevStep(5)">← 上一步</button>
+      <button class="btn btn-primary" onclick="nextStep(5)">下一步 →</button>
+    </div>
+  </div>
+
+  <!-- 步骤6: 确认创建 -->
+  <div class="step-panel" id="step6">
+    <div class="card">
+      <div class="card-title">确认角色信息</div>
+      <div class="preview" id="char-preview"></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="prevStep(6)">← 上一步</button>
+      <button class="btn btn-create" onclick="createCharacter()">确认创建角色</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ========== 数据定义 ==========
+const FACTIONS = {
+  '城防署': { desc: '官方治安，维护秩序，内部腐败与理想主义并存', jobs: ['外勤特工', '灵能调查员'], location: '上城区·城防署总部' },
+  '深渊议会': { desc: '绝对反派，追求神之容器，融合三路线', jobs: ['暗影执行者', '议会学者'], location: '深渊裂隙·深渊议会据点' },
+  '自由行者联盟': { desc: '零散佣兵，只认钱不认人，游走各方', jobs: ['赏金猎人', '街区医生'], location: '中城区·自由行者酒吧' },
+  '暮光商会': { desc: '中立商人，情报与器械交易，一切皆可买卖', jobs: ['情报掮客', '器械师'], location: '上城区·暮光交易所' }
+};
+
+const RACES = {
+  '人类': { category: '人类种', rarity: '普通', lockGender: null, blockFactions: [], desc: '适应性强，三路线皆可无偏向' },
+  '精灵种': { category: '亚人种', rarity: '普通', lockGender: null, blockFactions: [], desc: '远古自然契约后裔，寿命300+，基因强化+10' },
+  '兽化种': { category: '亚人种', rarity: '普通', lockGender: null, blockFactions: [], desc: '兽灵血统，感官敏锐，灵能初始+10' },
+  '血族种': { category: '亚人种', rarity: '特殊', lockGender: '女', blockFactions: ['城防署'], desc: '初源之血，白日减半/黑夜翻倍，灵能上限+15' },
+  '半机械体': { category: '机械种', rarity: '特殊', lockGender: null, blockFactions: ['深渊议会'], desc: '先天义体化20%，义体上限+15，灵能亲和-10' },
+  '天使种': { category: '亚人种', rarity: '传说', lockGender: '女', blockFactions: ['深渊议会', '暮光商会'], desc: '圣光审判庭遗民，光系灵能锁定' },
+  '恶魔种': { category: '亚人种', rarity: '传说', lockGender: '男', blockFactions: ['城防署'], desc: '深渊叛逃者后裔，暗系灵能锁定，地狱火' },
+  '纯机械生命体': { category: '机械种', rarity: '传说', lockGender: null, blockFactions: ['深渊议会'], desc: '失落科技觉醒AI，义体满级，无灵能无基因' }
+};
+
+const JOBS = {
+  '外勤特工': { desc: '城防署前线作战人员，执行巡逻与突袭任务', attributes: { 灵能等级: 10, 义体化程度: 10 } },
+  '灵能调查员': { desc: '城防署灵能事件专家，分析异常波动', attributes: { 灵能等级: 20 } },
+  '暗影执行者': { desc: '深渊议会精锐刺客，执行暗杀与绑架', attributes: { 灵能等级: 30, 义体化程度: 20 }, erosion: 15 },
+  '议会学者': { desc: '深渊议会研究员，三路线融合实验', attributes: { 灵能等级: 20, 基因强化等级: 30 }, erosion: 10 },
+  '赏金猎人': { desc: '自由行者佣兵，追踪目标换取赏金', attributes: { 灵能等级: 10, 义体化程度: 10 } },
+  '街区医生': { desc: '自由行者医疗者，义体手术与基因注射', attributes: { 基因强化等级: 20, 义体化程度: 10 } },
+  '情报掮客': { desc: '暮光商会情报交易者，买卖信息', attributes: { 基因强化等级: 10 } },
+  '器械师': { desc: '暮光商会技术专家，义体维修与改装', attributes: { 义体化程度: 15 } }
+};
+
+// ========== 状态变量 ==========
+let selectedFaction = null;
+let selectedJob = null;
+let selectedRace = null;
+let selectedGender = null;
+
+// ========== 初始化 ==========
+function init() {
+  renderFactionOptions();
+}
+
+// ========== 渲染函数 ==========
+function renderFactionOptions() {
+  const container = document.getElementById('faction-options');
+  container.innerHTML = '';
+  Object.keys(FACTIONS).forEach(name => {
+    const btn = document.createElement('div');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<div class="name">${name}</div><div class="desc">${FACTIONS[name].desc}</div>`;
+    btn.onclick = () => selectFaction(name);
+    container.appendChild(btn);
+  });
+}
+
+function renderJobOptions() {
+  const container = document.getElementById('job-options');
+  container.innerHTML = '';
+  const jobs = FACTIONS[selectedFaction].jobs;
+  jobs.forEach(name => {
+    const btn = document.createElement('div');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<div class="name">${name}</div><div class="desc">${JOBS[name].desc}</div>`;
+    btn.onclick = () => selectJob(name);
+    container.appendChild(btn);
+  });
+}
+
+function renderRaceOptions() {
+  const container = document.getElementById('race-options');
+  container.innerHTML = '';
+  Object.keys(RACES).forEach(name => {
+    const race = RACES[name];
+    const blocked = race.blockFactions.includes(selectedFaction);
+    const btn = document.createElement('div');
+    btn.className = 'option-btn' + (blocked ? ' disabled' : '');
+    
+    let tagHtml = '';
+    if (race.rarity === '传说') tagHtml = '<span class="tag tag-legend">传说</span>';
+    else if (race.rarity === '特殊') tagHtml = '<span class="tag tag-special">特殊</span>';
+    
+    btn.innerHTML = `<div class="name">${name}</div><div class="desc">${race.desc}</div>${tagHtml}`;
+    
+    if (!blocked) {
+      btn.onclick = () => selectRace(name);
+    }
+    container.appendChild(btn);
+  });
+}
+
+function renderGenderOptions() {
+  const container = document.getElementById('gender-options');
+  container.innerHTML = '';
+  const race = RACES[selectedRace];
+  const locked = race.lockGender;
+  
+  ['男', '女'].forEach(g => {
+    const btn = document.createElement('div');
+    const isLocked = locked && locked !== g;
+    btn.className = 'option-btn' + (isLocked ? ' disabled' : '') + (selectedGender === g ? ' selected' : '');
+    btn.innerHTML = `<div class="name">${g}</div>`;
+    
+    if (!isLocked) {
+      btn.onclick = () => selectGender(g);
+      if (locked === g) {
+        selectedGender = g; // 自动选择锁定性别
+        btn.classList.add('selected');
+      }
+    }
+    container.appendChild(btn);
+  });
+  
+  if (locked) {
+    document.getElementById('gender-warning').textContent = `${selectedRace}锁定性别为${locked}`;
+    document.getElementById('gender-warning').style.display = 'block';
+    selectedGender = locked;
+  } else {
+    document.getElementById('gender-warning').style.display = 'none';
+  }
+}
+
+function renderPreview() {
+  const name = document.getElementById('char-name').value || '待设定';
+  const age = document.getElementById('char-age').value;
+  const race = RACES[selectedRace];
+  const job = JOBS[selectedJob];
+  
+  // 年龄校验
+  let maxAge = selectedRace === '精灵种' ? 300 : 100;
+  let finalAge = Math.min(Math.max(parseInt(age) || 25, 16), maxAge);
+  document.getElementById('char-age').value = finalAge;
+  
+  const preview = document.getElementById('char-preview');
+  preview.innerHTML = `
+    <div class="preview-title">角色预览</div>
+    <div class="preview-item"><span class="preview-label">姓名</span><span class="preview-value">${name}</span></div>
+    <div class="preview-item"><span class="preview-label">势力</span><span class="preview-value">${selectedFaction}</span></div>
+    <div class="preview-item"><span class="preview-label">职业</span><span class="preview-value">${selectedJob}</span></div>
+    <div class="preview-item"><span class="preview-label">种族</span><span class="preview-value">${selectedRace} (${race.rarity})</span></div>
+    <div class="preview-item"><span class="preview-label">性别</span><span class="preview-value">${selectedGender}</span></div>
+    <div class="preview-item"><span class="preview-label">年龄</span><span class="preview-value">${finalAge}岁</span></div>
+    <div class="preview-item"><span class="preview-label">种族特性</span><span class="preview-value" style="font-size:11px;">${race.desc}</span></div>
+  `;
+}
+
+// ========== 选择函数 ==========
+function selectFaction(name) {
+  selectedFaction = name;
+  document.querySelectorAll('#faction-options .option-btn').forEach(btn => btn.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  document.getElementById('faction-info').textContent = FACTIONS[name].desc;
+  document.getElementById('faction-info').style.display = 'block';
+}
+
+function selectJob(name) {
+  selectedJob = name;
+  document.querySelectorAll('#job-options .option-btn').forEach(btn => btn.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  document.getElementById('job-info').textContent = JOBS[name].desc;
+  document.getElementById('job-info').style.display = 'block';
+}
+
+function selectRace(name) {
+  selectedRace = name;
+  document.querySelectorAll('#race-options .option-btn').forEach(btn => btn.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  document.getElementById('race-info').textContent = RACES[name].desc;
+  document.getElementById('race-info').style.display = 'block';
+}
+
+function selectGender(g) {
+  selectedGender = g;
+  document.querySelectorAll('#gender-options .option-btn').forEach(btn => btn.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+}
+
+// ========== 步骤导航 ==========
+function nextStep(current) {
+  // 验证
+  if (current === 1 && !selectedFaction) { alert('请选择一个势力'); return; }
+  if (current === 2 && !selectedJob) { alert('请选择一个职业'); return; }
+  if (current === 3 && !selectedRace) { alert('请选择一个种族'); return; }
+  if (current === 4 && !selectedGender) { alert('请选择性别'); return; }
+  if (current === 5) {
+    const name = document.getElementById('char-name').value.trim();
+    if (!name) { alert('请输入角色姓名'); return; }
+  }
+  
+  // 更新步骤指示器
+  document.querySelector(`.step[data-step="${current}"]`).classList.remove('active');
+  document.querySelector(`.step[data-step="${current}"]`).classList.add('done');
+  document.querySelector(`.step[data-step="${current + 1}"]`).classList.add('active');
+  
+  // 切换面板
+  document.getElementById(`step${current}`).classList.remove('active');
+  document.getElementById(`step${current + 1}`).classList.add('active');
+  
+  // 渲染下一步内容
+  if (current === 1) renderJobOptions();
+  if (current === 2) renderRaceOptions();
+  if (current === 3) renderGenderOptions();
+  if (current === 5) renderPreview();
+}
+
+function prevStep(current) {
+  document.querySelector(`.step[data-step="${current}"]`).classList.remove('active');
+  document.querySelector(`.step[data-step="${current - 1}"]`).classList.remove('done');
+  document.querySelector(`.step[data-step="${current - 1}"]`).classList.add('active');
+  
+  document.getElementById(`step${current}`).classList.remove('active');
+  document.getElementById(`step${current - 1}`).classList.add('active');
+}
+
+// ========== 创建角色 ==========
+function createCharacter() {
+  const name = document.getElementById('char-name').value.trim();
+  const age = document.getElementById('char-age').value;
+  
+  // 构建初始变量
+  const initvar = {
+    主角: {
+      基础: { 姓名: name, 种族: selectedRace, 年龄: parseInt(age), 职业: selectedJob, 性别: selectedGender, 势力: selectedFaction, 金钱: 5000 },
+      属性: { 灵能等级: 0, 基因强化等级: 0, 义体化程度: 0, 特殊能力: '无' },
+      状态: { HP: 100, 体力: 100, 精神力: 100, 侵蚀度: 0 },
+      着装: { 外套: '无', 上衣: '普通衬衫', 下装: '普通裤子', 内衣: '无', 内裤: '普通内裤', 鞋子: '普通鞋子', 饰品: '无' },
+      背包: ['身份卡', '通讯器'],
+      战斗定位: '中排输出',
+      当前情绪: '平静'
+    },
+    世界: {
+      当前时间: '6月29日·星期日 08:00:00',
+      当前地点: FACTIONS[selectedFaction].location,
+      经过天数: 0,
+      天气: '晴朗',
+      都市流言: '暂无',
+      城市活跃度: '正常'
+    },
+    任务: { 当前任务: '无', 任务目标: '无', 子任务: '无', 已获取线索: '无', 任务状态: '无任务' },
+    社交: { 已遇NPC列表: [], 当前交互NPC: '无', NPC关系: {} }
+  };
+  
+  // 应用职业属性
+  const jobAttrs = JOBS[selectedJob].attributes || {};
+  Object.assign(initvar.主角.属性, jobAttrs);
+  if (JOBS[selectedJob].erosion) initvar.主角.状态.侵蚀度 = JOBS[selectedJob].erosion;
+  
+  // 生成 UpdateVariable
+  const updateVar = `<UpdateVariable>\n<initvar>\n${yamlStringify(initvar, 0)}\n</initvar>\n</UpdateVariable>`;
+  
+  alert('角色创建完成！\n\n' + updateVar);
+  console.log(updateVar);
+}
+
+// 简单 YAML 字符串化
+function yamlStringify(obj, indent) {
+  const spaces = '  '.repeat(indent);
+  let result = '';
+  for (const [key, val] of Object.entries(obj)) {
+    if (typeof val === 'object' && !Array.isArray(val)) {
+      result += `${spaces}${key}:\n${yamlStringify(val, indent + 1)}`;
+    } else if (Array.isArray(val)) {
+      result += `${spaces}${key}:\n`;
+      val.forEach(item => result += `${spaces}  - ${item}\n`);
+    } else {
+      result += `${spaces}${key}: ${val}\n`;
+    }
+  }
+  return result;
+}
+
+// 启动
+init();
+</script>
+</body>
+</html>

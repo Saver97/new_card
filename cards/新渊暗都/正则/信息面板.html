@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新渊暗都 · 信息面板</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%); color: #e0e0e0; min-height: 100vh; padding: 15px; }
+.panel { max-width: 800px; margin: 0 auto; background: rgba(26,26,46,0.95); border-radius: 12px; border: 1px solid #333; overflow: hidden; }
+
+/* Tab 栏 */
+.tabs { display: flex; background: #0f0f1a; border-bottom: 1px solid #333; }
+.tab { flex: 1; padding: 14px; text-align: center; cursor: pointer; font-size: 14px; color: #888; transition: all 0.3s; border-bottom: 3px solid transparent; }
+.tab:hover { color: #00d4ff; background: rgba(0,212,255,0.05); }
+.tab.active { color: #00d4ff; border-bottom-color: #00d4ff; background: rgba(0,212,255,0.1); }
+
+/* Tab 内容 */
+.tab-content { display: none; padding: 20px; max-height: 600px; overflow-y: auto; }
+.tab-content.active { display: block; }
+.tab-content::-webkit-scrollbar { width: 6px; }
+.tab-content::-webkit-scrollbar-thumb { background: #00d4ff; border-radius: 3px; }
+.tab-content::-webkit-scrollbar-track { background: #1a1a2e; }
+
+/* 信息行 */
+.info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222; font-size: 13px; }
+.info-row:last-child { border-bottom: none; }
+.info-label { color: #888; min-width: 100px; }
+.info-value { color: #00ff88; text-align: right; flex: 1; }
+
+/* 状态条 */
+.bar-container { background: #1a1a2e; border-radius: 4px; height: 8px; margin-top: 5px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+.bar-hp { background: linear-gradient(90deg, #ff4444, #ff6b6b); }
+.bar-energy { background: linear-gradient(90deg, #00ff88, #00d4ff); }
+.bar-mental { background: linear-gradient(90deg, #9b59b6, #e74c3c); }
+.bar-erosion { background: linear-gradient(90deg, #8b0000, #ff00ff); }
+.bar-affection { background: linear-gradient(90deg, #ff6b9d, #ff4081); }
+
+/* 状态格 */
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 15px; }
+.stat-box { background: #1a1a2e; padding: 12px; border-radius: 8px; border: 1px solid #333; }
+.stat-box .stat-name { font-size: 12px; color: #888; margin-bottom: 5px; }
+.stat-box .stat-value { font-size: 18px; font-weight: bold; color: #00ff88; }
+
+/* NPC 卡片 */
+.npc-card { background: #1a1a2e; border-radius: 8px; padding: 15px; margin-bottom: 12px; border: 1px solid #333; cursor: pointer; transition: all 0.3s; }
+.npc-card:hover { border-color: #00d4ff; }
+.npc-card.expanded { border-color: #00d4ff; }
+.npc-header { display: flex; justify-content: space-between; align-items: center; }
+.npc-name { font-size: 16px; font-weight: bold; color: #00d4ff; }
+.npc-race { font-size: 11px; color: #888; }
+.npc-detail { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid #333; }
+.npc-card.expanded .npc-detail { display: block; }
+.npc-desc { font-size: 12px; color: #ccc; line-height: 1.6; margin-bottom: 10px; padding: 8px; background: #0f0f1a; border-radius: 4px; }
+
+/* 章节标题 */
+.section-title { color: #00d4ff; font-size: 14px; margin: 15px 0 10px; padding-bottom: 5px; border-bottom: 1px solid #333; }
+.section-title:first-child { margin-top: 0; }
+
+/* 着装网格 */
+.outfit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.outfit-item { background: #1a1a2e; padding: 8px 12px; border-radius: 6px; border: 1px solid #333; font-size: 12px; }
+.outfit-item .outfit-label { color: #888; font-size: 11px; }
+.outfit-item .outfit-value { color: #e0e0e0; }
+
+/* 空状态 */
+.empty-state { text-align: center; padding: 40px; color: #555; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="panel">
+  <div class="tabs">
+    <div class="tab active" data-tab="world" onclick="switchTab('world')">🌍 世界</div>
+    <div class="tab" data-tab="character" onclick="switchTab('character')">👤 主角</div>
+    <div class="tab" data-tab="tasks" onclick="switchTab('tasks')">📋 任务</div>
+    <div class="tab" data-tab="social" onclick="switchTab('social')">💬 社交</div>
+  </div>
+
+  <!-- 世界 Tab -->
+  <div class="tab-content active" id="tab-world">
+    <div class="section-title">时空信息</div>
+    <div class="info-row"><span class="info-label">当前时间</span><span class="info-value" id="w-time">--</span></div>
+    <div class="info-row"><span class="info-label">当前地点</span><span class="info-value" id="w-location">--</span></div>
+    <div class="info-row"><span class="info-label">经过天数</span><span class="info-value" id="w-days">第0天</span></div>
+    <div class="info-row"><span class="info-label">天气</span><span class="info-value" id="w-weather">--</span></div>
+    <div class="section-title">城市动态</div>
+    <div class="info-row"><span class="info-label">城市活跃度</span><span class="info-value" id="w-activity">--</span></div>
+    <div class="info-row" style="display:block;">
+      <div class="info-label" style="margin-bottom:8px;">都市流言</div>
+      <div id="w-rumor" style="color:#ccc; font-size:13px; line-height:1.6; padding:10px; background:#0f0f1a; border-radius:6px;">--</div>
+    </div>
+  </div>
+
+  <!-- 主角 Tab -->
+  <div class="tab-content" id="tab-character">
+    <div class="section-title">基础信息</div>
+    <div class="info-row"><span class="info-label">姓名</span><span class="info-value" id="c-name">--</span></div>
+    <div class="info-row"><span class="info-label">出身</span><span class="info-value" id="c-faction">--</span></div>
+    <div class="info-row"><span class="info-label">职业</span><span class="info-value" id="c-job">--</span></div>
+    <div class="info-row"><span class="info-label">种族</span><span class="info-value" id="c-race">--</span></div>
+    <div class="info-row"><span class="info-label">性别</span><span class="info-value" id="c-gender">--</span></div>
+    <div class="info-row"><span class="info-label">年龄</span><span class="info-value" id="c-age">--</span></div>
+    <div class="info-row"><span class="info-label">金钱</span><span class="info-value" id="c-money">--</span></div>
+    <div class="info-row" style="display:block;">
+      <div class="info-label" style="margin-bottom:8px;">外貌身材</div>
+      <div id="c-appearance" style="color:#ccc; font-size:13px; line-height:1.6; padding:10px; background:#0f0f1a; border-radius:6px;">--</div>
+    </div>
+
+    <div class="section-title">属性</div>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-name">灵能等级</div><div class="stat-value" id="c-psionic">0</div></div>
+      <div class="stat-box"><div class="stat-name">基因强化</div><div class="stat-value" id="c-gene">0</div></div>
+      <div class="stat-box"><div class="stat-name">义体化程度</div><div class="stat-value" id="c-cyber">0</div></div>
+      <div class="stat-box"><div class="stat-name">特殊能力</div><div class="stat-value" id="c-special" style="font-size:12px;">无</div></div>
+    </div>
+
+    <div class="section-title">状态</div>
+    <div id="c-hp-row"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span style="color:#888;">HP</span><span id="c-hp-val" style="color:#ff6b6b;">100/100</span></div><div class="bar-container"><div class="bar-fill bar-hp" id="c-hp-bar" style="width:100%"></div></div></div>
+    <div style="margin-top:10px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span style="color:#888;">体力</span><span id="c-stamina-val" style="color:#00ff88;">100/100</span></div><div class="bar-container"><div class="bar-fill bar-energy" id="c-stamina-bar" style="width:100%"></div></div></div>
+    <div style="margin-top:10px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span style="color:#888;">精神力</span><span id="c-mental-val" style="color:#9b59b6;">100/100</span></div><div class="bar-container"><div class="bar-fill bar-mental" id="c-mental-bar" style="width:100%"></div></div></div>
+    <div style="margin-top:10px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span style="color:#888;">侵蚀度</span><span id="c-erosion-val" style="color:#ff00ff;">0/100</span></div><div class="bar-container"><div class="bar-fill bar-erosion" id="c-erosion-bar" style="width:0%"></div></div></div>
+
+    <div class="section-title">着装</div>
+    <div class="outfit-grid" id="c-outfit"></div>
+  </div>
+
+  <!-- 任务 Tab -->
+  <div class="tab-content" id="tab-tasks">
+    <div class="section-title">当前主要任务</div>
+    <div class="info-row" style="display:block;">
+      <div id="t-main" style="color:#00d4ff; font-size:15px; font-weight:bold; padding:10px; background:#0f0f1a; border-radius:6px;">无</div>
+    </div>
+    <div class="section-title">任务目标</div>
+    <div class="info-row" style="display:block;">
+      <div id="t-objective" style="color:#00ff88; font-size:13px; padding:10px; background:#0f0f1a; border-radius:6px; line-height:1.6;">无</div>
+    </div>
+    <div class="section-title">子任务</div>
+    <div class="info-row" style="display:block;">
+      <div id="t-sub" style="color:#ccc; font-size:13px; padding:10px; background:#0f0f1a; border-radius:6px; line-height:1.6;">无</div>
+    </div>
+    <div class="section-title">已获取线索</div>
+    <div class="info-row" style="display:block;">
+      <div id="t-clues" style="color:#ccc; font-size:13px; padding:10px; background:#0f0f1a; border-radius:6px; line-height:1.6; white-space:pre-wrap;">无</div>
+    </div>
+    <div class="info-row"><span class="info-label">任务状态</span><span class="info-value" id="t-status">--</span></div>
+  </div>
+
+  <!-- 社交 Tab -->
+  <div class="tab-content" id="tab-social">
+    <div class="section-title">已遇 NPC</div>
+    <div id="s-npc-list">
+      <div class="empty-state">尚未遇到任何NPC</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ========== 工具函数 ==========
+function getProp(obj, path, def) {
+  const keys = path.split('.');
+  let result = obj;
+  for (const key of keys) {
+    if (result == null) return def;
+    result = result[key];
+  }
+  return result === undefined ? def : result;
+}
+
+function safe(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+// ========== Tab 切换 ==========
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.tab[data-tab="${name}"]`).classList.add('active');
+  document.getElementById(`tab-${name}`).classList.add('active');
+}
+
+// ========== 渲染函数 ==========
+function renderAll(sd) {
+  renderWorld(sd);
+  renderCharacter(sd);
+  renderTasks(sd);
+  renderSocial(sd);
+}
+
+function renderWorld(sd) {
+  safe('w-time', getProp(sd, '世界.当前时间', '--'));
+  safe('w-location', getProp(sd, '世界.当前地点', '--'));
+  safe('w-days', '第' + getProp(sd, '世界.经过天数', 0) + '天');
+  safe('w-weather', getProp(sd, '世界.天气', '--'));
+  safe('w-activity', getProp(sd, '世界.城市活跃度', '--'));
+  const rumor = document.getElementById('w-rumor');
+  if (rumor) rumor.textContent = getProp(sd, '世界.都市流言', '暂无');
+}
+
+function renderCharacter(sd) {
+  const basic = getProp(sd, '主角.基础', {});
+  safe('c-name', basic.姓名 || '--');
+  safe('c-faction', basic.势力 || '--');
+  safe('c-job', basic.职业 || '--');
+  safe('c-race', basic.种族 || '--');
+  safe('c-gender', basic.性别 || '--');
+  safe('c-age', (basic.年龄 || '--') + '岁');
+  safe('c-money', (basic.金钱 || 0) + ' 夜光币');
+  const appearance = document.getElementById('c-appearance');
+  if (appearance) appearance.textContent = basic.外貌身材 || '待生成';
+
+  const attr = getProp(sd, '主角.属性', {});
+  safe('c-psionic', attr.灵能等级 || 0);
+  safe('c-gene', attr.基因强化等级 || 0);
+  safe('c-cyber', attr.义体化程度 || 0);
+  safe('c-special', attr.特殊能力 || '无');
+
+  const status = getProp(sd, '主角.状态', {});
+  const hp = status.HP || 100;
+  const stamina = status.体力 || 100;
+  const mental = status.精神力 || 100;
+  const erosion = status.侵蚀度 || 0;
+  safe('c-hp-val', hp + '/100');
+  safe('c-stamina-val', stamina + '/100');
+  safe('c-mental-val', mental + '/100');
+  safe('c-erosion-val', erosion + '/100');
+  const hpBar = document.getElementById('c-hp-bar'); if (hpBar) hpBar.style.width = hp + '%';
+  const staminaBar = document.getElementById('c-stamina-bar'); if (staminaBar) staminaBar.style.width = stamina + '%';
+  const mentalBar = document.getElementById('c-mental-bar'); if (mentalBar) mentalBar.style.width = mental + '%';
+  const erosionBar = document.getElementById('c-erosion-bar'); if (erosionBar) erosionBar.style.width = erosion + '%';
+
+  const outfit = getProp(sd, '主角.着装', {});
+  const outfitItems = [
+    ['外套', outfit.外套], ['上衣', outfit.上衣], ['下装', outfit.下装],
+    ['内衣', outfit.内衣], ['内裤', outfit.内裤], ['鞋子', outfit.鞋子], ['饰品', outfit.饰品]
+  ];
+  const outfitContainer = document.getElementById('c-outfit');
+  if (outfitContainer) {
+    outfitContainer.innerHTML = outfitItems.map(([label, val]) =>
+      `<div class="outfit-item"><div class="outfit-label">${label}</div><div class="outfit-value">${escapeHtml(val) || '无'}</div></div>`
+    ).join('');
+  }
+}
+
+function renderTasks(sd) {
+  const task = getProp(sd, '任务', {});
+  const mainEl = document.getElementById('t-main'); if (mainEl) mainEl.textContent = task.当前任务 || '无';
+  const objEl = document.getElementById('t-objective'); if (objEl) objEl.textContent = task.任务目标 || '无';
+  const subEl = document.getElementById('t-sub'); if (subEl) subEl.textContent = task.子任务 || '无';
+  const cluesEl = document.getElementById('t-clues'); if (cluesEl) cluesEl.textContent = task.已获取线索 || '无';
+  safe('t-status', task.任务状态 || '--');
+}
+
+function renderSocial(sd) {
+  const npcList = getProp(sd, '社交.已遇NPC列表', []);
+  const npcRelations = getProp(sd, '社交.NPC关系', {});
+  const container = document.getElementById('s-npc-list');
+  if (!container) return;
+
+  if (npcList.length === 0) {
+    container.innerHTML = '<div class="empty-state">尚未遇到任何NPC</div>';
+    return;
+  }
+
+  container.innerHTML = npcList.map(name => {
+    const npc = npcRelations[name] || {};
+    const affection = npc.好感度 || 0;
+    return `
+      <div class="npc-card" onclick="this.classList.toggle('expanded')">
+        <div class="npc-header">
+          <div>
+            <div class="npc-name">${escapeHtml(name)}</div>
+            <div class="npc-race">${escapeHtml(npc.种族 || '未知')} · ${escapeHtml(npc.职业 || '未知')}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:#888;">好感度</div>
+            <div style="color:#ff6b9d;font-weight:bold;">${affection}</div>
+          </div>
+        </div>
+        <div class="npc-detail">
+          <div class="npc-desc"><strong>外貌身材：</strong>${escapeHtml(npc.外貌身材 || '待生成')}</div>
+          <div style="margin-top:8px;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span style="color:#888;">好感度</span><span style="color:#ff6b9d;">${affection}/100</span></div>
+            <div class="bar-container"><div class="bar-fill bar-affection" style="width:${affection}%"></div></div>
+          </div>
+          <div class="npc-desc" style="margin-top:8px;"><strong>对玩家的看法：</strong>${escapeHtml(npc.看法 || '陌生')}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ========== MVU 数据获取 ==========
+// 尝试从 SillyTavern 的 MVU 系统获取变量
+function getStatData() {
+  // 方式1: 全局变量
+  if (typeof stat_data !== 'undefined') return stat_data;
+  // 方式2: SillyTavern extension
+  if (typeof SillyTavern !== 'undefined' && SillyTavern.extensionStats) return SillyTavern.extensionStats;
+  // 方式3: 降级到默认值
+  return null;
+}
+
+function refresh() {
+  const sd = getStatData();
+  if (sd) {
+    renderAll(sd);
+  } else {
+    // 默认占位渲染
+    renderAll({});
+  }
+}
+
+// 启动
+refresh();
+// 定时刷新（应对 MVU 异步更新）
+setInterval(refresh, 2000);
+</script>
+</body>
+</html>

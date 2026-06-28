@@ -580,6 +580,60 @@
       "substituteRegex": 0,
       "minDepth": null,
       "maxDepth": null
+    },
+    "任务完成检测": {
+      "id": "task-complete-check",
+      "scriptName": "任务完成检测",
+      "findRegex": "\\{\\{([^}]+)\\}\\}(完成|放弃)",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    },
+    "角色创建面板": {
+      "id": "char-create-panel",
+      "scriptName": "角色创建面板",
+      "findRegex": "<CharacterCreatePanel\\s*/>",
+      "replace_file": "正则/角色创建面板.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
+    },
+    "信息面板": {
+      "id": "info-panel",
+      "scriptName": "信息面板",
+      "findRegex": "<InfoPanel\\s*/>",
+      "replace_file": "正则/信息面板.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "minDepth": null,
+      "maxDepth": null
     }
   }
 }
