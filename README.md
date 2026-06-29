@@ -53,6 +53,36 @@ cards/新渊暗都/
 
 ## 快速开始
 
+### 方式一：使用 ZCode（推荐）
+
+本项目完全通过 [ZCode](https://github.com/ai4rpg/tavern-cards) 对话式 AI 编程助手生成，无需手写代码：
+
+```bash
+# 1. 在 ZCode 中加载 tavern-cards skill
+#    skill 目录: C:\Users\Agent\.zcode\skills\tavern-cards
+
+# 2. 对话式创建项目
+#    用户: "创建一个叫 新渊暗都 的角色卡，现代都市+黑暗风格+多种族共存..."
+#    ZCode 自动执行:
+#      - forge init 新渊暗都 --mvu
+#      - 编写 27 条世界书条目
+#      - 生成 schema.ts + initvar.yaml + 变量更新规则.yaml
+#      - 编写角色创建面板 + 信息面板 HTML/JS
+#      - 配置正则脚本 + EJS 动态加载
+#      - forge pack + post-pack 后处理
+
+# 3. 导入 SillyTavern
+#    将 cards/新渊暗都/新渊暗都.json 导入 SillyTavern 角色卡
+```
+
+**ZCode 工作流要点**：
+- 所有条目通过 `forge patch` 注册到 `tavern-cards-state.json`
+- 面板 HTML 通过 `replaceString` 内联到正则脚本
+- 变量结构通过 `schema.ts` 定义，`validate-mvu` 校验
+- 每次 `forge pack` 后必须运行 `post-pack.mjs`
+
+### 方式二：手动 CLI
+
 ```bash
 # 1. 安装依赖
 git clone https://github.com/ai4rpg/tavern-cards.git
