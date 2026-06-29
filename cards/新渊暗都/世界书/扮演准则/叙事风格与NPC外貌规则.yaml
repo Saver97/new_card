@@ -42,6 +42,12 @@ NPC外貌生成规则:
   - ★ 时间格式必须为 "M月D日·星期X HH:MM:SS"
   - ★ NPC关系写入时必须包含完整字段（好感度/看法/职业/种族/外貌身材）
 
+状态栏规则:
+  - ★ 每次回复的最后一个字符必须是 <StatusPlaceHolderImpl/>
+  - ★ 这是信息面板的占位符，不可省略，不可遗漏
+  - ★ 即使没有变量更新，也必须输出 <StatusPlaceHolderImpl/>
+  - ★ 输出顺序：<UpdateVariable>...</UpdateVariable>\n<StatusPlaceHolderImpl/>
+
 任务系统:
   - 对话中出现「{{任务名}}完成」时，AI清空当前任务、目标、子任务，状态设为已完成
   - 对话中出现「{{任务名}}放弃」时，同上，状态设为已放弃

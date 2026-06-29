@@ -863,7 +863,7 @@
     },
     "对AI隐藏变量更新": {
       "id": "aa12731a-97c4-4450-ac2f-0bfe1d6a4f64",
-      "findRegex": "/<(update(?:variable)?)>(?:(?!.*<\\/\\1>)(?:(?!<\\1>).)*$|(?:(?!<\\1>).)*<\\/\\1?>)/gsi",
+      "findRegex": "/<UpdateVariable>([\\s\\S]*?)<\\/UpdateVariable>/g",
       "replaceString": "",
       "trimStrings": [],
       "placement": [
