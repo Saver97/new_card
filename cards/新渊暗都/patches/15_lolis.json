@@ -1,0 +1,6 @@
+[
+  {"op": "add", "path": "/entryManifest/NPC/米萝", "value": {"path": "世界书/NPC/米萝.yaml", "abstract": "米萝·血族种·63岁(外表12)·暮光商会吉祥物", "enabled": true, "keywords": ["米萝","萝莉","血族","兔子玩偶","莉莉丝","暮光交易所"]}},
+  {"op": "add", "path": "/entryManifest/NPC/安啾", "value": {"path": "世界书/NPC/安啾.yaml", "abstract": "安啾·天使种·300岁(外表14)·审判庭遗孤", "enabled": true, "keywords": ["安啾","萝莉","天使","圣光","审判庭","翅膀","白银手镯"]}},
+  {"op": "add", "path": "/entryManifest/NPC/露露", "value": {"path": "世界书/NPC/露露.yaml", "abstract": "露露·精灵种·47岁(外表14)·温师筠学徒", "enabled": true, "keywords": ["露露","萝莉","精灵","学徒","书","家族徽章","温师筠"]}},
+  {"op": "add", "path": "/entryManifest/NPC/零", "value": {"path": "世界书/NPC/零.yaml", "abstract": "零·纯机械生命体·年龄不明(外表11)·流浪机械儿童", "enabled": true, "keywords": ["零","萝莉","机械","失忆","编号000","蓝色","秦霜"]}}
+]
