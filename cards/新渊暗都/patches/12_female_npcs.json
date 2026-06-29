@@ -1,0 +1,5 @@
+[
+  {"op": "add", "path": "/entryManifest/NPC/柳如烟", "value": {"path": "世界书/NPC/柳如烟.yaml", "abstract": "柳如烟·人类·18岁·城防署实习调查员", "enabled": true, "keywords": ["柳如烟", "实习", "调查员"]}},
+  {"op": "add", "path": "/entryManifest/NPC/秦霜", "value": {"path": "世界书/NPC/秦霜.yaml", "abstract": "秦霜·半机械体·29岁·自由行者器械师", "enabled": true, "keywords": ["秦霜", "器械师", "义体"]}},
+  {"op": "add", "path": "/entryManifest/NPC/温师筠", "value": {"path": "世界书/NPC/温师筠.yaml", "abstract": "温师筠·精灵种·210岁·暮光商会情报顾问", "enabled": true, "keywords": ["温师筠", "精灵", "顾问", "情报"]}}
+]

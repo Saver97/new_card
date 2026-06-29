@@ -273,11 +273,17 @@
     - 首次遇到时初始化为0
     - 根据互动结果更新：帮助+，冒犯-，礼物+，背叛-
 
-/社交/NPC关系/{NPC名}/看法:
+/社交/NPC关系/{NPC名}/对主角看法:
   type: string
   check:
     - 首次遇到时初始化为"陌生"
     - 根据互动和好感度生成NPC对主角的看法描述
+
+/社交/NPC关系/{NPC名}/主角看法:
+  type: string
+  check:
+    - 首次遇到时初始化为"陌生"
+    - 根据互动和好感度生成主角对NPC的看法描述
 
 /社交/NPC关系/{NPC名}/职业:
   type: string
@@ -285,6 +291,22 @@
     - ★ 首次遇到时从世界书NPC条目写入，后续不更改
 
 /社交/NPC关系/{NPC名}/种族:
+  type: string
+  check:
+    - ★ 首次遇到时从世界书NPC条目写入，后续不更改
+
+/社交/NPC关系/{NPC名}/年龄:
+  type: number
+  range: 0-999
+  check:
+    - ★ 首次遇到时从世界书NPC条目或AI推理写入
+
+/社交/NPC关系/{NPC名}/性别:
+  type: string
+  check:
+    - ★ 首次遇到时从世界书NPC条目或AI观察写入
+
+/社交/NPC关系/{NPC名}/势力:
   type: string
   check:
     - ★ 首次遇到时从世界书NPC条目写入，后续不更改

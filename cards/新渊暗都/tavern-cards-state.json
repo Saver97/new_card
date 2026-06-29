@@ -9,6 +9,7 @@
         "path": "世界书/世界观/新渊城世界观.yaml",
         "keywords": [],
         "abstract": "新渊城核心设定：三层城市结构、三路线矛盾、深渊议会阴谋",
+        "uid": 0,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -18,13 +19,13 @@
           "role": "system",
           "depth": 2,
           "order": 20
-        },
-        "uid": 0
+        }
       },
       "种族与社会": {
         "path": "世界书/世界观/种族与社会.yaml",
         "keywords": [],
         "abstract": "8种族分类体系、来源、社会地位与种族关系",
+        "uid": 1,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -34,13 +35,13 @@
           "role": "system",
           "depth": 2,
           "order": 21
-        },
-        "uid": 1
+        }
       },
       "力量体系详述": {
         "path": "世界书/世界观/力量体系详述.yaml",
         "keywords": [],
         "abstract": "灵能/基因/义体三路线机制、等级、风险与侵蚀度",
+        "uid": 2,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -50,8 +51,7 @@
           "role": "system",
           "depth": 2,
           "order": 22
-        },
-        "uid": 2
+        }
       }
     },
     "扮演准则": {
@@ -59,6 +59,7 @@
         "path": "世界书/扮演准则/叙事风格与NPC外貌规则.yaml",
         "keywords": [],
         "abstract": "叙事风格、互动规则、NPC与主角外貌生成规则、任务系统",
+        "uid": 3,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -68,8 +69,7 @@
           "role": "system",
           "depth": 2,
           "order": 30
-        },
-        "uid": 3
+        }
       }
     },
     "地理": {
@@ -89,6 +89,7 @@
             "file": "世界书/地理/上城区.yaml"
           }
         ],
+        "uid": 4,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -101,8 +102,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 50
-        },
-        "uid": 4
+        }
       },
       "中城区": {
         "part": "region",
@@ -120,6 +120,7 @@
             "file": "世界书/地理/中城区.yaml"
           }
         ],
+        "uid": 5,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -132,8 +133,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 60
-        },
-        "uid": 5
+        }
       },
       "下城区": {
         "part": "region",
@@ -151,6 +151,7 @@
             "file": "世界书/地理/下城区.yaml"
           }
         ],
+        "uid": 6,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -163,8 +164,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 70
-        },
-        "uid": 6
+        }
       },
       "深渊裂隙": {
         "part": "region",
@@ -182,6 +182,7 @@
             "file": "世界书/地理/深渊裂隙.yaml"
           }
         ],
+        "uid": 7,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -194,8 +195,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 80
-        },
-        "uid": 7
+        }
       },
       "城防署总部": {
         "path": "世界书/地理/城防署总部.yaml",
@@ -205,6 +205,7 @@
           "城防署"
         ],
         "abstract": "城防署总部场景：灵能探测网、沈星河办公室",
+        "uid": 8,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -216,8 +217,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 90
-        },
-        "uid": 8
+        }
       },
       "暮光交易所": {
         "path": "世界书/地理/暮光交易所.yaml",
@@ -227,6 +227,7 @@
           "暮光商会"
         ],
         "abstract": "暮光交易所场景：莉莉丝的情报与器械交易中枢",
+        "uid": 9,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -238,8 +239,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 100
-        },
-        "uid": 9
+        }
       },
       "自由行者酒吧": {
         "path": "世界书/地理/自由行者酒吧.yaml",
@@ -249,6 +249,7 @@
           "自由行者"
         ],
         "abstract": "自由行者酒吧场景：林夜的佣兵据点与悬赏板",
+        "uid": 10,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -260,8 +261,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 110
-        },
-        "uid": 10
+        }
       },
       "城防署势力": {
         "path": "世界书/地理/城防署_势力.yaml",
@@ -273,6 +273,7 @@
           "沈星河"
         ],
         "abstract": "城防署势力详情：理想派与腐败派、灵能探测网",
+        "uid": 11,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -286,8 +287,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 120
-        },
-        "uid": 11
+        }
       },
       "深渊议会势力": {
         "path": "世界书/地理/深渊议会_势力.yaml",
@@ -298,6 +298,7 @@
           "维克托"
         ],
         "abstract": "深渊议会势力详情：神之容器计划、深渊强化",
+        "uid": 12,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -310,8 +311,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 130
-        },
-        "uid": 12
+        }
       },
       "自由行者联盟势力": {
         "path": "世界书/地理/自由行者联盟_势力.yaml",
@@ -322,6 +322,7 @@
           "林夜"
         ],
         "abstract": "自由行者联盟势力详情：佣兵规则、情报网络",
+        "uid": 13,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -334,8 +335,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 140
-        },
-        "uid": 13
+        }
       },
       "暮光商会势力": {
         "path": "世界书/地理/暮光商会_势力.yaml",
@@ -345,6 +345,7 @@
           "莉莉丝"
         ],
         "abstract": "暮光商会势力详情：情报交易、器械流通",
+        "uid": 14,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -356,11 +357,41 @@
         "position": {
           "type": "before_character_definition",
           "order": 150
-        },
-        "uid": 14
+        }
       }
     },
     "NPC": {
+      "柳如烟": {
+        "path": "世界书/NPC/柳如烟.yaml",
+        "abstract": "柳如烟·人类·18岁·城防署实习调查员",
+        "enabled": true,
+        "keywords": [
+          "柳如烟",
+          "实习",
+          "调查员"
+        ]
+      },
+      "秦霜": {
+        "path": "世界书/NPC/秦霜.yaml",
+        "abstract": "秦霜·半机械体·29岁·自由行者器械师",
+        "enabled": true,
+        "keywords": [
+          "秦霜",
+          "器械师",
+          "义体"
+        ]
+      },
+      "温师筠": {
+        "path": "世界书/NPC/温师筠.yaml",
+        "abstract": "温师筠·精灵种·210岁·暮光商会情报顾问",
+        "enabled": true,
+        "keywords": [
+          "温师筠",
+          "精灵",
+          "顾问",
+          "情报"
+        ]
+      },
       "沈星河": {
         "path": "世界书/NPC/沈星河.yaml",
         "keywords": [
@@ -369,6 +400,7 @@
           "署长"
         ],
         "abstract": "城防署署长·沈星河：理想主义者，前灵能特种部队指挥官",
+        "uid": 15,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -381,8 +413,7 @@
         "position": {
           "type": "after_character_definition",
           "order": 160
-        },
-        "uid": 15
+        }
       },
       "维克托": {
         "path": "世界书/NPC/维克托.yaml",
@@ -393,6 +424,7 @@
           "维克托·深渊"
         ],
         "abstract": "深渊议长·维克托·深渊：恶魔叛逃者领袖，追求神之容器",
+        "uid": 16,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -406,8 +438,7 @@
         "position": {
           "type": "after_character_definition",
           "order": 161
-        },
-        "uid": 16
+        }
       },
       "林夜": {
         "path": "世界书/NPC/林夜.yaml",
@@ -418,6 +449,7 @@
           "夜哥"
         ],
         "abstract": "自由行者首领·林夜：退役特工，佣兵之王，半机械体",
+        "uid": 17,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -431,8 +463,7 @@
         "position": {
           "type": "after_character_definition",
           "order": 162
-        },
-        "uid": 17
+        }
       },
       "莉莉丝": {
         "path": "世界书/NPC/莉莉丝.yaml",
@@ -443,6 +474,7 @@
           "莉莉丝·影纱"
         ],
         "abstract": "暮光商会会长·莉莉丝·影纱：血族商人，情报女王",
+        "uid": 18,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -456,8 +488,7 @@
         "position": {
           "type": "after_character_definition",
           "order": 163
-        },
-        "uid": 18
+        }
       }
     },
     "事件": {
@@ -470,6 +501,7 @@
           "黑市交易"
         ],
         "abstract": "日常巡逻随机事件池：街头斗殴、黑市交易、觉醒暴走等",
+        "uid": 19,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -485,8 +517,7 @@
           "role": "system",
           "depth": 0,
           "order": 170
-        },
-        "uid": 19
+        }
       },
       "深渊阴谋": {
         "keywords": [
@@ -505,6 +536,7 @@
             "file": "世界书/事件/深渊阴谋.yaml"
           }
         ],
+        "uid": 20,
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -521,8 +553,7 @@
           "role": "system",
           "depth": 0,
           "order": 171
-        },
-        "uid": 20
+        }
       }
     },
     "时间线": {
@@ -531,6 +562,7 @@
         "part": "history",
         "keywords": [],
         "abstract": "新渊城500年历史：大崩坏、审判庭覆灭、城建城、三路线成熟",
+        "uid": 21,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -538,8 +570,7 @@
         "position": {
           "type": "before_character_definition",
           "order": 40
-        },
-        "uid": 21
+        }
       }
     },
     "EJS预处理": {
@@ -547,6 +578,7 @@
         "path": "世界书/EJS/EJS预处理.txt",
         "keywords": [],
         "abstract": "EJS变量预处理：注册current_region/current_days/task_status等",
+        "uid": 22,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -556,8 +588,7 @@
           "role": "system",
           "depth": 2,
           "order": 10
-        },
-        "uid": 22
+        }
       }
     },
     "MVU": {
@@ -566,6 +597,7 @@
         "part": "variable_list",
         "keywords": [],
         "abstract": "MVU变量列表：展示所有变量给AI",
+        "uid": 23,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -575,14 +607,14 @@
           "role": "system",
           "depth": 2,
           "order": 180
-        },
-        "uid": 23
+        }
       },
       "变量更新规则": {
         "path": "世界书/变量/变量更新规则.yaml",
         "part": "update_rules",
         "keywords": [],
         "abstract": "MVU变量更新规则：AI可写路径白名单",
+        "uid": 24,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -592,14 +624,14 @@
           "role": "system",
           "depth": 2,
           "order": 190
-        },
-        "uid": 24
+        }
       },
       "变量输出格式": {
         "path": "世界书/变量/变量输出格式.txt",
         "part": "output_format",
         "keywords": [],
         "abstract": "MVU变量输出格式：JSON Patch格式说明",
+        "uid": 25,
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -609,22 +641,21 @@
           "role": "system",
           "depth": 2,
           "order": 200
-        },
-        "uid": 25
+        }
       },
       "初始变量": {
         "path": "世界书/变量/initvar.yaml",
         "part": "initvar",
         "keywords": [],
         "abstract": "MVU初始变量：角色创建时的初始状态",
+        "uid": 26,
         "enabled": false,
         "position": {
           "type": "at_depth",
           "role": "system",
           "depth": 2,
           "order": 210
-        },
-        "uid": 26
+        }
       }
     }
   },
@@ -789,6 +820,7 @@
         },
         "Zod": {
           "type": "script",
+          "content": "// 注入：validate-mvu 会提供全局 z（Zod v4）和 _（lodash），不依赖本地 node_modules\n// 运行时脚本/Zod.txt 也通过 registerMvuSchema 注入\n\n// ========== 主角域 ==========\n\nconst 主角基础Schema = z.object({\n  姓名: z.string().prefault('待设定'),\n  种族: z.enum(['人类', '精灵种', '兽化种', '血族种', '半机械体', '天使种', '恶魔种', '纯机械生命体']).prefault('人类'),\n  年龄: z.coerce.number().min(16).max(300).prefault(25),\n  职业: z.enum(['外勤特工', '灵能调查员', '暗影执行者', '议会学者', '赏金猎人', '街区医生', '情报掮客', '器械师']).prefault('外勤特工'),\n  性别: z.enum(['男', '女']).prefault('男'),\n  势力: z.enum(['城防署', '深渊议会', '自由行者联盟', '暮光商会']).prefault('城防署'),\n  金钱: z.coerce.number().min(0).max(999999999).prefault(5000),\n  外貌身材: z.string().prefault('待生成'),\n});\n\nconst 主角属性Schema = z.object({\n  灵能等级: z.coerce.number().min(0).max(100).prefault(0),\n  基因强化等级: z.coerce.number().min(0).max(100).prefault(0),\n  义体化程度: z.coerce.number().min(0).max(100).prefault(0),\n  特殊能力: z.string().prefault('无'),\n});\n\nconst 主角状态Schema = z.object({\n  HP: z.coerce.number().min(0).max(100).prefault(100),\n  体力: z.coerce.number().min(0).max(100).prefault(100),\n  精神力: z.coerce.number().min(0).max(100).prefault(100),\n  侵蚀度: z.coerce.number().min(0).max(100).prefault(0),\n});\n\nconst 主角着装Schema = z.object({\n  外套: z.string().prefault('无'),\n  上衣: z.string().prefault('普通衬衫'),\n  下装: z.string().prefault('普通裤子'),\n  内衣: z.string().prefault('无'),\n  内裤: z.string().prefault('普通内裤'),\n  鞋子: z.string().prefault('普通鞋子'),\n  饰品: z.string().prefault('无'),\n});\n\nconst 主角Schema = z.object({\n  基础: 主角基础Schema,\n  属性: 主角属性Schema,\n  状态: 主角状态Schema,\n  着装: 主角着装Schema,\n  背包: z.array(z.string()).prefault([]),\n  战斗定位: z.enum(['前排坦克', '中排输出', '后排支援', '游走刺客', '控场法师', '全能混合']).prefault('中排输出'),\n  当前情绪: z.string().prefault('平静'),\n});\n\n// ========== 世界域 ==========\n\nconst 世界Schema = z.object({\n  当前时间: z.string().prefault('6月29日·星期日 08:00:00'),\n  当前地点: z.string().prefault('上城区·城防署总部·会议室'),\n  经过天数: z.coerce.number().min(0).max(999).prefault(0),\n  天气: z.enum(['晴朗', '多云', '阴天', '小雨', '大雨', '暴雨', '雾霾', '极光']).prefault('晴朗'),\n  都市流言: z.string().prefault('暂无'),\n  城市活跃度: z.enum(['平静', '正常', '紧张', '混乱', '危机']).prefault('正常'),\n});\n\n// ========== 任务域 ==========\n\nconst 任务Schema = z.object({\n  当前任务: z.string().prefault('无'),\n  任务目标: z.string().prefault('无'),\n  子任务: z.string().prefault('无'),\n  已获取线索: z.string().prefault('无'),\n  任务状态: z.enum(['进行中', '已完成', '已放弃', '无任务']).prefault('无任务'),\n});\n\n// ========== 社交域 ==========\n\nconst NPC关系详情Schema = z.object({\n  好感度: z.coerce.number().min(0).max(100).prefault(0),\n  对主角看法: z.string().prefault('陌生'),\n  主角看法: z.string().prefault('陌生'),\n  职业: z.string().prefault('未知'),\n  种族: z.string().prefault('未知'),\n  年龄: z.coerce.number().min(0).max(999).prefault(0),\n  性别: z.string().prefault('未知'),\n  势力: z.string().prefault('未知'),\n  外貌身材: z.string().prefault('待生成'),\n  着装: z.object({\n    外套: z.string().prefault('未知'),\n    上衣: z.string().prefault('未知'),\n    下装: z.string().prefault('未知'),\n    内衣: z.string().prefault('未知'),\n    内裤: z.string().prefault('未知'),\n    鞋子: z.string().prefault('未知'),\n    饰品: z.string().prefault('未知'),\n  }).prefault({}),\n});\n\nconst 社交Schema = z.object({\n  已遇NPC列表: z.array(z.string()).prefault([]),\n  当前交互NPC: z.string().prefault('无'),\n  NPC关系: z.record(NPC关系详情Schema).prefault({}),\n});\n\n// ========== 总Schema ==========\n\nexport const Schema = z.object({\n  主角: 主角Schema,\n  世界: 世界Schema,\n  任务: 任务Schema,\n  社交: 社交Schema,\n});\n\n\n// 新渊暗都 MVU 变量结构 — schema.ts\n// z (zod 4.x) 与 _ (lodash) 全局可用，无需 import\n// 遵循 tavern-cards skill 的 zod-rule.yaml：幂等、z.coerce.number()、_.clamp、.prefault()\n\nexport const Schema = z.object({\n  主角: z.object({\n    基础: z.object({\n      姓名: z.string().prefault('待设定'),\n      种族: z.string().prefault('人类'),\n      年龄: z.coerce.number().min(16).max(300).prefault(25),\n      职业: z.string().prefault('外勤特工'),\n      性别: z.string().prefault('男'),\n      势力: z.string().prefault('城防署'),\n      金钱: z.coerce.number().min(0).max(999999999).prefault(5000),\n      外貌身材: z.string().prefault('待生成'),\n    }).prefault({}),\n    属性: z.object({\n      灵能等级: z.coerce.number().min(0).max(100).prefault(0),\n      基因强化等级: z.coerce.number().min(0).max(100).prefault(0),\n      义体化程度: z.coerce.number().min(0).max(100).prefault(0),\n      特殊能力: z.string().prefault('无'),\n    }).prefault({}),\n    状态: z.object({\n      HP: z.coerce.number().min(0).max(100).prefault(100),\n      体力: z.coerce.number().min(0).max(100).prefault(100),\n      精神力: z.coerce.number().min(0).max(100).prefault(100),\n      侵蚀度: z.coerce.number().min(0).max(100).prefault(0),\n    }).prefault({}),\n    着装: z.object({\n      外套: z.string().prefault('无'),\n      上衣: z.string().prefault('普通衬衫'),\n      下装: z.string().prefault('普通裤子'),\n      内衣: z.string().prefault('无'),\n      内裤: z.string().prefault('普通内裤'),\n      鞋子: z.string().prefault('普通鞋子'),\n      饰品: z.string().prefault('无'),\n    }).prefault({}),\n    背包: z.array(z.string()).prefault([]),\n    战斗定位: z.string().prefault('中排输出'),\n    当前情绪: z.string().prefault('平静'),\n  }).prefault({}),\n  世界: z.object({\n    当前时间: z.string().prefault('6月29日·星期日 08:00:00'),\n    当前地点: z.string().prefault('上城区·城防署总部·会议室'),\n    经过天数: z.coerce.number().min(0).max(999).prefault(0),\n    天气: z.string().prefault('晴朗'),\n    都市流言: z.string().prefault('暂无'),\n    城市活跃度: z.string().prefault('正常'),\n  }).prefault({}),\n  任务: z.object({\n    当前任务: z.string().prefault('无'),\n    任务目标: z.string().prefault('无'),\n    子任务: z.string().prefault('无'),\n    已获取线索: z.string().prefault('无'),\n    任务状态: z.string().prefault('无任务'),\n  }).prefault({}),\n  社交: z.object({\n    已遇NPC列表: z.array(z.string()).prefault([]),\n    当前交互NPC: z.string().prefault('无'),\n    NPC关系: z.record(z.object({\n      好感度: z.coerce.number().min(0).max(100).prefault(0),\n      看法: z.string().prefault('陌生'),\n      职业: z.string().prefault('未知'),\n      种族: z.string().prefault('未知'),\n      外貌身材: z.string().prefault('待生成'),\n    })).prefault({}),\n  }).prefault({}),\n});\n\n\n$(() => {\n  registerMvuSchema(Schema);\n});",
           "enabled": true,
           "id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
           "info": "",
@@ -796,8 +828,7 @@
             "enabled": true,
             "buttons": []
           },
-          "data": {},
-          "content": "import { registerMvuSchema } from 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';\n// 新渊暗都 MVU 变量结构 — schema.ts\n// z (zod 4.x) 与 _ (lodash) 全局可用，无需 import\n// 遵循 tavern-cards skill 的 zod-rule.yaml：幂等、z.coerce.number()、_.clamp、.prefault()\n\nexport const Schema = z.object({\n  主角: z.object({\n    基础: z.object({\n      姓名: z.string().prefault('待设定'),\n      种族: z.string().prefault('人类'),\n      年龄: z.coerce.number().min(16).max(300).prefault(25),\n      职业: z.string().prefault('外勤特工'),\n      性别: z.string().prefault('男'),\n      势力: z.string().prefault('城防署'),\n      金钱: z.coerce.number().min(0).max(999999999).prefault(5000),\n      外貌身材: z.string().prefault('待生成'),\n    }).prefault({}),\n    属性: z.object({\n      灵能等级: z.coerce.number().min(0).max(100).prefault(0),\n      基因强化等级: z.coerce.number().min(0).max(100).prefault(0),\n      义体化程度: z.coerce.number().min(0).max(100).prefault(0),\n      特殊能力: z.string().prefault('无'),\n    }).prefault({}),\n    状态: z.object({\n      HP: z.coerce.number().min(0).max(100).prefault(100),\n      体力: z.coerce.number().min(0).max(100).prefault(100),\n      精神力: z.coerce.number().min(0).max(100).prefault(100),\n      侵蚀度: z.coerce.number().min(0).max(100).prefault(0),\n    }).prefault({}),\n    着装: z.object({\n      外套: z.string().prefault('无'),\n      上衣: z.string().prefault('普通衬衫'),\n      下装: z.string().prefault('普通裤子'),\n      内衣: z.string().prefault('无'),\n      内裤: z.string().prefault('普通内裤'),\n      鞋子: z.string().prefault('普通鞋子'),\n      饰品: z.string().prefault('无'),\n    }).prefault({}),\n    背包: z.array(z.string()).prefault([]),\n    战斗定位: z.string().prefault('中排输出'),\n    当前情绪: z.string().prefault('平静'),\n  }).prefault({}),\n  世界: z.object({\n    当前时间: z.string().prefault('6月29日·星期日 08:00:00'),\n    当前地点: z.string().prefault('上城区·城防署总部·会议室'),\n    经过天数: z.coerce.number().min(0).max(999).prefault(0),\n    天气: z.string().prefault('晴朗'),\n    都市流言: z.string().prefault('暂无'),\n    城市活跃度: z.string().prefault('正常'),\n  }).prefault({}),\n  任务: z.object({\n    当前任务: z.string().prefault('无'),\n    任务目标: z.string().prefault('无'),\n    子任务: z.string().prefault('无'),\n    已获取线索: z.string().prefault('无'),\n    任务状态: z.string().prefault('无任务'),\n  }).prefault({}),\n  社交: z.object({\n    已遇NPC列表: z.array(z.string()).prefault([]),\n    当前交互NPC: z.string().prefault('无'),\n    NPC关系: z.record(z.object({\n      好感度: z.coerce.number().min(0).max(100).prefault(0),\n      看法: z.string().prefault('陌生'),\n      职业: z.string().prefault('未知'),\n      种族: z.string().prefault('未知'),\n      外貌身材: z.string().prefault('待生成'),\n    })).prefault({}),\n  }).prefault({}),\n});\n\n\n$(() => {\n  registerMvuSchema(Schema);\n});"
+          "data": {}
         }
       },
       "variables": {}
@@ -829,9 +860,8 @@
     },
     "状态栏界面": {
       "id": "ce6da13c-4e35-4057-8964-3192b7903acc",
-      "scriptName": "状态栏界面",
       "findRegex": "<StatusPlaceHolderImpl/>",
-      "replaceString": "```html\n<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n<title>新渊暗都 · 状态面板</title>\n<style>\n:root{--bg:#080b14;--card:#0f1322;--border:#1e2d50;--text:#c8d6e5;--muted:#5a6988;--gold:#f0c040;--cyan:#00e5ff;--blue:#4fc3f7;--purple:#ab47bc;--green:#66bb6a;--orange:#ffa726;--pink:#ec407a;--red:#ef5350;--neon:#39ff14}\n*{margin:0;padding:0;box-sizing:border-box}\nbody{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);display:flex;justify-content:center;padding:12px;font-size:13px;background-image:radial-gradient(ellipse at top,rgba(79,195,247,.04) 0%,transparent 50%),radial-gradient(ellipse at bottom right,rgba(171,71,188,.03) 0%,transparent 40%)}\n.container{width:680px}\n\n/* Header */\n.header{text-align:center;margin-bottom:10px}\n.header h1{font-size:16px;font-weight:800;color:var(--cyan);letter-spacing:2px;text-shadow:0 0 12px rgba(0,229,255,.2)}\n\n/* Tabs */\n.tabs{display:flex;background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:10px 10px 0 0;overflow:hidden}\n.tab-btn{flex:1;padding:10px 4px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:12px;font-weight:600;transition:all .2s;border-bottom:2px solid transparent;letter-spacing:.5px}\n.tab-btn:hover{color:var(--text);background:rgba(255,255,255,.02)}\n.tab-btn.active{color:var(--cyan);border-bottom-color:var(--cyan);background:rgba(0,229,255,.06)}\n\n/* Tab panels */\n.tab-panel{display:none;padding:12px;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;animation:fadeIn .2s ease}\n.tab-panel.active{display:block}\n@keyframes fadeIn{from{opacity:0}to{opacity:1}}\n\n/* Cards */\n.card{background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px}\n.card h3{font-size:11px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}\n.dot{display:inline-block;width:6px;height:6px;border-radius:50%}\n\n/* Rows */\n.row{display:flex;justify-content:space-between;padding:4px 0;font-size:12px}\n.row:last-child{border-bottom:none}\n.row .lbl{color:var(--muted);font-size:11px}\n.row .val{color:var(--text);font-weight:500}\n\n/* Grid */\n.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}\n.grid-item{background:rgba(0,0,0,.15);border:1px solid var(--border);border-radius:6px;padding:8px 6px;text-align:center}\n.grid-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}\n.grid-val{font-size:14px;font-weight:700}\n\n/* Bars */\n.bar{margin:5px 0}\n.bar-info{display:flex;justify-content:space-between;font-size:10px;margin-bottom:2px}\n.bar-track{height:4px;background:rgba(255,255,255,.04);border-radius:2px;overflow:hidden}\n.bar-fill{height:100%;border-radius:2px;transition:width .4s}\n\n/* NPC */\n.nodata{text-align:center;padding:16px;color:var(--muted);font-size:12px}\n.npc-card{background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:8px;margin-bottom:6px;overflow:hidden;transition:all .2s}\n.npc-card:hover{border-color:var(--cyan)}\n.npc-head{padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--text)}\n.npc-badge{font-size:10px;color:var(--muted);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:4px;margin-left:6px}\n.npc-body{display:none;padding:0 12px 12px;font-size:11px}\n.npc-body.open{display:block}\n.text-block{background:rgba(0,0,0,.15);border-radius:5px;padding:8px;margin:4px 0;font-size:11px;line-height:1.5;white-space:pre-wrap}\n\n/* Gear grid */\n.gear-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}\n.gear-item{background:rgba(0,0,0,.15);border:1px solid var(--border);border-radius:4px;padding:6px;text-align:center}\n.gear-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}\n.gear-val{font-size:10px;color:var(--text);margin-top:2px}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<div class=\"header\"><h1>新 渊 暗 都</h1></div>\n<div class=\"tabs\">\n<button class=\"tab-btn active\" data-tab=\"world\">世界</button>\n<button class=\"tab-btn\" data-tab=\"hero\">主角</button>\n<button class=\"tab-btn\" data-tab=\"task\">任务</button>\n<button class=\"tab-btn\" data-tab=\"npc\">社交</button>\n</div>\n<div class=\"tab-panel active\" id=\"world\">\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--cyan)\"></span>时空</h3>\n<div class=\"row\"><span class=\"lbl\">当前时间</span><span class=\"val\" id=\"w-time\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">当前地点</span><span class=\"val\" id=\"w-loc\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">经过天数</span><span class=\"val\" id=\"w-days\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">天气</span><span class=\"val\" id=\"w-weather\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--gold)\"></span>城市动态</h3>\n<div class=\"row\"><span class=\"lbl\">活跃度</span><span class=\"val\" id=\"w-act\">-</span></div>\n<div class=\"text-block\" style=\"margin-top:6px\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">都市流言</span><br><span id=\"w-rumor\" style=\"font-size:11px\">-</span></div>\n</div>\n</div>\n<div class=\"tab-panel\" id=\"hero\">\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--gold)\"></span>身份信息</h3>\n<div class=\"row\"><span class=\"lbl\">姓名</span><span class=\"val\" id=\"h-name\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">出身</span><span class=\"val\" id=\"h-faction\" style=\"color:var(--cyan)\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">职业</span><span class=\"val\" id=\"h-job\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">种族</span><span class=\"val\" id=\"h-race\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">性别</span><span class=\"val\" id=\"h-gender\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">年龄</span><span class=\"val\" id=\"h-age\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">金钱</span><span class=\"val\" id=\"h-money\" style=\"color:var(--gold)\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--purple)\"></span>外貌</h3>\n<div class=\"text-block\"><span id=\"h-look\" style=\"font-size:11px\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--blue)\"></span>核心属性</h3>\n<div class=\"grid\">\n<div class=\"grid-item\"><div class=\"grid-label\">灵能</div><div class=\"grid-val\" style=\"color:var(--purple)\" id=\"h-psion\">0</div></div>\n<div class=\"grid-item\"><div class=\"grid-label\">基因</div><div class=\"grid-val\" style=\"color:var(--green)\" id=\"h-gene\">0</div></div>\n<div class=\"grid-item\"><div class=\"grid-label\">义体</div><div class=\"grid-val\" style=\"color:var(--orange)\" id=\"h-cyber\">0</div></div>\n<div class=\"grid-item\"><div class=\"grid-label\">特殊</div><div class=\"grid-val\" style=\"font-size:10px;color:var(--gold)\" id=\"h-special\">-</div></div>\n</div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--red)\"></span>生存状态</h3>\n<div class=\"bar\"><div class=\"bar-info\"><span>HP</span><span id=\"h-hp\" style=\"color:var(--red)\">100/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-hp-bar\" style=\"width:100%;background:var(--red)\"></div></div></div>\n<div class=\"bar\"><div class=\"bar-info\"><span>体力</span><span id=\"h-stam\" style=\"color:var(--green)\">100/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-stam-bar\" style=\"width:100%;background:var(--green)\"></div></div></div>\n<div class=\"bar\"><div class=\"bar-info\"><span>精神力</span><span id=\"h-mental\" style=\"color:var(--blue)\">100/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-mental-bar\" style=\"width:100%;background:var(--blue)\"></div></div></div>\n<div class=\"bar\"><div class=\"bar-info\"><span>侵蚀度</span><span id=\"h-eros\" style=\"color:var(--purple)\">0/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-eros-bar\" style=\"width:0%;background:var(--purple)\"></div></div></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--green)\"></span>当前着装</h3>\n<div class=\"gear-grid\">\n<div class=\"gear-item\"><div class=\"gear-label\">外套</div><div class=\"gear-val\" id=\"g-coat\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">上衣</div><div class=\"gear-val\" id=\"g-top\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">下装</div><div class=\"gear-val\" id=\"g-bottom\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">内衣</div><div class=\"gear-val\" id=\"g-under\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">内裤</div><div class=\"gear-val\" id=\"g-pants\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">鞋子</div><div class=\"gear-val\" id=\"g-shoe\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">饰品</div><div class=\"gear-val\" id=\"g-acc\">-</div></div>\n</div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--gold)\"></span>背包</h3>\n<div id=\"inv\"></div>\n</div>\n</div>\n<div class=\"tab-panel\" id=\"task\">\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--orange)\"></span>当前任务</h3>\n<div class=\"row\"><span class=\"lbl\">任务名</span><span class=\"val\" id=\"t-main\" style=\"color:var(--cyan)\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">目标</span><span class=\"val\" id=\"t-goal\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">子任务</span><span class=\"val\" id=\"t-sub\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">状态</span><span class=\"val\" id=\"t-status\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--pink)\"></span>已获取线索</h3>\n<div class=\"text-block\"><span id=\"t-clues\">-</span></div>\n</div>\n</div>\n<div class=\"tab-panel\" id=\"npc\">\n<div id=\"npc-list\"></div>\n</div>\n</div>\n<script>\nfunction g(o,p,d){var k=p.split('.'),r=o;for(var i=0;i<k.length;i++){if(r&&typeof r=='object'&&k[i]in r)r=r[k[i]];else return d}return r!==undefined?r:d}\nfunction esc(s){if(!s)return '';var r='';for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);if(c===38)r+=String.fromCharCode(38,97,109,112,59);else if(c===60)r+=String.fromCharCode(38,108,116,59);else if(c===62)r+=String.fromCharCode(38,103,116,59);else if(c===34)r+=String.fromCharCode(38,113,117,111,116,59);else r+=s[i]}return r}\nvar DEMO_MODE=true;function render(){var d=null;if(typeof getAllVariables=='function'){var a=getAllVariables();var p=typeof _!=='undefined'?_.get(a,'stat_data'):(a.stat_data||a);if(p&&Object.keys(p).length>0)d=p}if(!d){if(DEMO_MODE){d={世界:{当前时间:'6月29日·星期日 08:15:00',当前地点:'上城区·城防署总部·11层会议室',经过天数:3,天气:'阴天',城市活跃度:'紧张',都市流言:'下城区第三街区连续三天灵能波动异常，巡逻队不敢深入'},主角:{基础:{姓名:'谭不得',势力:'城防署',职业:'外勤特工',种族:'人类',性别:'男',年龄:25,金钱:5000,外貌身材:'二十五岁上下，寸头利落，眉骨和下颌线轮廓硬朗。身高约178cm，肩宽体健但不夸张，右臂有基础型银色义体腕骨，表面有细浅划痕。穿着城防署深蓝制服，眼神带着新人特有的清醒与审慎。'},属性:{灵能等级:15,基因强化等级:0,义体化程度:10,特殊能力:'无'},状态:{HP:92,体力:78,精神力:100,侵蚀度:5},着装:{外套:'城防署深蓝制服',上衣:'制式黑衬衫',下装:'战术长裤',内衣:'无',内裤:'军用内裤',鞋子:'作战靴',饰品:'城防署身份卡'},背包:['标准配枪','通讯器','灵能探测仪']},任务:{当前任务:'调查下城区灵能波动',任务目标:'前往第三街区架设灵能锚点，确认波形性质并上报',子任务:'前往B3车库取车',任务状态:'进行中',已获取线索:'监控拍到暗紫色雾气从下水道渗出；巡逻队员今早失联'},社交:{已遇NPC列表:['赵北','沈星河','莉莉丝·影纱'],NPC关系:{'赵北':{好感度:25,看法:'外勤特遣队副队长，公事公办，对新人还算照顾',职业:'外勤特遣队副队长',种族:'人类',外貌身材:'三十五六岁，黑夹克，右臂全义体化(哑光黑外壳+红色散热槽)，左眼角有疤',着装:{外套:'洗得发白的黑夹克',上衣:'灰T恤',下装:'战术工装裤',内衣:'无',内裤:'军用内裤',鞋子:'作战靴',饰品:'战术手套'}},'沈星河':{好感度:10,看法:'城防署署长，铁面无私的理想主义者',职业:'城防署署长',种族:'人类',外貌身材:'四十二岁，银灰寸头，左眼角到太阳穴有贯穿刀疤。制服笔挺勋章满胸，眼神冷峻',着装:{外套:'城防署署长制服',上衣:'白衬衫',下装:'西裤',内衣:'无',内裤:'无',鞋子:'皮鞋',饰品:'署长徽章'}},'莉莉丝·影纱':{好感度:5,看法:'暮光商会会长，优雅冷漠的情报女王',职业:'暮光商会会长',种族:'血族种',外貌身材:'外表28岁(实约180岁)，银白长发及腰，暗红瞳孔，左眼下方有泪痣。黑色蕾丝手套包裹修长手指',着装:{外套:'黑色蕾丝长裙',上衣:'维多利亚式衬衫',下装:'长裙',内衣:'未知',内裤:'未知',鞋子:'黑色高跟鞋',饰品:'泪痣·蕾丝手套'}}}}};}else{document.getElementById('npc-list').innerHTML='<div class=\"nodata\">等待数据同步...</div>';return}}\ndocument.getElementById('w-time').textContent=g(d,'世界.当前时间','-');\ndocument.getElementById('w-loc').textContent=g(d,'世界.当前地点','-');\ndocument.getElementById('w-days').textContent='第'+(g(d,'世界.经过天数',0)||0)+'天';\ndocument.getElementById('w-weather').textContent=g(d,'世界.天气','-');\ndocument.getElementById('w-act').textContent=g(d,'世界.城市活跃度','-');\ndocument.getElementById('w-rumor').textContent=g(d,'世界.都市流言','-')||'-';\nvar b=g(d,'主角.基础',{});document.getElementById('h-name').textContent=b.姓名||'-';\ndocument.getElementById('h-faction').textContent=b.势力||'-';\ndocument.getElementById('h-job').textContent=b.职业||'-';\ndocument.getElementById('h-race').textContent=b.种族||'-';\ndocument.getElementById('h-gender').textContent=b.性别||'-';\ndocument.getElementById('h-age').textContent=(b.年龄||'-')+'岁';\ndocument.getElementById('h-money').textContent=(b.金钱||0)+' 夜光币';\ndocument.getElementById('h-look').textContent=b.外貌身材||'待生成';\nvar at=g(d,'主角.属性',{});document.getElementById('h-psion').textContent=at.灵能等级||0;\ndocument.getElementById('h-gene').textContent=at.基因强化等级||0;\ndocument.getElementById('h-cyber').textContent=at.义体化程度||0;\ndocument.getElementById('h-special').textContent=at.特殊能力||'无';\nvar st=g(d,'主角.状态',{});var hp=st.HP||100,stam=st.体力||100,men=st.精神力||100,ero=st.侵蚀度||0;\ndocument.getElementById('h-hp').textContent=hp+'/100';document.getElementById('h-hp-bar').style.width=hp+'%';\ndocument.getElementById('h-stam').textContent=stam+'/100';document.getElementById('h-stam-bar').style.width=stam+'%';\ndocument.getElementById('h-mental').textContent=men+'/100';document.getElementById('h-mental-bar').style.width=men+'%';\ndocument.getElementById('h-eros').textContent=ero+'/100';document.getElementById('h-eros-bar').style.width=ero+'%';\nvar o=g(d,'主角.着装',{});document.getElementById('g-coat').textContent=g(o,'外套','空置');\ndocument.getElementById('g-top').textContent=g(o,'上衣','空置');document.getElementById('g-bottom').textContent=g(o,'下装','空置');\ndocument.getElementById('g-under').textContent=g(o,'内衣','空置');document.getElementById('g-pants').textContent=g(o,'内裤','空置');\ndocument.getElementById('g-shoe').textContent=g(o,'鞋子','空置');document.getElementById('g-acc').textContent=g(o,'饰品','空置');\nvar inv=g(d,'主角.背包',[]);var ih='';if(Array.isArray(inv)&&inv.length){for(var ii=0;ii<inv.length;ii++){ih+='<div class=\"row\"><span class=\"val\" style=\"font-size:11px\">'+esc(inv[ii])+'</span></div>'}}else{ih='<div class=\"nodata\" style=\"padding:8px\">背包为空</div>'}\ndocument.getElementById('inv').innerHTML=ih;\nvar t=g(d,'任务',{});document.getElementById('t-main').textContent=t.当前任务||'无';\ndocument.getElementById('t-goal').textContent=t.任务目标||'无';\ndocument.getElementById('t-sub').textContent=t.子任务||'无';\ndocument.getElementById('t-status').textContent=t.任务状态||'-';\ndocument.getElementById('t-clues').textContent=t.已获取线索||'无';\nvar nL=g(d,'社交.已遇NPC列表',[]);var nR=g(d,'社交.NPC关系',{});var nh='';\nif(!nL.length)nh='<div class=\"nodata\">尚未遇到NPC</div>';\nelse{for(var ni=0;ni<nL.length;ni++){var n=nL[ni],r=nR[n]||{};var aff=r.好感度||0;var outfit=r.着装||{};\nnh+='<div class=\"npc-card\"><div class=\"npc-head\" onclick=\"this.nextElementSibling.classList.toggle(\\'open\\')\"><div>'+esc(n)+'<span class=\"npc-badge\">'+(r.种族||'')+' · '+esc(r.职业||'')+'</span></div><span style=\"color:var(--pink);font-size:12px\">好感 '+aff+'</span></div><div class=\"npc-body\"><div class=\"text-block\" style=\"margin-top:6px\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">外貌身材</span><br>'+esc(r.外貌身材||'待生成')+'</div><div class=\"text-block\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">看法</span><br><span style=\"color:var(--gold)\">\\\"'+esc(r.看法||'陌生')+'\\\"</span></div><div class=\"bar\" style=\"margin-top:4px\"><div class=\"bar-info\"><span>好感度</span><span style=\"color:var(--pink)\">'+aff+'/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" style=\"width:'+aff+'%;background:var(--pink)\"></div></div></div><div style=\"margin-top:8px\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">当前着装</span><div class=\"gear-grid\" style=\"margin-top:4px\"><div class=\"gear-item\"><div class=\"gear-label\">外套</div><div class=\"gear-val\">'+esc(outfit.外套||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">上衣</div><div class=\"gear-val\">'+esc(outfit.上衣||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">下装</div><div class=\"gear-val\">'+esc(outfit.下装||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">内衣</div><div class=\"gear-val\">'+esc(outfit.内衣||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">内裤</div><div class=\"gear-val\">'+esc(outfit.内裤||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">鞋子</div><div class=\"gear-val\">'+esc(outfit.鞋子||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">饰品</div><div class=\"gear-val\">'+esc(outfit.饰品||'未知')+'</div></div></div></div></div></div>';}}\ndocument.getElementById('npc-list').innerHTML=nh}\ndocument.querySelectorAll('.tab-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')})});\nrender();\nif(typeof eventOn=='function'&&typeof Mvu!=='undefined'){try{eventOn(Mvu.events.VARIABLE_UPDATE_ENDED,function(){setTimeout(render,150)})}catch(e){}}\n</script>\n</body>\n</html>\n```",
+      "replaceString": "```html\n<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n<title>新渊暗都 · 状态面板</title>\n<style>\n:root{--bg:#080b14;--card:#0f1322;--border:#1e2d50;--text:#c8d6e5;--muted:#5a6988;--gold:#f0c040;--cyan:#00e5ff;--blue:#4fc3f7;--purple:#ab47bc;--green:#66bb6a;--orange:#ffa726;--pink:#ec407a;--red:#ef5350;--neon:#39ff14}\n*{margin:0;padding:0;box-sizing:border-box}\nbody{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);display:flex;justify-content:center;padding:12px;font-size:13px;background-image:radial-gradient(ellipse at top,rgba(79,195,247,.04) 0%,transparent 50%),radial-gradient(ellipse at bottom right,rgba(171,71,188,.03) 0%,transparent 40%)}\n.container{width:680px}\n\n/* Header */\n.header{text-align:center;margin-bottom:10px}\n.header h1{font-size:16px;font-weight:800;color:var(--cyan);letter-spacing:2px;text-shadow:0 0 12px rgba(0,229,255,.2)}\n\n/* Tabs */\n.tabs{display:flex;background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:10px 10px 0 0;overflow:hidden}\n.tab-btn{flex:1;padding:10px 4px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:12px;font-weight:600;transition:all .2s;border-bottom:2px solid transparent;letter-spacing:.5px}\n.tab-btn:hover{color:var(--text);background:rgba(255,255,255,.02)}\n.tab-btn.active{color:var(--cyan);border-bottom-color:var(--cyan);background:rgba(0,229,255,.06)}\n\n/* Tab panels */\n.tab-panel{display:none;padding:12px;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;animation:fadeIn .2s ease}\n.tab-panel.active{display:block}\n@keyframes fadeIn{from{opacity:0}to{opacity:1}}\n\n/* Cards */\n.card{background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px}\n.card h3{font-size:11px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}\n.dot{display:inline-block;width:6px;height:6px;border-radius:50%}\n\n/* Rows */\n.row{display:flex;justify-content:space-between;padding:4px 0;font-size:12px}\n.row:last-child{border-bottom:none}\n.row .lbl{color:var(--muted);font-size:11px}\n.row .val{color:var(--text);font-weight:500}\n\n/* Grid */\n.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}\n.grid-item{background:rgba(0,0,0,.15);border:1px solid var(--border);border-radius:6px;padding:8px 6px;text-align:center}\n.grid-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}\n.grid-val{font-size:14px;font-weight:700}\n\n/* Bars */\n.bar{margin:5px 0}\n.bar-info{display:flex;justify-content:space-between;font-size:10px;margin-bottom:2px}\n.bar-track{height:4px;background:rgba(255,255,255,.04);border-radius:2px;overflow:hidden}\n.bar-fill{height:100%;border-radius:2px;transition:width .4s}\n\n/* NPC */\n.nodata{text-align:center;padding:16px;color:var(--muted);font-size:12px}\n.npc-card{background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:8px;margin-bottom:6px;overflow:hidden;transition:all .2s}\n.npc-card:hover{border-color:var(--cyan)}\n.npc-head{padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--text)}\n.npc-badge{font-size:10px;color:var(--muted);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:4px;margin-left:6px}\n.npc-body{display:none;padding:0 12px 12px;font-size:11px}\n.npc-body.open{display:block}\n.text-block{background:rgba(0,0,0,.15);border-radius:5px;padding:8px;margin:4px 0;font-size:11px;line-height:1.5;white-space:pre-wrap}\n\n/* Gear grid */\n.gear-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}\n.gear-item{background:rgba(0,0,0,.15);border:1px solid var(--border);border-radius:4px;padding:6px;text-align:center}\n.gear-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}\n.gear-val{font-size:10px;color:var(--text);margin-top:2px}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<div class=\"header\"><h1>新 渊 暗 都</h1></div>\n<div class=\"tabs\">\n<button class=\"tab-btn active\" data-tab=\"world\">世界</button>\n<button class=\"tab-btn\" data-tab=\"hero\">主角</button>\n<button class=\"tab-btn\" data-tab=\"task\">任务</button>\n<button class=\"tab-btn\" data-tab=\"npc\">社交</button>\n</div>\n<div class=\"tab-panel active\" id=\"world\">\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--cyan)\"></span>时空</h3>\n<div class=\"row\"><span class=\"lbl\">当前时间</span><span class=\"val\" id=\"w-time\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">当前地点</span><span class=\"val\" id=\"w-loc\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">经过天数</span><span class=\"val\" id=\"w-days\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">天气</span><span class=\"val\" id=\"w-weather\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--gold)\"></span>城市动态</h3>\n<div class=\"row\"><span class=\"lbl\">活跃度</span><span class=\"val\" id=\"w-act\">-</span></div>\n<div class=\"text-block\" style=\"margin-top:6px\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">都市流言</span><br><span id=\"w-rumor\" style=\"font-size:11px\">-</span></div>\n</div>\n</div>\n<div class=\"tab-panel\" id=\"hero\">\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--gold)\"></span>身份信息</h3>\n<div class=\"row\"><span class=\"lbl\">姓名</span><span class=\"val\" id=\"h-name\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">出身</span><span class=\"val\" id=\"h-faction\" style=\"color:var(--cyan)\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">职业</span><span class=\"val\" id=\"h-job\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">种族</span><span class=\"val\" id=\"h-race\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">性别</span><span class=\"val\" id=\"h-gender\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">年龄</span><span class=\"val\" id=\"h-age\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">金钱</span><span class=\"val\" id=\"h-money\" style=\"color:var(--gold)\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--purple)\"></span>外貌</h3>\n<div class=\"text-block\"><span id=\"h-look\" style=\"font-size:11px\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--blue)\"></span>核心属性</h3>\n<div class=\"grid\">\n<div class=\"grid-item\"><div class=\"grid-label\">灵能</div><div class=\"grid-val\" style=\"color:var(--purple)\" id=\"h-psion\">0</div></div>\n<div class=\"grid-item\"><div class=\"grid-label\">基因</div><div class=\"grid-val\" style=\"color:var(--green)\" id=\"h-gene\">0</div></div>\n<div class=\"grid-item\"><div class=\"grid-label\">义体</div><div class=\"grid-val\" style=\"color:var(--orange)\" id=\"h-cyber\">0</div></div>\n<div class=\"grid-item\"><div class=\"grid-label\">特殊</div><div class=\"grid-val\" style=\"font-size:10px;color:var(--gold)\" id=\"h-special\">-</div></div>\n</div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--red)\"></span>生存状态</h3>\n<div class=\"bar\"><div class=\"bar-info\"><span>HP</span><span id=\"h-hp\" style=\"color:var(--red)\">100/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-hp-bar\" style=\"width:100%;background:var(--red)\"></div></div></div>\n<div class=\"bar\"><div class=\"bar-info\"><span>体力</span><span id=\"h-stam\" style=\"color:var(--green)\">100/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-stam-bar\" style=\"width:100%;background:var(--green)\"></div></div></div>\n<div class=\"bar\"><div class=\"bar-info\"><span>精神力</span><span id=\"h-mental\" style=\"color:var(--blue)\">100/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-mental-bar\" style=\"width:100%;background:var(--blue)\"></div></div></div>\n<div class=\"bar\"><div class=\"bar-info\"><span>侵蚀度</span><span id=\"h-eros\" style=\"color:var(--purple)\">0/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" id=\"h-eros-bar\" style=\"width:0%;background:var(--purple)\"></div></div></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--green)\"></span>当前着装</h3>\n<div class=\"gear-grid\">\n<div class=\"gear-item\"><div class=\"gear-label\">外套</div><div class=\"gear-val\" id=\"g-coat\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">上衣</div><div class=\"gear-val\" id=\"g-top\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">下装</div><div class=\"gear-val\" id=\"g-bottom\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">内衣</div><div class=\"gear-val\" id=\"g-under\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">内裤</div><div class=\"gear-val\" id=\"g-pants\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">鞋子</div><div class=\"gear-val\" id=\"g-shoe\">-</div></div>\n<div class=\"gear-item\"><div class=\"gear-label\">饰品</div><div class=\"gear-val\" id=\"g-acc\">-</div></div>\n</div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--gold)\"></span>背包</h3>\n<div id=\"inv\"></div>\n</div>\n</div>\n<div class=\"tab-panel\" id=\"task\">\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--orange)\"></span>当前任务</h3>\n<div class=\"row\"><span class=\"lbl\">任务名</span><span class=\"val\" id=\"t-main\" style=\"color:var(--cyan)\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">目标</span><span class=\"val\" id=\"t-goal\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">子任务</span><span class=\"val\" id=\"t-sub\">-</span></div>\n<div class=\"row\"><span class=\"lbl\">状态</span><span class=\"val\" id=\"t-status\">-</span></div>\n</div>\n<div class=\"card\"><h3><span class=\"dot\" style=\"background:var(--pink)\"></span>已获取线索</h3>\n<div class=\"text-block\"><span id=\"t-clues\">-</span></div>\n</div>\n</div>\n<div class=\"tab-panel\" id=\"npc\">\n<div id=\"npc-list\"></div>\n</div>\n</div>\n<script>\nfunction g(o,p,d){var k=p.split('.'),r=o;for(var i=0;i<k.length;i++){if(r&&typeof r=='object'&&k[i]in r)r=r[k[i]];else return d}return r!==undefined?r:d}\nfunction esc(s){if(!s)return '';var r='';for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);if(c===38)r+=String.fromCharCode(38,97,109,112,59);else if(c===60)r+=String.fromCharCode(38,108,116,59);else if(c===62)r+=String.fromCharCode(38,103,116,59);else if(c===34)r+=String.fromCharCode(38,113,117,111,116,59);else r+=s[i]}return r}\nvar DEMO_MODE=true;function render(){var d=null;if(typeof getAllVariables=='function'){var a=getAllVariables();var p=typeof _!=='undefined'?_.get(a,'stat_data'):(a.stat_data||a);if(p&&Object.keys(p).length>0)d=p}if(!d){if(DEMO_MODE){d={世界:{当前时间:'6月29日·星期日 08:15:00',当前地点:'上城区·城防署总部·11层会议室',经过天数:3,天气:'阴天',城市活跃度:'紧张',都市流言:'下城区第三街区连续三天灵能波动异常，巡逻队不敢深入'},主角:{基础:{姓名:'谭不得',势力:'城防署',职业:'外勤特工',种族:'人类',性别:'男',年龄:25,金钱:5000,外貌身材:'二十五岁上下，寸头利落，眉骨和下颌线轮廓硬朗。身高约178cm，肩宽体健但不夸张，右臂有基础型银色义体腕骨，表面有细浅划痕。穿着城防署深蓝制服，眼神带着新人特有的清醒与审慎。'},属性:{灵能等级:15,基因强化等级:0,义体化程度:10,特殊能力:'无'},状态:{HP:92,体力:78,精神力:100,侵蚀度:5},着装:{外套:'城防署深蓝制服',上衣:'制式黑衬衫',下装:'战术长裤',内衣:'无',内裤:'军用内裤',鞋子:'作战靴',饰品:'城防署身份卡'},背包:['标准配枪','通讯器','灵能探测仪']},任务:{当前任务:'调查下城区灵能波动',任务目标:'前往第三街区架设灵能锚点，确认波形性质并上报',子任务:'前往B3车库取车',任务状态:'进行中',已获取线索:'监控拍到暗紫色雾气从下水道渗出；巡逻队员今早失联'},社交:{已遇NPC列表:['赵北','沈星河','莉莉丝·影纱'],NPC关系:{'赵北':{好感度:25,对主角看法:'外勤特遣队副队长，公事公办，对新人还算照顾',主角看法:'靠谱的前辈，虽然话少但做事稳妥',职业:'外勤特遣队副队长',种族:'人类',年龄:36,性别:'男',势力:'城防署',外貌身材:'三十五六岁，黑夹克，右臂全义体化(哑光黑外壳+红色散热槽)，左眼角有疤',着装:{外套:'洗得发白的黑夹克',上衣:'灰T恤',下装:'战术工装裤',内衣:'无',内裤:'军用内裤',鞋子:'作战靴',饰品:'战术手套'}},'沈星河':{好感度:10,对主角看法:'新来的外勤特工，看档案素质和潜力都不错',主角看法:'城防署的铁面署长，让人敬畏但也值得尊敬',职业:'城防署署长',种族:'人类',年龄:42,性别:'男',势力:'城防署',外貌身材:'四十二岁，银灰寸头，左眼角到太阳穴有贯穿刀疤。制服笔挺勋章满胸，眼神冷峻',着装:{外套:'城防署署长制服',上衣:'白衬衫',下装:'西裤',内衣:'无',内裤:'无',鞋子:'皮鞋',饰品:'署长徽章'}},'莉莉丝·影纱':{好感度:5,对主角看法:'一个有意思的新人，值得观察',主角看法:'危险而优雅的血族商人，不可轻信',职业:'暮光商会会长',种族:'血族种',年龄:180,性别:'女',势力:'暮光商会',外貌身材:'外表28岁(实约180岁)，银白长发及腰，暗红瞳孔，左眼下方有泪痣。黑色蕾丝手套包裹修长手指',着装:{外套:'黑色蕾丝长裙',上衣:'维多利亚式衬衫',下装:'长裙',内衣:'未知',内裤:'未知',鞋子:'黑色高跟鞋',饰品:'泪痣·蕾丝手套'}}}}};}else{document.getElementById('npc-list').innerHTML='<div class=\"nodata\">等待数据同步...</div>';return}}\ndocument.getElementById('w-time').textContent=g(d,'世界.当前时间','-');\ndocument.getElementById('w-loc').textContent=g(d,'世界.当前地点','-');\ndocument.getElementById('w-days').textContent='第'+(g(d,'世界.经过天数',0)||0)+'天';\ndocument.getElementById('w-weather').textContent=g(d,'世界.天气','-');\ndocument.getElementById('w-act').textContent=g(d,'世界.城市活跃度','-');\ndocument.getElementById('w-rumor').textContent=g(d,'世界.都市流言','-')||'-';\nvar b=g(d,'主角.基础',{});document.getElementById('h-name').textContent=b.姓名||'-';\ndocument.getElementById('h-faction').textContent=b.势力||'-';\ndocument.getElementById('h-job').textContent=b.职业||'-';\ndocument.getElementById('h-race').textContent=b.种族||'-';\ndocument.getElementById('h-gender').textContent=b.性别||'-';\ndocument.getElementById('h-age').textContent=(b.年龄||'-')+'岁';\ndocument.getElementById('h-money').textContent=(b.金钱||0)+' 夜光币';\ndocument.getElementById('h-look').textContent=b.外貌身材||'待生成';\nvar at=g(d,'主角.属性',{});document.getElementById('h-psion').textContent=at.灵能等级||0;\ndocument.getElementById('h-gene').textContent=at.基因强化等级||0;\ndocument.getElementById('h-cyber').textContent=at.义体化程度||0;\ndocument.getElementById('h-special').textContent=at.特殊能力||'无';\nvar st=g(d,'主角.状态',{});var hp=st.HP||100,stam=st.体力||100,men=st.精神力||100,ero=st.侵蚀度||0;\ndocument.getElementById('h-hp').textContent=hp+'/100';document.getElementById('h-hp-bar').style.width=hp+'%';\ndocument.getElementById('h-stam').textContent=stam+'/100';document.getElementById('h-stam-bar').style.width=stam+'%';\ndocument.getElementById('h-mental').textContent=men+'/100';document.getElementById('h-mental-bar').style.width=men+'%';\ndocument.getElementById('h-eros').textContent=ero+'/100';document.getElementById('h-eros-bar').style.width=ero+'%';\nvar o=g(d,'主角.着装',{});document.getElementById('g-coat').textContent=g(o,'外套','空置');\ndocument.getElementById('g-top').textContent=g(o,'上衣','空置');document.getElementById('g-bottom').textContent=g(o,'下装','空置');\ndocument.getElementById('g-under').textContent=g(o,'内衣','空置');document.getElementById('g-pants').textContent=g(o,'内裤','空置');\ndocument.getElementById('g-shoe').textContent=g(o,'鞋子','空置');document.getElementById('g-acc').textContent=g(o,'饰品','空置');\nvar inv=g(d,'主角.背包',[]);var ih='';if(Array.isArray(inv)&&inv.length){for(var ii=0;ii<inv.length;ii++){ih+='<div class=\"row\"><span class=\"val\" style=\"font-size:11px\">'+esc(inv[ii])+'</span></div>'}}else{ih='<div class=\"nodata\" style=\"padding:8px\">背包为空</div>'}\ndocument.getElementById('inv').innerHTML=ih;\nvar t=g(d,'任务',{});document.getElementById('t-main').textContent=t.当前任务||'无';\ndocument.getElementById('t-goal').textContent=t.任务目标||'无';\ndocument.getElementById('t-sub').textContent=t.子任务||'无';\ndocument.getElementById('t-status').textContent=t.任务状态||'-';\ndocument.getElementById('t-clues').textContent=t.已获取线索||'无';\nvar nL=g(d,'社交.已遇NPC列表',[]);var nR=g(d,'社交.NPC关系',{});var nh='';\nif(!nL.length)nh='<div class=\"nodata\">尚未遇到NPC</div>';\nelse{for(var ni=0;ni<nL.length;ni++){var n=nL[ni],r=nR[n]||{};var aff=r.好感度||0;var outfit=r.着装||{};var npcView=r.对主角看法||'陌生';var myView=r.主角看法||'陌生';var age=r.年龄||'?';var gender=r.性别||'?';var faction=r.势力||'?';\nnh+='<div class=\"npc-card\"><div class=\"npc-head\" onclick=\"this.nextElementSibling.classList.toggle(\\'open\\')\"><div>'+esc(n)+'<span class=\"npc-badge\">'+(r.种族||'')+' · '+esc(r.职业||'')+'</span></div><span style=\"color:var(--pink);font-size:12px\">好感 '+aff+'</span></div><div class=\"npc-body\"><div class=\"row\"><span class=\"lbl\">年龄</span><span class=\"val\">'+age+'岁</span></div><div class=\"row\"><span class=\"lbl\">性别</span><span class=\"val\">'+esc(gender)+'</span></div><div class=\"row\"><span class=\"lbl\">势力</span><span class=\"val\" style=\"color:var(--cyan)\">'+esc(faction)+'</span></div><div class=\"text-block\" style=\"margin-top:6px\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">外貌身材</span><br>'+esc(r.外貌身材||'待生成')+'</div><div class=\"text-block\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">对主角看法</span><br><span style=\"color:var(--gold)\">\\\"'+esc(npcView)+'\\\"</span></div><div class=\"text-block\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">主角对ta看法</span><br><span style=\"font-style:italic\">\\\"'+esc(myView)+'\\\"</span></div><div class=\"bar\" style=\"margin-top:4px\"><div class=\"bar-info\"><span>好感度</span><span style=\"color:var(--pink)\">'+aff+'/100</span></div><div class=\"bar-track\"><div class=\"bar-fill\" style=\"width:'+aff+'%;background:var(--pink)\"></div></div></div><div style=\"margin-top:8px\"><span style=\"color:var(--muted);font-size:9px;letter-spacing:1px\">当前着装</span><div class=\"gear-grid\" style=\"margin-top:4px\"><div class=\"gear-item\"><div class=\"gear-label\">外套</div><div class=\"gear-val\">'+esc(outfit.外套||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">上衣</div><div class=\"gear-val\">'+esc(outfit.上衣||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">下装</div><div class=\"gear-val\">'+esc(outfit.下装||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">内衣</div><div class=\"gear-val\">'+esc(outfit.内衣||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">内裤</div><div class=\"gear-val\">'+esc(outfit.内裤||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">鞋子</div><div class=\"gear-val\">'+esc(outfit.鞋子||'未知')+'</div></div><div class=\"gear-item\"><div class=\"gear-label\">饰品</div><div class=\"gear-val\">'+esc(outfit.饰品||'未知')+'</div></div></div></div></div></div>';}}\ndocument.getElementById('npc-list').innerHTML=nh}\ndocument.querySelectorAll('.tab-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')})});\nrender();\nif(typeof eventOn=='function'&&typeof Mvu!=='undefined'){try{eventOn(Mvu.events.VARIABLE_UPDATE_ENDED,function(){setTimeout(render,150)})}catch(e){}}\n</script>\n</body>\n</html>\n```",
       "trimStrings": [],
       "placement": [
         2
@@ -846,7 +876,6 @@
     },
     "角色创建面板": {
       "id": "char-create-panel",
-      "scriptName": "角色创建面板",
       "findRegex": "<CharacterCreatePanel\\s*/>",
       "replaceString": "```html\n<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n<title>新渊暗都 · 角色创建</title>\n<style>\n:root{\n  --bg:#080b14;--card:#0f1322;--border:#1e2d50;\n  --text:#c8d6e5;--muted:#5a6988;--gold:#f0c040;\n  --blue:#4fc3f7;--purple:#ab47bc;--green:#66bb6a;\n  --orange:#ffa726;--pink:#ec407a;--red:#ef5350;\n  --cyan:#00e5ff;--neon:#39ff14;\n}\n*{margin:0;padding:0;box-sizing:border-box}\nbody{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);display:flex;justify-content:center;padding:16px;font-size:14px;background-image:radial-gradient(ellipse at top,rgba(79,195,247,.06) 0%,transparent 60%),radial-gradient(ellipse at bottom right,rgba(171,71,188,.04) 0%,transparent 50%)}\n.container{max-width:820px;width:100%}\n\n/* Header */\n.panel-header{text-align:center;margin-bottom:20px}\n.panel-header .logo{font-size:28px;font-weight:800;color:var(--cyan);letter-spacing:4px;text-shadow:0 0 20px rgba(0,229,255,.3)}\n.panel-header .tagline{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:2px}\n\n/* Step indicator */\n.steps{display:flex;justify-content:center;gap:0;margin-bottom:24px;background:var(--card);border-radius:30px;padding:4px;border:1px solid var(--border)}\n.step{flex:1;padding:10px 12px;text-align:center;font-size:11px;color:var(--muted);border-radius:26px;cursor:default;transition:all .3s;position:relative;white-space:nowrap}\n.step.active{background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(79,195,247,.08));color:var(--cyan);font-weight:600;box-shadow:inset 0 0 12px rgba(0,229,255,.08)}\n.step.done{color:var(--green)}\n.step .step-num{display:block;font-size:10px;opacity:.6;margin-bottom:2px}\n\n/* Panel */\n.step-panel{display:none;animation:fadeIn .25s ease}\n.step-panel.active{display:block}\n@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}\n\n/* Card */\n.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px}\n.card-header{margin-bottom:18px}\n.card-header h2{font-size:17px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}\n.card-header .icon{font-size:22px}\n.card-header p{font-size:12px;color:var(--muted);margin-top:4px}\n\n/* Options grid */\n.options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}\n.option-card{background:rgba(255,255,255,.02);border:2px solid var(--border);border-radius:12px;padding:18px 16px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}\n.option-card:hover{border-color:var(--cyan);background:rgba(0,229,255,.04);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}\n.option-card.selected{border-color:var(--cyan);background:rgba(0,229,255,.08);box-shadow:0 0 20px rgba(0,229,255,.1)}\n.option-card.disabled{opacity:.35;cursor:not-allowed;pointer-events:none;filter:grayscale(.5)}\n.option-card .opt-icon{font-size:30px;margin-bottom:8px;line-height:1}\n.option-card .opt-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}\n.option-card .opt-desc{font-size:11px;color:var(--muted);line-height:1.5}\n.option-card .opt-badge{position:absolute;top:8px;right:8px;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600}\n.option-card.gender-card{padding:20px 16px}\n.option-card.gender-card .opt-icon{font-size:40px;margin-bottom:0}\n.badge-legend{background:rgba(255,107,0,.2);color:#ff8c42;border:1px solid rgba(255,107,0,.3)}\n.badge-special{background:rgba(171,71,188,.2);color:#ce93d8;border:1px solid rgba(171,71,188,.3)}\n.badge-faction{position:absolute;bottom:10px;right:10px;font-size:9px;color:var(--muted);opacity:.5}\n\n/* Info bar */\n.info-bar{background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:var(--cyan);display:none;animation:fadeIn .3s ease}\n.warning-bar{background:rgba(255,107,0,.06);border:1px solid rgba(255,107,0,.2);border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#ff8c42;display:none;animation:fadeIn .3s ease}\n\n/* Form */\n.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}\n.form-group{margin-bottom:0}\n.form-group label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px}\n.form-group input{width:100%;padding:14px 16px;border-radius:10px;border:2px solid var(--border);background:rgba(0,0,0,.2);color:var(--text);font-size:15px;transition:all .2s}\n.form-group input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 12px rgba(0,229,255,.08)}\n.form-group input::placeholder{color:var(--muted)}\n\n/* Preview */\n.preview{background:rgba(0,0,0,.2);border:2px solid var(--cyan);border-radius:12px;padding:24px;margin-bottom:0}\n.preview h3{font-size:14px;color:var(--cyan);margin-bottom:16px;text-transform:uppercase;letter-spacing:2px}\n.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}\n.preview-item{display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:6px;font-size:13px}\n.preview-label{color:var(--muted)}\n.preview-value{color:var(--text);font-weight:500}\n.preview-value.gold{color:var(--gold)}\n\n/* Buttons */\n.btn-group{display:flex;gap:12px;margin-top:18px;justify-content:center}\n.btn{padding:12px 28px;border-radius:10px;border:none;cursor:pointer;font-size:14px;font-weight:600;transition:all .25s;letter-spacing:.5px}\n.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;box-shadow:0 4px 16px rgba(0,229,255,.2)}\n.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,229,255,.3)}\n.btn-secondary{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--border)}\n.btn-secondary:hover{background:rgba(255,255,255,.1)}\n.btn-create{background:linear-gradient(135deg,var(--neon),var(--cyan));color:#000;font-weight:700;width:100%;font-size:15px;padding:14px;box-shadow:0 4px 20px rgba(57,255,20,.2);letter-spacing:1px}\n.btn-create:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(57,255,20,.3)}\n.btn-create:disabled{opacity:.5;cursor:not-allowed;transform:none;filter:grayscale(.3)}\n\n/* Card text */\n.card-header h2{font-size:16px}\n.card-header p{font-size:11px;line-height:1.5}\n.form-group label{font-size:11px;margin-bottom:5px}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<div class=\"panel-header\">\n<div class=\"logo\">新 渊 暗 都</div>\n<div class=\"tagline\">NEO-ABYSS · 角色身份创建</div>\n</div>\n\n<div class=\"steps\">\n<div class=\"step active\" data-step=\"1\"><span class=\"step-num\">01</span>势力</div>\n<div class=\"step\" data-step=\"2\"><span class=\"step-num\">02</span>职业</div>\n<div class=\"step\" data-step=\"3\"><span class=\"step-num\">03</span>种族</div>\n<div class=\"step\" data-step=\"4\"><span class=\"step-num\">04</span>性别</div>\n<div class=\"step\" data-step=\"5\"><span class=\"step-num\">05</span>信息</div>\n<div class=\"step\" data-step=\"6\"><span class=\"step-num\">06</span>确认</div>\n</div>\n\n<div class=\"step-panel active\" id=\"step1\">\n<div class=\"card\">\n<div class=\"card-header\"><h2><span class=\"icon\">🏛️</span>选择你的势力</h2><p>决定你在新渊城的立场、盟友与敌人</p></div>\n<div class=\"options-grid\" id=\"faction-options\"></div>\n<div class=\"info-bar\" id=\"faction-info\"></div>\n</div>\n<div class=\"btn-group\"><button class=\"btn btn-primary\" onclick=\"nextStep(1)\">下一步 →</button></div>\n</div>\n\n<div class=\"step-panel\" id=\"step2\">\n<div class=\"card\">\n<div class=\"card-header\"><h2><span class=\"icon\">⚔️</span>选择你的职业</h2><p>你的专长将影响初始属性与开局任务</p></div>\n<div class=\"options-grid\" id=\"job-options\"></div>\n<div class=\"info-bar\" id=\"job-info\"></div>\n</div>\n<div class=\"btn-group\"><button class=\"btn btn-secondary\" onclick=\"prevStep(2)\">← 上一步</button><button class=\"btn btn-primary\" onclick=\"nextStep(2)\">下一步 →</button></div>\n</div>\n\n<div class=\"step-panel\" id=\"step3\">\n<div class=\"card\">\n<div class=\"card-header\"><h2><span class=\"icon\">🧬</span>选择你的种族</h2><p>种族决定先天特性与可选势力</p></div>\n<div class=\"options-grid\" id=\"race-options\"></div>\n<div class=\"warning-bar\" id=\"race-warning\"></div>\n<div class=\"info-bar\" id=\"race-info\"></div>\n</div>\n<div class=\"btn-group\"><button class=\"btn btn-secondary\" onclick=\"prevStep(3)\">← 上一步</button><button class=\"btn btn-primary\" onclick=\"nextStep(3)\">下一步 →</button></div>\n</div>\n\n<div class=\"step-panel\" id=\"step4\">\n<div class=\"card\">\n<div class=\"card-header\"><h2><span class=\"icon\">👤</span>选择你的性别</h2><p>部分种族有性别限制</p></div>\n<div class=\"options-grid\" id=\"gender-options\"></div>\n<div class=\"warning-bar\" id=\"gender-warning\"></div>\n</div>\n<div class=\"btn-group\"><button class=\"btn btn-secondary\" onclick=\"prevStep(4)\">← 上一步</button><button class=\"btn btn-primary\" onclick=\"nextStep(4)\">下一步 →</button></div>\n</div>\n\n<div class=\"step-panel\" id=\"step5\">\n<div class=\"card\">\n<div class=\"card-header\"><h2><span class=\"icon\">📝</span>填写基础信息</h2></div>\n<div class=\"form-row\">\n<div class=\"form-group\"><label>角色姓名</label><input type=\"text\" id=\"char-name\" placeholder=\"输入角色姓名\" maxlength=\"20\"></div>\n<div class=\"form-group\"><label>年龄 (16-300)</label><input type=\"number\" id=\"char-age\" min=\"16\" max=\"300\" value=\"25\"></div>\n</div>\n</div>\n<div class=\"btn-group\"><button class=\"btn btn-secondary\" onclick=\"prevStep(5)\">← 上一步</button><button class=\"btn btn-primary\" onclick=\"nextStep(5)\">下一步 →</button></div>\n</div>\n\n<div class=\"step-panel\" id=\"step6\">\n<div class=\"card\">\n<div class=\"card-header\"><h2><span class=\"icon\">✅</span>确认角色信息</h2><p>检查无误后点击确认创建</p></div>\n<div class=\"preview\" id=\"char-preview\"></div>\n</div>\n<div class=\"btn-group\"><button class=\"btn btn-secondary\" onclick=\"prevStep(6)\">← 上一步</button><button class=\"btn btn-create\" onclick=\"createCharacter()\">确认创建角色</button></div>\n</div>\n</div>\n<script>\nvar FACTIONS={'城防署':{desc:'官方治安力量，维护城市表面秩序。外勤特工与灵能调查员驻守上城区',icon:'🏛️',jobs:['外勤特工','灵能调查员'],location:'上城区·城防署总部·会议室',startingMoney:5000,weather:'晴朗',rumor:'下城区灵能波动异常'},'深渊议会':{desc:'暗影中的绝对反派。追求三路线融合的禁忌实验',icon:'🌑',jobs:['暗影执行者','议会学者'],location:'深渊裂隙·深渊议会据点·议事厅',startingMoney:8000,weather:'极光',rumor:'议会调动暗影执行者'},'自由行者联盟':{desc:'只认钱不认人的佣兵组织。赏金猎人与街区医生聚集地',icon:'🔫',jobs:['赏金猎人','街区医生'],location:'中城区·自由行者酒吧·大厅',startingMoney:3000,weather:'阴天',rumor:'义体暴走者出没'},'暮光商会':{desc:'中立情报交易商。一切皆可买卖',icon:'💎',jobs:['情报掮客','器械师'],location:'上城区·暮光交易所·VIP厅',startingMoney:10000,weather:'多云',rumor:'沈星河调查旧案'}};\nvar RACES={'人类':{rarity:'普通',lockGender:null,blockFactions:[],desc:'适应性极强，三条强化路线均无先天偏向',icon:'👤'},'精灵种':{rarity:'普通',lockGender:null,blockFactions:[],desc:'远古自然契约后裔，寿命300+，基因强化上限+10',icon:'🌿'},'兽化种':{rarity:'普通',lockGender:null,blockFactions:[],desc:'兽灵血统觉醒，感官敏锐，灵能初始+10',icon:'🐾'},'血族种':{rarity:'特殊',lockGender:'女',blockFactions:['城防署'],desc:'初源之血的女性血脉，白日减半·黑夜翻倍',icon:'🩸'},'半机械体':{rarity:'特殊',lockGender:null,blockFactions:['深渊议会'],desc:'先天义体化20%，义体上限+15',icon:'⚙️'},'天使种':{rarity:'传说',lockGender:'女',blockFactions:['深渊议会','暮光商会'],desc:'圣光审判庭幸存遗民，光系灵能锁定',icon:'🪽'},'恶魔种':{rarity:'传说',lockGender:'男',blockFactions:['城防署'],desc:'深渊裂隙叛逃者后裔，暗系灵能·地狱火',icon:'🔥'},'纯机械生命体':{rarity:'传说',lockGender:null,blockFactions:['深渊议会'],desc:'失落科技觉醒AI，无灵能无基因·义体满级',icon:'🔷'}};\nvar JOBS={'外勤特工':{desc:'城防署前线作战，执行巡逻与突袭任务',icon:'🛡️',attributes:{灵能等级:10,义体化程度:10},outfit:{外套:'城防署制服外套',上衣:'制式衬衫',下装:'战术长裤',鞋子:'作战靴'},inventory:['城防署身份卡','通讯器','标准配枪'],task:'调查下城区灵能波动',objective:'查明波动源头'},'灵能调查员':{desc:'灵能事件专家，追踪并分析异常波动',icon:'🔍',attributes:{灵能等级:20},outfit:{外套:'城防署制服外套',上衣:'制式衬衫',下装:'战术长裤',鞋子:'作战靴'},inventory:['城防署身份卡','通讯器','灵能探测仪'],task:'调查觉醒者失踪案',objective:'分析波动残留'},'暗影执行者':{desc:'议会精锐刺客，暗杀·绑架·渗透',icon:'🗡️',attributes:{灵能等级:30,义体化程度:20},erosion:15,outfit:{外套:'议会战术斗篷',上衣:'暗影作战服',下装:'战术长裤',鞋子:'静音作战靴'},inventory:['议会徽章','通讯器','深渊短刃'],task:'绑架光系觉醒者',objective:'带回议会'},'议会学者':{desc:'三路线融合研究员，禁忌实验的执笔人',icon:'📖',attributes:{灵能等级:20,基因强化等级:30},erosion:10,outfit:{外套:'学者长袍',上衣:'实验服',下装:'长裙',鞋子:'低跟皮鞋'},inventory:['议会学者徽章','便携实验箱'],task:'窃取基因稳定剂配方',objective:'获取配方'},'赏金猎人':{desc:'追踪悬赏目标，为报酬而战',icon:'🎯',attributes:{灵能等级:10,义体化程度:10},outfit:{外套:'皮质夹克',上衣:'汗衫',下装:'工装裤',鞋子:'军靴'},inventory:['联盟徽章','通讯器','改装手枪'],task:'猎杀义体暴走者',objective:'猎杀目标'},'街区医生':{desc:'街头义体手术与基因注射',icon:'🩺',attributes:{基因强化等级:20,义体化程度:10},outfit:{外套:'白大褂',上衣:'手术服',下装:'工装裤',鞋子:'防滑鞋'},inventory:['联盟徽章','便携医疗箱'],task:'救治兽化种老大',objective:'义体排异手术'},'情报掮客':{desc:'情报交易与信息编织',icon:'🕸️',attributes:{基因强化等级:10},outfit:{外套:'黑色风衣',上衣:'衬衫',下装:'西裤',鞋子:'皮鞋'},inventory:['商会徽章','加密通讯器'],task:'向沈星河转卖情报',objective:'伪装来源'},'器械师':{desc:'义体维修与装备改装',icon:'🔩',attributes:{义体化程度:15},outfit:{外套:'工装外套',上衣:'工作服',下装:'多袋工装裤',鞋子:'防静电靴'},inventory:['商会徽章','便携工具箱'],task:'更换林夜机械臂核心',objective:'扫描左臂数据'}};\nvar selectedFaction=null,selectedJob=null,selectedRace=null,selectedGender=null;\nfunction init(){renderFactionOptions()}\nfunction renderFactionOptions(){var c=document.getElementById('faction-options');c.innerHTML='';Object.keys(FACTIONS).forEach(function(n){var f=FACTIONS[n];var b=document.createElement('div');b.className='option-card';b.innerHTML='<div class=\"opt-icon\">'+f.icon+'</div><div class=\"opt-name\">'+n+'</div><div class=\"opt-desc\">'+f.desc+'</div>';b.onclick=function(){selectFaction(n,this)};c.appendChild(b)})}\nfunction renderJobOptions(){var c=document.getElementById('job-options');c.innerHTML='';FACTIONS[selectedFaction].jobs.forEach(function(n){var j=JOBS[n];var b=document.createElement('div');b.className='option-card';b.innerHTML='<div class=\"opt-icon\">'+j.icon+'</div><div class=\"opt-name\">'+n+'</div><div class=\"opt-desc\">'+j.desc+'</div>';b.onclick=function(){selectJob(n,this)};c.appendChild(b)})}\nfunction renderRaceOptions(){var c=document.getElementById('race-options');c.innerHTML='';Object.keys(RACES).forEach(function(n){var r=RACES[n];var blocked=r.blockFactions.indexOf(selectedFaction)>=0;var b=document.createElement('div');b.className='option-card'+(blocked?' disabled':'');var tag='';if(r.rarity==='传说')tag='<span class=\"opt-badge badge-legend\">传说</span>';else if(r.rarity==='特殊')tag='<span class=\"opt-badge badge-special\">特殊</span>';b.innerHTML=tag+'<div class=\"opt-icon\">'+r.icon+'</div><div class=\"opt-name\">'+n+'</div><div class=\"opt-desc\">'+r.desc+'</div>';if(!blocked)b.onclick=function(){selectRace(n,this)};c.appendChild(b)})}\nfunction renderGenderOptions(){var c=document.getElementById('gender-options');c.innerHTML='';var r=RACES[selectedRace];var locked=r.lockGender;['男','女'].forEach(function(g){var b=document.createElement('div');var isLocked=locked&&locked!==g;b.className='option-card gender-card'+(isLocked?' disabled':'')+(selectedGender===g?' selected':'');b.innerHTML='<div class=\"opt-icon\">'+(g==='男'?'♂️':'♀️')+'</div>';if(!isLocked){b.onclick=function(){selectGender(g,this)};if(locked===g){selectedGender=g;b.classList.add('selected')}}c.appendChild(b)});if(locked){document.getElementById('gender-warning').textContent='⚠ '+selectedRace+'限制性别为 '+locked+'，已自动锁定';document.getElementById('gender-warning').style.display='block';selectedGender=locked}else{document.getElementById('gender-warning').style.display='none'}}\nfunction renderPreview(){var n=document.getElementById('char-name').value||'待设定';var a=document.getElementById('char-age').value;var r=RACES[selectedRace];var f=FACTIONS[selectedFaction];var maxAge=selectedRace==='精灵种'?300:100;var finalAge=Math.min(Math.max(parseInt(a)||25,16),maxAge);document.getElementById('char-age').value=finalAge;document.getElementById('char-preview').innerHTML='<h3>'+f.icon+' '+selectedFaction+' · '+selectedJob+'</h3><div style=\"display:flex;align-items:center;gap:16px;margin:16px 0;padding:16px;background:rgba(255,255,255,.02);border-radius:10px\"><div style=\"font-size:48px;line-height:1\">'+r.icon+'</div><div><div style=\"font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px\">'+n+'</div><div style=\"font-size:13px;color:var(--muted)\">'+selectedRace+' · '+r.rarity+' · '+selectedGender+' · '+finalAge+'岁</div><div style=\"font-size:13px;color:var(--gold);margin-top:4px\">'+f.startingMoney+' 夜光币</div></div></div><div style=\"font-size:12px;color:var(--muted);line-height:1.6;padding:10px;background:rgba(0,0,0,.15);border-radius:8px\">📌 <span style=\"color:var(--gold)\">种族特性:</span> '+r.desc+'</div>'}\nfunction selectFaction(n,el){selectedFaction=n;document.querySelectorAll('#faction-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected');document.getElementById('faction-info').textContent='📌 '+FACTIONS[n].desc;document.getElementById('faction-info').style.display='block'}\nfunction selectJob(n,el){selectedJob=n;document.querySelectorAll('#job-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected');document.getElementById('job-info').textContent='📌 '+JOBS[n].desc;document.getElementById('job-info').style.display='block'}\nfunction selectRace(n,el){selectedRace=n;document.querySelectorAll('#race-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected');document.getElementById('race-info').textContent='📌 '+RACES[n].desc;document.getElementById('race-info').style.display='block'}\nfunction selectGender(g,el){selectedGender=g;document.querySelectorAll('#gender-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected')}\nfunction nextStep(cur){if(cur===1&&!selectedFaction){alert('请选择一个势力');return}if(cur===2&&!selectedJob){alert('请选择一个职业');return}if(cur===3&&!selectedRace){alert('请选择一个种族');return}if(cur===4&&!selectedGender){alert('请选择性别');return}if(cur===5){var n=document.getElementById('char-name').value.trim();if(!n){alert('请输入角色姓名');return}}document.querySelector('.step[data-step=\"'+cur+'\"]').classList.remove('active');document.querySelector('.step[data-step=\"'+cur+'\"]').classList.add('done');document.querySelector('.step[data-step=\"'+(cur+1)+'\"]').classList.add('active');document.getElementById('step'+cur).classList.remove('active');document.getElementById('step'+(cur+1)).classList.add('active');if(cur===1)renderJobOptions();if(cur===2)renderRaceOptions();if(cur===3)renderGenderOptions();if(cur===5)renderPreview()}\nfunction prevStep(cur){document.querySelector('.step[data-step=\"'+cur+'\"]').classList.remove('active');document.querySelector('.step[data-step=\"'+(cur-1)+'\"]').classList.remove('done');document.querySelector('.step[data-step=\"'+(cur-1)+'\"]').classList.add('active');document.getElementById('step'+cur).classList.remove('active');document.getElementById('step'+(cur-1)).classList.add('active')}\nvar adventureStarted=false;\nfunction createCharacter(){\nif(adventureStarted)return;\nvar n=document.getElementById('char-name').value.trim();\nvar a=parseInt(document.getElementById('char-age').value);\nvar f=FACTIONS[selectedFaction];var j=JOBS[selectedJob];var r=RACES[selectedRace];var g=selectedGender;if(r.lockGender)g=r.lockGender;var maxAge=selectedRace==='精灵种'?300:100;var age=Math.min(Math.max(a||25,16),maxAge);var outfit=Object.assign({内衣:'无',内裤:'普通内裤'},j.outfit||{});if(g==='女')outfit.内衣=outfit.内衣==='无'?'运动内衣':outfit.内衣;var attr=Object.assign({灵能等级:0,基因强化等级:0,义体化程度:0,特殊能力:'无'},j.attributes||{});if(selectedRace==='纯机械生命体'){attr.灵能等级=0;attr.基因强化等级=0;attr.义体化程度=100;attr.特殊能力='机械意识觉醒'}else if(selectedRace==='半机械体'){attr.义体化程度=Math.max(attr.义体化程度,20)}var status={HP:100,体力:100,精神力:100,侵蚀度:0};if(selectedRace==='纯机械生命体')status.精神力=0;if(j.erosion)status.侵蚀度=j.erosion;\nadventureStarted=true;\nvar btn=document.querySelector('.btn-create');if(btn){btn.disabled=true;btn.style.opacity='.5';btn.style.cursor='not-allowed'}\nvar narrative='角色创建完成。我叫'+n+'，'+selectedRace+'，'+selectedFaction+'的'+selectedJob+'。现在，故事开始了。请根据我的身份展开开场叙事，并为我的外貌身材生成一段描写。';\nvar patches=[];patches.push({op:'replace',path:'/主角/基础/姓名',value:n});patches.push({op:'replace',path:'/主角/基础/种族',value:selectedRace});patches.push({op:'replace',path:'/主角/基础/年龄',value:age});patches.push({op:'replace',path:'/主角/基础/职业',value:selectedJob});patches.push({op:'replace',path:'/主角/基础/性别',value:g});patches.push({op:'replace',path:'/主角/基础/势力',value:selectedFaction});patches.push({op:'replace',path:'/主角/基础/金钱',value:f.startingMoney});patches.push({op:'replace',path:'/主角/属性/灵能等级',value:attr.灵能等级});patches.push({op:'replace',path:'/主角/属性/基因强化等级',value:attr.基因强化等级});patches.push({op:'replace',path:'/主角/属性/义体化程度',value:attr.义体化程度});patches.push({op:'replace',path:'/主角/属性/特殊能力',value:attr.特殊能力});patches.push({op:'replace',path:'/主角/状态/侵蚀度',value:status.侵蚀度});patches.push({op:'replace',path:'/主角/状态/精神力',value:status.精神力});patches.push({op:'replace',path:'/主角/着装/外套',value:outfit.外套||'无'});patches.push({op:'replace',path:'/主角/着装/上衣',value:outfit.上衣||'无'});patches.push({op:'replace',path:'/主角/着装/下装',value:outfit.下装||'无'});patches.push({op:'replace',path:'/主角/着装/内衣',value:outfit.内衣||'无'});patches.push({op:'replace',path:'/主角/着装/内裤',value:outfit.内裤||'无'});patches.push({op:'replace',path:'/主角/着装/鞋子',value:outfit.鞋子||'无'});patches.push({op:'replace',path:'/主角/着装/饰品',value:outfit.饰品||'无'});patches.push({op:'replace',path:'/主角/背包',value:j.inventory||['身份卡','通讯器']});patches.push({op:'replace',path:'/世界/当前地点',value:f.location});patches.push({op:'replace',path:'/世界/天气',value:f.weather});patches.push({op:'replace',path:'/世界/都市流言',value:f.rumor});patches.push({op:'replace',path:'/任务/当前任务',value:j.task||'无'});patches.push({op:'replace',path:'/任务/任务目标',value:j.objective||'无'});patches.push({op:'replace',path:'/任务/任务状态',value:j.task?'进行中':'无任务'});\nvar ps=JSON.stringify(patches);\nvar uv='<Up'+'dateVariable>';var ue='</Up'+'dateVariable>';\nvar fp='/send '+narrative+'\\n\\n<span style=\"display:none;\">\\n'+uv+'\\n<JSONPatch>\\n'+ps+'\\n</JSONPatch>\\n'+ue+'\\n</span>|/trigger';\nif(typeof triggerSlash==='function'){triggerSlash(fp)}else{alert('角色创建完成！\\n\\n若未自动发送，请复制以下文本手动发送：\\n\\n'+narrative)}\n}\ninit()\n</script>\n</body>\n</html>\n```",
       "trimStrings": [],

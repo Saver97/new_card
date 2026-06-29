@@ -73,9 +73,13 @@ const 任务Schema = z.object({
 
 const NPC关系详情Schema = z.object({
   好感度: z.coerce.number().min(0).max(100).prefault(0),
-  看法: z.string().prefault('陌生'),
+  对主角看法: z.string().prefault('陌生'),
+  主角看法: z.string().prefault('陌生'),
   职业: z.string().prefault('未知'),
   种族: z.string().prefault('未知'),
+  年龄: z.coerce.number().min(0).max(999).prefault(0),
+  性别: z.string().prefault('未知'),
+  势力: z.string().prefault('未知'),
   外貌身材: z.string().prefault('待生成'),
   着装: z.object({
     外套: z.string().prefault('未知'),
