@@ -81,6 +81,12 @@ const NPC关系详情Schema = z.object({
   性别: z.string().prefault('未知'),
   势力: z.string().prefault('未知'),
   外貌身材: z.string().prefault('待生成'),
+  属性: z.object({
+    灵能等级: z.coerce.number().min(0).max(100).prefault(0),
+    基因强化等级: z.coerce.number().min(0).max(100).prefault(0),
+    义体化程度: z.coerce.number().min(0).max(100).prefault(0),
+    特殊能力: z.string().prefault('未知'),
+  }).prefault({}),
   着装: z.object({
     外套: z.string().prefault('未知'),
     上衣: z.string().prefault('未知'),
