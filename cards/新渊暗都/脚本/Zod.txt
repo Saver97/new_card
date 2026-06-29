@@ -1,100 +1,72 @@
 import { registerMvuSchema } from 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';
-// 注入：validate-mvu 会提供全局 z（Zod v4）和 _（lodash），不依赖本地 node_modules
-// 运行时脚本/Zod.txt 也通过 registerMvuSchema 注入
-
-// ========== 主角域 ==========
-
-const 主角基础Schema = z.object({
-  姓名: z.string().prefault('待设定'),
-  种族: z.enum(['人类', '精灵种', '兽化种', '血族种', '半机械体', '天使种', '恶魔种', '纯机械生命体']).prefault('人类'),
-  年龄: z.coerce.number().min(16).max(300).prefault(25),
-  职业: z.enum(['外勤特工', '灵能调查员', '暗影执行者', '议会学者', '赏金猎人', '街区医生', '情报掮客', '器械师']).prefault('外勤特工'),
-  性别: z.enum(['男', '女']).prefault('男'),
-  势力: z.enum(['城防署', '深渊议会', '自由行者联盟', '暮光商会']).prefault('城防署'),
-  金钱: z.coerce.number().min(0).max(999999999).prefault(5000),
-  外貌身材: z.string().prefault('待生成'),
-});
-
-const 主角属性Schema = z.object({
-  灵能等级: z.coerce.number().min(0).max(100).prefault(0),
-  基因强化等级: z.coerce.number().min(0).max(100).prefault(0),
-  义体化程度: z.coerce.number().min(0).max(100).prefault(0),
-  特殊能力: z.string().prefault('无'),
-});
-
-const 主角状态Schema = z.object({
-  HP: z.coerce.number().min(0).max(100).prefault(100),
-  体力: z.coerce.number().min(0).max(100).prefault(100),
-  精神力: z.coerce.number().min(0).max(100).prefault(100),
-  侵蚀度: z.coerce.number().min(0).max(100).prefault(0),
-});
-
-const 主角着装Schema = z.object({
-  外套: z.string().prefault('无'),
-  上衣: z.string().prefault('普通衬衫'),
-  下装: z.string().prefault('普通裤子'),
-  内衣: z.string().prefault('无'),
-  内裤: z.string().prefault('普通内裤'),
-  鞋子: z.string().prefault('普通鞋子'),
-  饰品: z.string().prefault('无'),
-});
-
-const 主角Schema = z.object({
-  基础: 主角基础Schema,
-  属性: 主角属性Schema,
-  状态: 主角状态Schema,
-  着装: 主角着装Schema,
-  背包: z.array(z.string()).prefault([]),
-  战斗定位: z.enum(['前排坦克', '中排输出', '后排支援', '游走刺客', '控场法师', '全能混合']).prefault('中排输出'),
-  当前情绪: z.string().prefault('平静'),
-});
-
-// ========== 世界域 ==========
-
-const 世界Schema = z.object({
-  当前时间: z.string().prefault('6月29日·星期日 08:00:00'),
-  当前地点: z.string().prefault('上城区·城防署总部·会议室'),
-  经过天数: z.coerce.number().min(0).max(999).prefault(0),
-  天气: z.enum(['晴朗', '多云', '阴天', '小雨', '大雨', '暴雨', '雾霾', '极光']).prefault('晴朗'),
-  都市流言: z.string().prefault('暂无'),
-  城市活跃度: z.enum(['平静', '正常', '紧张', '混乱', '危机']).prefault('正常'),
-});
-
-// ========== 任务域 ==========
-
-const 任务Schema = z.object({
-  当前任务: z.string().prefault('无'),
-  任务目标: z.string().prefault('无'),
-  子任务: z.string().prefault('无'),
-  已获取线索: z.string().prefault('无'),
-  任务状态: z.enum(['进行中', '已完成', '已放弃', '无任务']).prefault('无任务'),
-});
-
-// ========== 社交域 ==========
-
-const NPC关系详情Schema = z.object({
-  好感度: z.coerce.number().min(0).max(100).prefault(0),
-  看法: z.string().prefault('陌生'),
-  职业: z.string().prefault('未知'),
-  种族: z.string().prefault('未知'),
-  外貌身材: z.string().prefault('待生成'),
-});
-
-const 社交Schema = z.object({
-  已遇NPC列表: z.array(z.string()).prefault([]),
-  当前交互NPC: z.string().prefault('无'),
-  NPC关系: z.record(NPC关系详情Schema).prefault({}),
-});
-
-// ========== 总Schema ==========
+// 新渊暗都 MVU 变量结构 — schema.ts
+// z (zod 4.x) 与 _ (lodash) 全局可用，无需 import
+// 遵循 tavern-cards skill 的 zod-rule.yaml：幂等、z.coerce.number()、_.clamp、.prefault()
 
 export const Schema = z.object({
-  主角: 主角Schema,
-  世界: 世界Schema,
-  任务: 任务Schema,
-  社交: 社交Schema,
+  主角: z.object({
+    基础: z.object({
+      姓名: z.string().prefault('待设定'),
+      种族: z.string().prefault('人类'),
+      年龄: z.coerce.number().min(16).max(300).prefault(25),
+      职业: z.string().prefault('外勤特工'),
+      性别: z.string().prefault('男'),
+      势力: z.string().prefault('城防署'),
+      金钱: z.coerce.number().min(0).max(999999999).prefault(5000),
+      外貌身材: z.string().prefault('待生成'),
+    }).prefault({}),
+    属性: z.object({
+      灵能等级: z.coerce.number().min(0).max(100).prefault(0),
+      基因强化等级: z.coerce.number().min(0).max(100).prefault(0),
+      义体化程度: z.coerce.number().min(0).max(100).prefault(0),
+      特殊能力: z.string().prefault('无'),
+    }).prefault({}),
+    状态: z.object({
+      HP: z.coerce.number().min(0).max(100).prefault(100),
+      体力: z.coerce.number().min(0).max(100).prefault(100),
+      精神力: z.coerce.number().min(0).max(100).prefault(100),
+      侵蚀度: z.coerce.number().min(0).max(100).prefault(0),
+    }).prefault({}),
+    着装: z.object({
+      外套: z.string().prefault('无'),
+      上衣: z.string().prefault('普通衬衫'),
+      下装: z.string().prefault('普通裤子'),
+      内衣: z.string().prefault('无'),
+      内裤: z.string().prefault('普通内裤'),
+      鞋子: z.string().prefault('普通鞋子'),
+      饰品: z.string().prefault('无'),
+    }).prefault({}),
+    背包: z.array(z.string()).prefault([]),
+    战斗定位: z.string().prefault('中排输出'),
+    当前情绪: z.string().prefault('平静'),
+  }).prefault({}),
+  世界: z.object({
+    当前时间: z.string().prefault('6月29日·星期日 08:00:00'),
+    当前地点: z.string().prefault('上城区·城防署总部·会议室'),
+    经过天数: z.coerce.number().min(0).max(999).prefault(0),
+    天气: z.string().prefault('晴朗'),
+    都市流言: z.string().prefault('暂无'),
+    城市活跃度: z.string().prefault('正常'),
+  }).prefault({}),
+  任务: z.object({
+    当前任务: z.string().prefault('无'),
+    任务目标: z.string().prefault('无'),
+    子任务: z.string().prefault('无'),
+    已获取线索: z.string().prefault('无'),
+    任务状态: z.string().prefault('无任务'),
+  }).prefault({}),
+  社交: z.object({
+    已遇NPC列表: z.array(z.string()).prefault([]),
+    当前交互NPC: z.string().prefault('无'),
+    NPC关系: z.record(z.object({
+      好感度: z.coerce.number().min(0).max(100).prefault(0),
+      看法: z.string().prefault('陌生'),
+      职业: z.string().prefault('未知'),
+      种族: z.string().prefault('未知'),
+      外貌身材: z.string().prefault('待生成'),
+    })).prefault({}),
+  }).prefault({}),
 });
-
 
 
 $(() => {
