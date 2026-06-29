@@ -71,3 +71,4 @@
   NPC关系: {}
 </initvar>
 </UpdateVariable>
+<StatusPlaceHolderImpl/>

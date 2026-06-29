@@ -871,8 +871,8 @@
         2
       ],
       "disabled": false,
-      "markdownOnly": false,
-      "promptOnly": true,
+      "markdownOnly": true,
+      "promptOnly": false,
       "runOnEdit": false,
       "substituteRegex": 0,
       "minDepth": null,
