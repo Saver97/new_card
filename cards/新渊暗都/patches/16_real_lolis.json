@@ -1,0 +1,5 @@
+[
+  {"op": "add", "path": "/entryManifest/NPC/小糖", "value": {"path": "世界书/NPC/小糖.yaml", "abstract": "小糖·人类·8岁·下城区卖花孤儿", "enabled": true, "keywords": ["小糖","孤儿","卖花","自由行者酒吧","红绳","糖果"]}},
+  {"op": "add", "path": "/entryManifest/NPC/芽芽", "value": {"path": "世界书/NPC/芽芽.yaml", "abstract": "芽芽·兽化种·9岁·下城区流浪白犬娘", "enabled": true, "keywords": ["芽芽","流浪","白犬","地铁站","孤儿","怕生","机械犬"]}},
+  {"op": "add", "path": "/entryManifest/NPC/豆豆", "value": {"path": "世界书/NPC/豆豆.yaml", "abstract": "豆豆·人类·6岁·城防署家属区·双马尾", "enabled": true, "keywords": ["豆豆","双马尾","画画","苏瑾","城防署","蝴蝶结"]}}
+]
