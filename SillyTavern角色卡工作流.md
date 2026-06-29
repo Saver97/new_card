@@ -297,6 +297,123 @@ JS:   bar.style.width = value + '%';
 - ✗ 跳过后处理 → MVU 完全失效
 - ✗ 编辑非 `正则/` 的面板 → 打包不生效
 
+---
+
+## 十一、新渊暗都项目实战总结（2026.06）
+
+### 11.1 世界书条目深度设计
+
+**核心发现**：`depth=2` 的 position 设置在 forge pack 后会丢失，因为 forge 将 position 序列化为简化值（如 `after_char`），而非 `at_depth` 对象。真正的深度控制依赖 `extensions.position=4` 和 `extensions.depth=N`。
+
+**正确做法**：
+```json
+// position 在 state.json 中设置为 at_depth
+"position": {"type": "at_depth", "role": "system", "depth": 2}
+
+// 但打包后 position 被简化为 "after_char"，扩展数据在 extensions 中
+"extensions": {"position": 4, "depth": 2}
+```
+
+**实际验证**：参考卡绝区零 157 个条目全部 depth=0~1，**没有使用 depth=2**。核心条目通过 `constant` 策略 + `Infinity` 阈值实现常驻，而非依赖 depth。
+
+**教训**：
+- 不要盲目设置 depth=2，它不解决条目注入问题
+- 常驻条目用 `strategy: constant` + `threshold: Infinity` 更可靠
+- 条件条目用 `@@if` + EJS 动态加载更精准
+
+### 11.2 正则脚本注入设计
+
+**replaceString vs replace_file**（本次踩坑最深处）：
+- `replace_file` 在 forge pack 后**会丢失**，必须改用 `replaceString` 内联完整 HTML
+- 面板 HTML 必须用 `` ```html ... ``` `` 代码块包裹（SillyTavern markdownOnly 渲染要求）
+- 结尾格式必须是 `</html>  \n```  \n`（尾随空格+换行，否则代码块不闭合）
+
+**正则脚本执行顺序**：
+- `promptOnly` 和 `markdownOnly` 是独立通道，不冲突
+- 但同一通道内匹配相同占位符的脚本会互斥
+- 参考卡脚本顺序：隐藏状态栏 → 状态栏界面 → 角色创建（紧挨着）
+
+**placement 字段**：
+- `[1]` = 用户输入，`[2]` = AI 输出
+- 信息面板用 `[2]` 才正确（只在 AI 回复渲染）
+
+### 11.3 HTML 注入的 JS 安全规则
+
+**致命陷阱：HTML 实体在 srcdoc 中被解码**：
+
+```javascript
+// ❌ 致命：&#39; 在 srcdoc 中解码为 ' → ''' 三个单引号 → SyntaxError
+r += c===39 ? '&#39;' : s[i];
+
+// ❌ 致命：&amp; 在 srcdoc 中解码为 & → esc 函数失效
+r += c===38 ? '&amp;' : ...;
+
+// ✅ 正确：用 String.fromCharCode 运行时拼接 HTML 实体
+r += String.fromCharCode(38, 97, 109, 112, 59);  // = "&amp;"
+```
+
+**JS 语法安全清单**：
+- 禁止箭头函数 `=>`：`>` 在 srcdoc 中被解析为标签
+- 禁止正则字面量中的 `&<>"'` 字符：会被 HTML 实体化
+- 禁止 JS 字符串中直接写 `&#39;` / `&amp;` 等 HTML 实体
+- 强制使用 `function` 关键字，禁用 ES6 箭头
+- 嵌套三元表达式可以正常使用
+- `for` 循环、`forEach` 均安全
+
+### 11.4 tavern_helper 序列化陷阱
+
+**forge pack 的已知 bug**：`tavern_helper` 在 state.json 中是对象，但 pack 后变成数组 `[["scripts", [...]], ["variables", {}]]`。SillyTavern 期望对象格式 `{scripts: [...], variables: {}}`。
+
+**post-pack 后处理必须做的事**：
+```javascript
+// 数组转对象，scripts 保持为数组（不是对象！）
+const fixed = { scripts: [], variables: {} };
+th.forEach(([k, v]) => {
+  if (k === 'scripts') fixed.scripts = Array.isArray(v) ? v : Object.values(v);
+  if (k === 'variables') fixed.variables = v || {};
+});
+```
+
+**教训**：scripts 必须是**数组**（不是 `{0: ..., 1: ...}` 对象），否则 SillyTavern 脚本面板为空，MVU 不加载，`getAllVariables` 未定义。
+
+### 11.5 Zod 脚本的两个致命错误
+
+1. **`export type` 语句未移除**：skill 文档明确要求移除，遗漏导致浏览器执行时报语法错误 → `registerMvuSchema` 未执行 → MVU 不工作
+2. **schema 内容重复/残留旧版**：多次编辑 Zod.txt 导致旧 schema（含已删除的 `主角状态Schema`）残留，MVU 初始化失败
+
+### 11.6 变量更新规则设计经验
+
+**规则必须有具体数值**：
+- ❌ "受损时减少，休息时恢复" → AI 轻伤扣 50，重伤扣 5
+- ✅ "战斗顿悟 +1~5，单次上限 5" → AI 有明确范围约束
+
+**突发情况必须单独列明**：
+- 常规提升和剧情例外分开写
+- 每个例外给具体数值范围 + 代价（侵蚀度/金钱）
+- 覆盖正向/反向/恢复全场景
+
+**字段名变更必须全局同步**：
+- schema 改 `看法` → `对主角看法` + `主角看法`
+- 必须同步更新变量更新规则、面板 JS、demo 数据、扮演准则
+- 遗漏任何一处 = AI 写旧字段名 → Zod 静默丢弃 → 面板显示默认值
+
+### 11.7 EJS 条件条目的 configure 陷阱
+
+- 含 `@@if` 的条目不能跑 `forge configure`
+- configure 会将 constant 条目优化为 path，吞掉 `@@if` 条件
+- 这些条目保持 `contents` 格式，直接 pack
+
+### 11.8 角色创建面板设计经验
+
+**步骤跳转**：用可点击步骤指示器代替"上一步"按钮，减少 UI 控件，步骤指示器做 `cursor:pointer` + hover 效果。
+
+**数据联动**：势力→职业→种族→性别的联动过滤在 JS 中完成，禁选项置灰不可点击。
+
+**身份绑定**：开局后必须忽略玩家自设，仅以创建面板选择的值为准。三层强化：
+1. 开场白直接声明（玩家第一眼看到）
+2. 扮演准则铁律（AI 每次回复阅读）
+3. 变量更新规则锁死字段（技术兜底）
+
 ### 6.1 post-pack.js 做了什么
 
 | 修正项 | 说明 |
