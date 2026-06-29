@@ -2,7 +2,8 @@
 /**
  * 新渊暗都 post-pack 后处理脚本
  * 修复 forge pack 的已知问题：
- * 1. tavern_helper 被错误序列化为数组，需转回对象
+ * 1. tavern_helper 被错误序列化为 [[scripts, [...]], [variables, {}]]
+ *    需转为正确格式 {scripts: [...], variables: {}}（scripts 是数组）
  *
  * 用法: node post-pack.mjs
  */
@@ -22,20 +23,20 @@ if (!fs.existsSync(cardPath)) {
 const card = JSON.parse(fs.readFileSync(cardPath, 'utf8'));
 let fixed = false;
 
-// === 修复1: tavern_helper 数组转对象 ===
+// === 修复1: tavern_helper 数组转对象（scripts 保持数组） ===
 const th = card.data?.extensions?.tavern_helper;
 if (Array.isArray(th)) {
-  console.log('🔧 修复 tavern_helper: Array → Object');
-  const fixedTh = { scripts: {}, variables: {} };
+  console.log('🔧 修复 tavern_helper: [[...]] → {scripts: [...], variables: {}');
+  const fixedTh = { scripts: [], variables: {} };
 
   th.forEach(([key, value]) => {
     if (key === 'scripts') {
+      // scripts 必须是数组，不是对象！
       if (Array.isArray(value)) {
-        value.forEach((script, i) => {
-          fixedTh.scripts[String(i)] = script;
-        });
-      } else {
         fixedTh.scripts = value;
+      } else {
+        // 如果 value 是对象，转为数组
+        fixedTh.scripts = Object.keys(value).map(k => value[k]);
       }
     } else if (key === 'variables') {
       fixedTh.variables = value || {};
@@ -44,7 +45,11 @@ if (Array.isArray(th)) {
 
   card.data.extensions.tavern_helper = fixedTh;
   fixed = true;
-  console.log('   scripts keys:', Object.keys(fixedTh.scripts));
+  console.log('   scripts 是数组:', Array.isArray(fixedTh.scripts));
+  console.log('   scripts 长度:', fixedTh.scripts.length);
+  if (fixedTh.scripts.length > 0) {
+    console.log('   scripts[0].name:', fixedTh.scripts[0].name);
+  }
 }
 
 if (fixed) {
