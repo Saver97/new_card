@@ -77,6 +77,15 @@ const NPC关系详情Schema = z.object({
   职业: z.string().prefault('未知'),
   种族: z.string().prefault('未知'),
   外貌身材: z.string().prefault('待生成'),
+  着装: z.object({
+    外套: z.string().prefault('未知'),
+    上衣: z.string().prefault('未知'),
+    下装: z.string().prefault('未知'),
+    内衣: z.string().prefault('未知'),
+    内裤: z.string().prefault('未知'),
+    鞋子: z.string().prefault('未知'),
+    饰品: z.string().prefault('未知'),
+  }).prefault({}),
 });
 
 const 社交Schema = z.object({
