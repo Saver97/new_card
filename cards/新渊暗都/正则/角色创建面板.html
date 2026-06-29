@@ -24,9 +24,11 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 
 /* Step indicator */
 .steps{display:flex;justify-content:center;gap:0;margin-bottom:24px;background:var(--card);border-radius:30px;padding:4px;border:1px solid var(--border)}
-.step{flex:1;padding:10px 12px;text-align:center;font-size:11px;color:var(--muted);border-radius:26px;cursor:default;transition:all .3s;position:relative;white-space:nowrap}
+.step{flex:1;padding:10px 12px;text-align:center;font-size:11px;color:var(--muted);border-radius:26px;cursor:pointer;transition:all .3s;position:relative;white-space:nowrap}
+.step:hover{color:var(--text);background:rgba(255,255,255,.03)}
 .step.active{background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(79,195,247,.08));color:var(--cyan);font-weight:600;box-shadow:inset 0 0 12px rgba(0,229,255,.08)}
 .step.done{color:var(--green)}
+.step:hover.done{color:var(--cyan)}
 .step .step-num{display:block;font-size:10px;opacity:.6;margin-bottom:2px}
 
 /* Panel */
@@ -36,8 +38,8 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 
 /* Card */
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px}
-.card-header{margin-bottom:18px}
-.card-header h2{font-size:17px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.card-header{margin-bottom:18px;text-align:center}
+.card-header h2{font-size:17px;font-weight:700;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px}
 .card-header .icon{font-size:22px}
 .card-header p{font-size:12px;color:var(--muted);margin-top:4px}
 
@@ -103,12 +105,12 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 </div>
 
 <div class="steps">
-<div class="step active" data-step="1"><span class="step-num">01</span>势力</div>
-<div class="step" data-step="2"><span class="step-num">02</span>职业</div>
-<div class="step" data-step="3"><span class="step-num">03</span>种族</div>
-<div class="step" data-step="4"><span class="step-num">04</span>性别</div>
-<div class="step" data-step="5"><span class="step-num">05</span>信息</div>
-<div class="step" data-step="6"><span class="step-num">06</span>确认</div>
+<div class="step active" data-step="1" onclick="jumpTo(1)"><span class="step-num">01</span>势力</div>
+<div class="step" data-step="2" onclick="jumpTo(2)"><span class="step-num">02</span>职业</div>
+<div class="step" data-step="3" onclick="jumpTo(3)"><span class="step-num">03</span>种族</div>
+<div class="step" data-step="4" onclick="jumpTo(4)"><span class="step-num">04</span>性别</div>
+<div class="step" data-step="5" onclick="jumpTo(5)"><span class="step-num">05</span>信息</div>
+<div class="step" data-step="6" onclick="jumpTo(6)"><span class="step-num">06</span>确认</div>
 </div>
 
 <div class="step-panel active" id="step1">
@@ -126,7 +128,7 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 <div class="options-grid" id="job-options"></div>
 <div class="info-bar" id="job-info"></div>
 </div>
-<div class="btn-group"><button class="btn btn-secondary" onclick="prevStep(2)">← 上一步</button><button class="btn btn-primary" onclick="nextStep(2)">下一步 →</button></div>
+<div class="btn-group"><button class="btn btn-primary" onclick="nextStep(2)">下一步 →</button></div>
 </div>
 
 <div class="step-panel" id="step3">
@@ -136,7 +138,7 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 <div class="warning-bar" id="race-warning"></div>
 <div class="info-bar" id="race-info"></div>
 </div>
-<div class="btn-group"><button class="btn btn-secondary" onclick="prevStep(3)">← 上一步</button><button class="btn btn-primary" onclick="nextStep(3)">下一步 →</button></div>
+<div class="btn-group"><button class="btn btn-primary" onclick="nextStep(3)">下一步 →</button></div>
 </div>
 
 <div class="step-panel" id="step4">
@@ -145,7 +147,7 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 <div class="options-grid" id="gender-options"></div>
 <div class="warning-bar" id="gender-warning"></div>
 </div>
-<div class="btn-group"><button class="btn btn-secondary" onclick="prevStep(4)">← 上一步</button><button class="btn btn-primary" onclick="nextStep(4)">下一步 →</button></div>
+<div class="btn-group"><button class="btn btn-primary" onclick="nextStep(4)">下一步 →</button></div>
 </div>
 
 <div class="step-panel" id="step5">
@@ -156,7 +158,7 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 <div class="form-group"><label>年龄 (16-300)</label><input type="number" id="char-age" min="16" max="300" value="25"></div>
 </div>
 </div>
-<div class="btn-group"><button class="btn btn-secondary" onclick="prevStep(5)">← 上一步</button><button class="btn btn-primary" onclick="nextStep(5)">下一步 →</button></div>
+<div class="btn-group"><button class="btn btn-primary" onclick="nextStep(5)">下一步 →</button></div>
 </div>
 
 <div class="step-panel" id="step6">
@@ -164,7 +166,7 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);co
 <div class="card-header"><h2><span class="icon">✅</span>确认角色信息</h2><p>检查无误后点击确认创建</p></div>
 <div class="preview" id="char-preview"></div>
 </div>
-<div class="btn-group"><button class="btn btn-secondary" onclick="prevStep(6)">← 上一步</button><button class="btn btn-create" onclick="createCharacter()">确认创建角色</button></div>
+<div class="btn-group"><button class="btn btn-create" onclick="createCharacter()">确认创建角色</button></div>
 </div>
 </div>
 <script>
@@ -182,6 +184,7 @@ function selectFaction(n,el){selectedFaction=n;document.querySelectorAll('#facti
 function selectJob(n,el){selectedJob=n;document.querySelectorAll('#job-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected');document.getElementById('job-info').textContent='📌 '+JOBS[n].desc;document.getElementById('job-info').style.display='block'}
 function selectRace(n,el){selectedRace=n;document.querySelectorAll('#race-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected');document.getElementById('race-info').textContent='📌 '+RACES[n].desc;document.getElementById('race-info').style.display='block'}
 function selectGender(g,el){selectedGender=g;document.querySelectorAll('#gender-options .option-card').forEach(function(b){b.classList.remove('selected')});el.classList.add('selected')}
+function jumpTo(target){for(var i=1;i<=6;i++){var s=document.querySelector('.step[data-step="'+i+'"]');s.classList.remove('active','done');if(i<target)s.classList.add('done');if(i===target)s.classList.add('active');document.getElementById('step'+i).classList.remove('active')};document.getElementById('step'+target).classList.add('active');if(target===2)renderJobOptions();if(target===3)renderRaceOptions();if(target===4)renderGenderOptions();if(target===5||target===6)renderPreview()}
 function nextStep(cur){if(cur===1&&!selectedFaction){alert('请选择一个势力');return}if(cur===2&&!selectedJob){alert('请选择一个职业');return}if(cur===3&&!selectedRace){alert('请选择一个种族');return}if(cur===4&&!selectedGender){alert('请选择性别');return}if(cur===5){var n=document.getElementById('char-name').value.trim();if(!n){alert('请输入角色姓名');return}}document.querySelector('.step[data-step="'+cur+'"]').classList.remove('active');document.querySelector('.step[data-step="'+cur+'"]').classList.add('done');document.querySelector('.step[data-step="'+(cur+1)+'"]').classList.add('active');document.getElementById('step'+cur).classList.remove('active');document.getElementById('step'+(cur+1)).classList.add('active');if(cur===1)renderJobOptions();if(cur===2)renderRaceOptions();if(cur===3)renderGenderOptions();if(cur===5)renderPreview()}
 function prevStep(cur){document.querySelector('.step[data-step="'+cur+'"]').classList.remove('active');document.querySelector('.step[data-step="'+(cur-1)+'"]').classList.remove('done');document.querySelector('.step[data-step="'+(cur-1)+'"]').classList.add('active');document.getElementById('step'+cur).classList.remove('active');document.getElementById('step'+(cur-1)).classList.add('active')}
 var adventureStarted=false;
