@@ -132,7 +132,7 @@ body{font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:#0a0b14;colo
 </div>
 <script>
 function g(o,p,d){var k=p.split('.'),r=o;for(var i=0;i<k.length;i++){if(r&&typeof r==='object'&&k[i]in r)r=r[k[i]];else return d}return r!==undefined?r:d}
-function esc(s){if(!s)return '';var r='';for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);r+=c===38?'&amp;':c===60?'&lt;':c===62?'&gt;':c===34?'&quot;':c===39?'&#39;':s[i]}return r}
+function esc(s){if(!s)return "";var r="";for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);if(c===38)r+=String.fromCharCode(38,97,109,112,59);else if(c===60)r+=String.fromCharCode(38,108,116,59);else if(c===62)r+=String.fromCharCode(38,103,116,59);else if(c===34)r+=String.fromCharCode(38,113,117,111,116,59);else r+=s[i]}return r}
 function render(){var d=null;if(typeof getAllVariables==='function'){var a=getAllVariables();var p=typeof _!=='undefined'?_.get(a,'stat_data'):(a.stat_data||a);if(p&&Object.keys(p).length>0)d=p}if(!d){document.getElementById('npc-list').innerHTML='<div class="nodata">无数据</div>';return}
 document.getElementById('w-time').textContent=g(d,'世界.当前时间','-');
 document.getElementById('w-loc').textContent=g(d,'世界.当前地点','-');
