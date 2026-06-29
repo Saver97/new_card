@@ -1,0 +1,7 @@
+[
+  {"op": "add", "path": "/entryManifest/NPC/小夜", "value": {"path": "世界书/NPC/小夜.yaml", "abstract": "小夜·兽化种·15岁·下城区街头跑腿(黑猫)", "enabled": true, "keywords": ["小夜","猫耳","跑腿","下城区","孤儿","自由行者酒吧"]}},
+  {"op": "add", "path": "/entryManifest/NPC/林晓", "value": {"path": "世界书/NPC/林晓.yaml", "abstract": "林晓·人类·24岁·暮光商会交易员", "enabled": true, "keywords": ["林晓","交易员","暮光交易所","女商人"]}},
+  {"op": "add", "path": "/entryManifest/NPC/玛莎", "value": {"path": "世界书/NPC/玛莎.yaml", "abstract": "玛莎·半机械体·38岁·下城区地下诊所医生(退伍军医)", "enabled": true, "keywords": ["玛莎","地下诊所","军医","义体","治疗","下城区"]}},
+  {"op": "add", "path": "/entryManifest/NPC/苏瑾", "value": {"path": "世界书/NPC/苏瑾.yaml", "abstract": "苏瑾·人类·45岁·城防署律政局局长", "enabled": true, "keywords": ["苏瑾","律政局","调查","腐败","文职","城防署"]}},
+  {"op": "add", "path": "/entryManifest/NPC/阎婆", "value": {"path": "世界书/NPC/阎婆.yaml", "abstract": "阎婆·恶魔种·320岁·下城区情报贩子(暗网核心)", "enabled": true, "keywords": ["阎婆","情报","暗网","恶魔","酒馆","下城区","老妇人"]}}
+]
