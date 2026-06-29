@@ -154,7 +154,7 @@ var out=g(d,'主角.着装',{});document.getElementById('g-coat').textContent=g(
 document.getElementById('g-top').textContent=g(out,'上衣','-');document.getElementById('g-bottom').textContent=g(out,'下装','-');
 document.getElementById('g-under').textContent=g(out,'内衣','空');document.getElementById('g-pants').textContent=g(out,'内裤','-');
 document.getElementById('g-shoe').textContent=g(out,'鞋子','-');document.getElementById('g-acc').textContent=g(out,'饰品','空');
-var inv=g(d,'主角.背包',[]);var ih=Array.isArray(inv)&&inv.length?inv.map(i=>'<div class="row"><span>'+esc(i)+'</span></div>').join(''):'<div class="nodata">空</div>';
+var inv=g(d,'主角.背包',[]);var ih='';if(Array.isArray(inv)&&inv.length){inv.forEach(function(i){ih+='<div class="row"><span>'+esc(i)+'</span></div>'})}else{ih='<div class="nodata">空</div>'}
 document.getElementById('inv').innerHTML=ih;
 var t=g(d,'任务',{});document.getElementById('t-main').textContent=t.当前任务||'无';
 document.getElementById('t-goal').textContent=t.任务目标||'无';
