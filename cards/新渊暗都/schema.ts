@@ -21,13 +21,6 @@ const 主角属性Schema = z.object({
   特殊能力: z.string().prefault('无'),
 });
 
-const 主角状态Schema = z.object({
-  HP: z.coerce.number().min(0).max(100).prefault(100),
-  体力: z.coerce.number().min(0).max(100).prefault(100),
-  精神力: z.coerce.number().min(0).max(100).prefault(100),
-  侵蚀度: z.coerce.number().min(0).max(100).prefault(0),
-});
-
 const 主角着装Schema = z.object({
   外套: z.string().prefault('无'),
   上衣: z.string().prefault('普通衬衫'),
@@ -41,11 +34,11 @@ const 主角着装Schema = z.object({
 const 主角Schema = z.object({
   基础: 主角基础Schema,
   属性: 主角属性Schema,
-  状态: 主角状态Schema,
   着装: 主角着装Schema,
   背包: z.array(z.string()).prefault([]),
   战斗定位: z.enum(['前排坦克', '中排输出', '后排支援', '游走刺客', '控场法师', '全能混合']).prefault('中排输出'),
   当前情绪: z.string().prefault('平静'),
+  侵蚀度: z.coerce.number().min(0).max(100).prefault(0),
 });
 
 // ========== 世界域 ==========
